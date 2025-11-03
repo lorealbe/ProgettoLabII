@@ -49,7 +49,6 @@ int parse_emergency_type(const char* path,
         char* saveptr_line;
         char* tok_name = strtok_r(line, "][", &saveptr_line);
         char* tok_priority = strtok_r(NULL, "][\n", &saveptr_line);
-        
         if(tok_name && tok_priority) {
             // Trovata un'emergenza valida, rialloca l'array dei contatori
             request_counts_per_emergency = realloc(request_counts_per_emergency, (emergency_count + 1) * sizeof(size_t));
@@ -100,9 +99,10 @@ int parse_emergency_type(const char* path,
 
     while (getline(&line, &len, file) != -1) {
         char* saveptr_line;
-        strtok_r(line, "[", &saveptr_line); // Salta ""
-        char* tok_name = strtok_r(NULL, "][", &saveptr_line);
-        char* tok_priority = strtok_r(NULL, "]", &saveptr_line);
+        char* tok_name = strtok_r(line, "][", &saveptr_line);
+        char* tok_priority = strtok_r(NULL, "][", &saveptr_line);
+
+        printf("DEBUG: Parsing Emergency Type: '%s' with priority '%s'\n", tok_name ? tok_name : "NULL", tok_priority ? tok_priority : "NULL");
 
         if(tok_name && tok_priority) {
             // Prendi il puntatore all'emergenza corrente
@@ -110,9 +110,11 @@ int parse_emergency_type(const char* path,
 
             current_emergency->emergency_name = strdup(tok_name);
             current_emergency->priority = atoi(tok_priority);
+
             
             size_t num_requests = request_counts_per_emergency[current_emergency_idx];
             current_emergency->rescuers_req_number = num_requests;
+
 
             if (num_requests > 0) {
                 // Alloca spazio per le richieste di *questa* emergenza
