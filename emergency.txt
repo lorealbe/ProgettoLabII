@@ -1,2 +1,0 @@
-[Allagamento][1]Pompieri:1,5;Ambulanza:1,2;
-[Incendio][2]Pompieri:2,8;Ambulanza:3,1;

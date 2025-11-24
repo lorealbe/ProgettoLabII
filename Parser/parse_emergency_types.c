@@ -2,48 +2,57 @@
 #include <stdio.h> 
 #include <stdlib.h>
 #include <string.h>
-#include "emergency_types.h"
-#include "rescuers.h"
+#include "../Types/emergency_types.h"
+#include "../Types/rescuers.h"
+#include "../logging.h"
 
-// Includi o copia qui la funzione 'find_rescuer_type_by_name'
+
+// !!! RIGUARDA IL FUNZIONAMENTO
+
+
+
+// Cerca il rescuer dato il suo nome nella lista di digital twins
 static rescuer_type_t* find_rescuer_type_by_name(const char* name, rescuer_type_t* types_list) {
-    if (!name || !types_list) return NULL;
+    LOG_SYSTEM("parse_emergency_types", "Ricerca del tipo di soccorritore: %s", name);
+    if (!name || !types_list) {
+        LOG_SYSTEM("parse_emergency_types", "Nome o lista di tipi di soccorritore non validi");
+        return NULL;
+    }
+
     for (size_t i = 0; types_list[i].rescuer_type_name; i++) {
         if (strcmp(types_list[i].rescuer_type_name, name) == 0) {
+            LOG_SYSTEM("parse_emergency_types", "Tipo di soccorritore trovato: %s", name);
             return &types_list[i];
         }
     }
+    LOG_SYSTEM("parse_emergency_types", "Tipo di soccorritore non trovato: %s", name);
     return NULL;
 }
 
 
-/**
- * Parsing in 2 passate per i tipi di emergenza.
- *
- * @param path File da parsare
- * @param out_emergency_types Puntatore doppio per l'array di output (terminato con NULL)
- * @param all_rescuer_types L'array (già parsato) di tipi di soccorritori 
- * per collegare le richieste.
- */
 int parse_emergency_type(const char* path, 
                          emergency_type_t** out_emergency_types, 
-                         rescuer_type_t* all_rescuer_types) 
-{
+                         rescuer_type_t* all_rescuer_types) {
+
+    LOG_FILE_PARSING("PARSE-EMERGENCY-TYPES", "Inizio parsing tipi di emergenza da '%s'", path);
+
     FILE* file = fopen(path, "r");
     if (!file) {
-        perror("Errore nell'apertura del file");
-        exit(1);
+        LOG_FILE_PARSING("PARSE-EMERGENCY-TYPES-ERROR", "Errore apertura file '%s'", path);
+        perror("Errore apertura file");
+        return -1;
     }
 
-    char* line = NULL;
-    size_t len = 0;
+    char* line = NULL;                                                              // puntatore alla linea letta
+    size_t len = 0;                                                                 // lunghezza del buffer per getline
     
-    size_t emergency_count = 0;
-    // Array che memorizza quanti sub-request ha ogni emergenza
-    size_t* request_counts_per_emergency = NULL;
+    size_t emergency_count = 0;                                                     // Numero di tipi di emergenze
+    
+    size_t* rescuers_required_for_emergency = NULL;                                 // Array che memorizza quanti soccorritori sono richiesti per ogni emergenza
+
 
     // -----------------------------------------------------------------
-    // --- PASSATA 1: Contare ---
+    // --- PASSATA 1: Conta  ---
     // -----------------------------------------------------------------
     while (getline(&line, &len, file) != -1) {
         char* saveptr_line;
@@ -51,18 +60,20 @@ int parse_emergency_type(const char* path,
         char* tok_priority = strtok_r(NULL, "][\n", &saveptr_line);
         if(tok_name && tok_priority) {
             // Trovata un'emergenza valida, rialloca l'array dei contatori
-            request_counts_per_emergency = realloc(request_counts_per_emergency, (emergency_count + 1) * sizeof(size_t));
-            if (!request_counts_per_emergency) {
-                perror("Errore realloc contatori pass 1"); exit(1);
+            rescuers_required_for_emergency = realloc(rescuers_required_for_emergency, (emergency_count + 1) * sizeof(size_t));
+            if (!rescuers_required_for_emergency) {
+                LOG_FILE_PARSING("PARSE-EMERGENCY-TYPES-ERROR", "Errore realloc memoria per le emergenze '%s'", path);
+                perror("Errore realloc"); exit(1);
             }
             
             size_t current_request_count = 0;
             
-            // Loop per contare le sub-richieste
+            // Loop per contare le richieste di soccorritori
             char* saveptr_req;
             char* tok_name_resc = strtok_r(saveptr_line, ":;", &saveptr_req); // Cerca il primo nome
             
             while(tok_name_resc) {
+                LOG_FILE_PARSING("PARSE-EMERGENCY-TYPES", "Trovata sub-richiesta '%s' per emergenza '%s'", tok_name_resc, tok_name);
                 char* tok_required_count = strtok_r(NULL, ",", &saveptr_req);
                 char* tok_time_to_manage = strtok_r(NULL, ";", &saveptr_req);
 
@@ -74,12 +85,14 @@ int parse_emergency_type(const char* path,
                 tok_name_resc = strtok_r(NULL, ":;", &saveptr_req);
             }
             
-            request_counts_per_emergency[emergency_count] = current_request_count;
+            rescuers_required_for_emergency[emergency_count] = current_request_count;
             emergency_count++;
         }
     }
     
-    if (emergency_count == 0) { /* File vuoto o malformato */ }
+    if (emergency_count == 0) { 
+        LOG_FILE_PARSING("PARSE-EMERGENCY-TYPES-WARNING", "Nessun tipo di emergenza trovato in '%s'", path);
+    }
 
     // -----------------------------------------------------------------
     // --- Allocazione Unica ---
@@ -102,8 +115,6 @@ int parse_emergency_type(const char* path,
         char* tok_name = strtok_r(line, "][", &saveptr_line);
         char* tok_priority = strtok_r(NULL, "][", &saveptr_line);
 
-        printf("DEBUG: Parsing Emergency Type: '%s' with priority '%s'\n", tok_name ? tok_name : "NULL", tok_priority ? tok_priority : "NULL");
-
         if(tok_name && tok_priority) {
             // Prendi il puntatore all'emergenza corrente
             emergency_type_t* current_emergency = &((*out_emergency_types)[current_emergency_idx]);
@@ -112,7 +123,7 @@ int parse_emergency_type(const char* path,
             current_emergency->priority = atoi(tok_priority);
 
             
-            size_t num_requests = request_counts_per_emergency[current_emergency_idx];
+            size_t num_requests = rescuers_required_for_emergency[current_emergency_idx];
             current_emergency->rescuers_req_number = num_requests;
 
 
@@ -160,7 +171,7 @@ int parse_emergency_type(const char* path,
     // è già NULL grazie a calloc().
 
     free(line); // Libera il buffer di getline
-    free(request_counts_per_emergency); // Libera l'array dei contatori
+    free(rescuers_required_for_emergency); // Libera l'array dei contatori
     fclose(file);
     
     return emergency_count;

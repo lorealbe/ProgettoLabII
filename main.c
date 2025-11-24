@@ -1,39 +1,70 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "parse_env.h" 
-#include "parse_rescuers.h"
-#include "parse_emergency_types.h"
-#include "rescuers.h"
-#include "emergency_types.h"
+#include <fcntl.h>
+#include <sys/stat.h>
+#include <mqueue.h>
+#include <string.h>
+#include <unistd.h>
+#include <limits.h>
+#include <time.h>
+
+#include "Parser/parse_env.h"
+#include "Parser/parse_emergency_types.h"
+#include "Parser/parse_rescuers.h"
+#include "mq_consumer.h"
+#include "src/runtime/status.h"
 
 
-int main() {  
+#define QUEUE_NAME "/emergenze676878"
+
+
+int main(){
+    // -----------------------------------
+    // Parsing dei file di configurazione
+    // -----------------------------------
+
+    // Ambiente
+    environment_variable_t env_vars;
+    parse_environment_variables("./Data/environment.conf", &env_vars);
+
+    // Tipi di soccorritori e loro digital twin
     rescuer_type_t* rescuer_types = NULL;
     rescuer_digital_twin_t* rescuer_twins = NULL;
-    parse_rescuer_type("rescuers.txt", &rescuer_types, &rescuer_twins);
-    printf("Parsed Rescuer Types:\n");
-    for (size_t i = 0; rescuer_types && rescuer_types[i].rescuer_type_name; i++) {
-        printf("Rescuer Type: %s, Speed: %d, X: %d, Y: %d\n",
-               rescuer_types[i].rescuer_type_name,
-               rescuer_types[i].speed,
-               rescuer_types[i].x,
-               rescuer_types[i].y);
-    }
-    printf("+\n");
+    size_t dt_count = parse_rescuer_type("./Data/rescuers.conf", &rescuer_types, &rescuer_twins);
+
+    // Tipi di emergenze
     emergency_type_t* emergency_types = NULL;
-    parse_emergency_type("emergency.txt", &emergency_types, rescuer_types); 
-    
-    printf("Parsed Emergency Types:\n");
-    for (size_t i = 0; emergency_types && emergency_types[i].emergency_name != NULL; i++) {
-        printf("Emergency Type: %s, Priority: %d\n",
-               emergency_types[i].emergency_name,
-               emergency_types[i].priority);
-        for (int j = 0; j < emergency_types[i].rescuers_req_number; j++) {
-            printf("  Rescuer Request: %s, Required Count: %d, Time to Manage: %d\n",
-                   emergency_types[i].rescuer_requests[j].type->rescuer_type_name,
-                   emergency_types[i].rescuer_requests[j].required_count,
-                   emergency_types[i].rescuer_requests[j].time_to_manage);
-        }
+    size_t em_count = parse_emergency_type("./Data/emergency.conf", &emergency_types, rescuer_types); 
+
+    // ------------------------------------------------------
+    // Inizializzazione dello stato dell'applicazione
+    // ------------------------------------------------------
+
+    state_t status;
+    if(status_init(&status, &rescuer_twins, dt_count) != 0){
+        LOG_SYSTEM("main", "Errore nell'inizializzazione dello stato dell'applicazione");
+        return -1;
     }
-    return 0; 
+
+    // Avvio dei worker thread
+    if(status_start_worker_threads(&status) != 0){
+        LOG_SYSTEM("main", "Errore nell'avvio dei worker threads");
+        status_destroy(&status);
+        return -1;
+    }
+
+    // ------------------------------------------------------
+    // Inizializzazione della message queue
+    // ------------------------------------------------------
+    mq_consumer_t consumer;
+    if(start_mq(&consumer, &env_vars, &emergency_types, em_count) != 0){
+        LOG_SYSTEM("main", "Errore nell'inizializzazione della message queue");
+        status_request_shutdown(&status);
+        status_join_worker_threads(&status);
+        status_destroy(&status);
+        return -1;
+    }
+    
+    
+
 }

@@ -1,3 +1,0 @@
-queue=emergenze123456
-height=300
-width=400
