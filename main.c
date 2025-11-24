@@ -64,7 +64,4 @@ int main(){
         status_destroy(&status);
         return -1;
     }
-    
-    
-
 }

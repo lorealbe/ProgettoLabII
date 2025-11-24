@@ -10,8 +10,6 @@
 #include "Types/emergencies.h"
 #include "Types/rescuers.h"
 
-
-
 typedef struct mq_consumer_t {
     // Coda 
     mqd_t mq;                                 

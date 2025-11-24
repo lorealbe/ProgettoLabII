@@ -139,26 +139,29 @@ static int management_time(emergency_record_t* record) {
     
 }
 
+// Prepara il record dell'emergenza ricevuta
 static int prepare_emergency_record(state_t* state, emergency_record_t** out_record, emergency_requests_t* request, emergency_type_t* emergency_types, size_t emergency_types_count) {
     if(!state || !out_record || !request || !emergency_types) {
         return -1; // Errore: parametri non validi
     }
-
+    LOG_SYSTEM("status", "Preparazione del record per l'emergenza: %s", request->emergency_name);
     emergency_type_t* type = find_emergency_type_by_name(request->emergency_name, emergency_types, emergency_types_count);
     if(!type) {
+        LOG_SYSTEM("status", "Preparazione fallita: %s", request->emergency_name);
         return -1; // Errore: tipo di emergenza non trovato
     }
 
     emergency_record_t* emergency_record = calloc(1, sizeof(emergency_record_t));
     if(!emergency_record) {
+        LOG_SYSTEM("status", "Preparazione fallita: %s", request->emergency_name);
         return -1; // Errore di allocazione
     }
 
-    emergency_record->emergency.type = *type;
-    emergency_record->emergency.status = WAITING;
-    emergency_record->emergency.x = request->x;
-    emergency_record->emergency.y = request->y;
-    emergency_record->emergency.time = request->timestamp;
+    emergency_record->emergency.type = *type;                        // Copia il tipo di emergenza
+    emergency_record->emergency.status = WAITING;                    // Stato iniziale
+    emergency_record->emergency.x = request->x;                      // Coordinate X
+    emergency_record->emergency.y = request->y;                      // Coordinate Y
+    emergency_record->emergency.time = request->timestamp;           // Timestamp in cui è stata ricevuta l'emergenza
 
     // Calcola il numero totale di soccorritori richiesti sommando required_count di ogni requisito
     int total_required = 0;
@@ -167,24 +170,26 @@ static int prepare_emergency_record(state_t* state, emergency_record_t** out_rec
             total_required += type->rescuer_requests[r].required_count;
         }
     }
-    emergency_record->emergency.rescuers_count = total_required;
-    emergency_record->emergency.assigned_rescuers = NULL; // Inizialmente nessun soccorritore assegnato
-    emergency_record->current_priority = type->priority;
-    emergency_record->total_time_to_manage = management_time(emergency_record);
-    emergency_record->time_remaining = emergency_record->total_time_to_manage;
+    emergency_record->emergency.rescuers_count = total_required;                  // Numero totale di soccorritori richiesti
+    emergency_record->emergency.assigned_rescuers = NULL;                         // Inizialmente nessun soccorritore assegnato
+    emergency_record->current_priority = type->priority;                          // Priorità iniziale
+    emergency_record->total_time_to_manage = management_time(emergency_record);   // Tempo totale di gestione
+    emergency_record->time_remaining = emergency_record->total_time_to_manage;    // Tempo rimanente
 
-    emergency_record->starting_time = 0;
+    emergency_record->starting_time = 0;                                          // Tempo di inizio gestione, 0 = non iniziato         
 
-    emergency_record->preempted = false;
+    emergency_record->preempted = false;                                          // Flag di preemption     
+
+    LOG_SYSTEM("status", "Record per l'emergenza %s preparato correttamente", request->emergency_name);
 
     *out_record = emergency_record;
     return 0; // Successo
 }
 
-
+// Mette in pausa un'emergenza
 static bool pause_emergency(state_t* state, emergency_t* emergency){
     state->emergencies_paused_count++;
-
+    LOG_SYSTEM("status", "Mette in pausa l'emergenza: %s", emergency->type.emergency_type_name);
     ensure_capacity((void***)&state->emergencies_paused, &state->emergencies_paused_capacity, state->emergencies_paused_count);
 
     emergency->status = PAUSED;
@@ -193,7 +198,7 @@ static bool pause_emergency(state_t* state, emergency_t* emergency){
     if(idx == (size_t)-1){
         return false; // Emergenza non trovata nell'array delle emergenze in corso
     }
-
+    LOG_SYSTEM("status", "Emergenza %s rimossa dall'array delle emergenze in corso", emergency->type.emergency_type_name);
     emergency->preempted = true;
     remove_from_general_queue(state->emergencies_in_progress, 
                               &state->emergencies_in_progress_count, 
@@ -203,12 +208,13 @@ static bool pause_emergency(state_t* state, emergency_t* emergency){
                                &state->emergencies_paused_count, 
                                &state->emergencies_paused_capacity, 
                                (void*)emergency);
+    LOG_SYSTEM("status", "Emergenza %s inserita nell'array delle emergenze in pausa", emergency->type.emergency_type_name);
     return true;
 }
 
+// Termina un'emergenza per timeout
 static bool timeout_emergency(state_t* state, emergency_t* emergency){
     if(!state || !emergency) return false; // Errore nei parametri
-
     emergency->status = TIMEOUT;
     // Trova l'indirizzo dell'emergenza nell'array delle emergenze in corso e la rimuove
     size_t idx = find_idx((void**)state->emergencies_in_progress, state->emergencies_in_progress_count, (void*)emergency);
@@ -219,13 +225,17 @@ static bool timeout_emergency(state_t* state, emergency_t* emergency){
     remove_from_general_queue(state->emergencies_in_progress, 
                               &state->emergencies_in_progress_count, 
                               idx);
-    // Log timeout 
+    LOG_SYSTEM("status", "Emergenza %s terminata per timeout", emergency->type.emergency_type_name);
     // L'emergenza non è stata risolta in tempo
     return true;
 }
 
+// Trova il miglior soccorritore IDLE per un'emergenza
 static rescuer_digital_twin_t* find_best_idle_rescuer(state_t* state, emergency_record_t* record){
     if(!state || !record) return NULL; // Errore nei parametri
+    
+    LOG_SYSTEM("status", "Ricerca del miglior soccorritore IDLE per l'emergenza: %s", record->emergency.type.emergency_type_name);
+
     if(state->rescuer_available_count == 0) return NULL; // Nessun soccorritore disponibile
     emergency_t* emergency = &record->emergency;
     rescuer_digital_twin_t* best = NULL;
@@ -246,10 +256,15 @@ static rescuer_digital_twin_t* find_best_idle_rescuer(state_t* state, emergency_
             }
         }
     }
+    LOG_SYSTEM("status", "Miglior soccorritore IDLE trovato: %s", best ? best->type->rescuer_type_name : "Nessuno");
+    return best;
 }
 
+// Trova il miglior soccorritore impegnato in un'emergenza di priorità inferiore
 static rescuer_digital_twin_t* find_best_rescuer_lower_priority(state_t* state, emergency_record_t* record){
     if(!state || !record) return NULL; // Errore nei parametri
+
+    LOG_SYSTEM("status", "Ricerca del miglior soccorritore impegnato in un'emergenza di priorità inferiore per l'emergenza: %s", record->emergency.type.emergency_type_name);
 
     emergency_t* emergency = &record->emergency; // Emergenza da risolvere
     emergency_t* rescuer_emergency = NULL;       // Emergenza da cui viene prelevato il soccorritore
@@ -257,42 +272,28 @@ static rescuer_digital_twin_t* find_best_rescuer_lower_priority(state_t* state, 
     time_t best_time = LONG_MAX;      
     int idx = -1;                            // Indice del soccorritore trovato nell'array dei soccorritori in uso           
 
-    for(size_t i = 0; i < state->rescuer_in_use_count; ++i){
-        rescuer_digital_twin_t* rescuer = state->rescuers_in_use[i]; // Rescuer_in_use contiene solo soccorritori non IDLE
-        if(rescuer->status != EN_ROUTE_TO_SCENE && rescuer->status != ON_SCENE){
-            continue; // Ignora i soccorritori RETURNING_TO_BASE
-        }
-        rescuer_emergency = find_emergency_by_rescuer(best, state->emergencies_in_progress, state->emergencies_in_progress_count);
-        if(!rescuer_emergency){
-            // L'emergenza non esiste
-            // Il soccorritore viene rimosso dall'array rescuers_in_use
-            memmove(&state->rescuers_in_use[i], &state->rescuers_in_use[i+1], (state->rescuers_in_use_count - i - 1) * sizeof(rescuer_digital_twin_t*));
-            state->rescuers_in_use_count--;
-            i--; // Decrementa per controllare il nuovo rescuer_in_use[i]
-        }
-        if(rescuer_emergency->type.priority >= emergency->type.priority) continue; // Il soccoritore si trova in un emergenza di priorità pari o superiore e viene quindi ignorato
+
+
+    for(size_t j = 0; j < (size_t)emergency->type.rescuers_req_number; ++j){
+        rescuer_request_t* req = &emergency->type.rescuer_requests[j];
         
-        // Abbiamo il soccorritore in un'emergenza di priorità inferiore
-        // emergency -> quella da risolvere
-        // rescuer_emergency -> quella in cui si trova attualmente il soccorritore
-
-
-
-        // Cerco il tipo di soccorritore richiesto dall'emergenza --> servono N tipi di soccorritori
-        // cerco tra i soccoritori in uso se c'è quel tipo        --> scorre fino ad N * la sua lunghezza (M)
-        // controllo se posso rimuverlo e se arriva in tempo      --> scorro N volte
-
-        // eccetto all'inizio N < M
-
-        // prendo in ordine tutti i soccorritori in uso                   --> scorro M soccorritori
-        // controllo se posso rimuoverlo dall'emergenza in cui si trova   --> controllo M volte 
-        // controllo se è del tipo richiesto dall'emergenza               --> scorro N tipi di soccorritori
-        // calcolo il tempo per arrivare all'emergenza
-
-
-        for(size_t j = 0; j < (size_t)emergency->type.rescuers_req_number; ++j){
-            rescuer_request_t* req = &emergency->type.rescuer_requests[j];
+        for(size_t i = 0; i < state->rescuer_in_use_count; ++i){
+            rescuer_digital_twin_t* rescuer = state->rescuers_in_use[i]; // Rescuer_in_use contiene solo soccorritori non IDLE
+            
             if(strcmp(rescuer->type->rescuer_type_name, req->type->rescuer_type_name) == 0){
+                
+                if(rescuer->status != EN_ROUTE_TO_SCENE && rescuer->status != ON_SCENE) continue; // Ignora i soccorritori RETURNING_TO_BASE
+                
+                rescuer_emergency = find_emergency_by_rescuer(best, state->emergencies_in_progress, state->emergencies_in_progress_count);
+                if(!rescuer_emergency){
+                    // L'emergenza non esiste
+                    // Il soccorritore viene rimosso dall'array rescuers_in_use
+                    memmove(&state->rescuers_in_use[i], &state->rescuers_in_use[i+1], (state->rescuers_in_use_count - i - 1) * sizeof(rescuer_digital_twin_t*));
+                    state->rescuers_in_use_count--;
+                    i--; // Decrementa per controllare il nuovo rescuer_in_use[i]
+                }
+                if(rescuer_emergency->type.priority >= emergency->type.priority) continue; // Il soccoritore si trova in un emergenza di priorità pari o superiore e viene quindi ignorato
+
                 int distance = manhattan_distance(rescuer->x, rescuer->y, emergency->x, emergency->y);
                 int speed = rescuer->type->speed > 0 ? rescuer->type->speed : 1; // Garantisce che non ci siano velocità nulle o negative
                 time_t time_to_scene = (distance + speed - 1) / speed; // Calcola il tempo stimato per arrivare sulla scena approssimando per eccesso
@@ -300,23 +301,22 @@ static rescuer_digital_twin_t* find_best_rescuer_lower_priority(state_t* state, 
                     best = rescuer;
                     best_time = time_to_scene; 
                     idx = find_idx((void**)state->rescuers_in_use, state->rescuer_in_use_count, (void*)best);
-                    // TODO AGGIUNGI UN IDX PER IL SOCCORRITORE TROVATO PER POI RIMUOVERLO DALL'ARRAY DELL'EMERGENZA IN CUI SI TROVA
                 }
             }
         }
-    }      
-    
-
+    }
 
     if(best != NULL){  
+        LOG_SYSTEM("status", "Miglior soccorritore impegnato in un'emergenza di priorità inferiore trovato: %s", best->type->rescuer_type_name);
         rescuer_emergency->rescuers_count--;
-        // Lo aggiungo ad emergency 
+        
+        // Inserisce il soccorritore nell'array dei soccorritori assegnati all'emergenza da risolvere
         emergency->rescuers_count++;
         insert_into_general_queue((void***)&emergency->assigned_rescuers, 
                                &emergency->rescuers_count, 
                                &emergency->rescuers_capacity, 
                                (void*)best);
-
+        // Rimuove il soccorritore dall'emergenza in cui si trovava
         remove_rescuer_from_general_queue((void***)&rescuer_emergency->assigned_rescuers, 
                                   &rescuer_emergency->rescuers_count, 
                                   idx);
@@ -324,8 +324,12 @@ static rescuer_digital_twin_t* find_best_rescuer_lower_priority(state_t* state, 
     return best;
 }
 
+// Prova ad allocare i soccorritori per un'emergenza non preemptata
 static bool try_allocate_rescuers(state_t* state, emergency_record_t* record){
-    if(!state || !record) return false // Errore nei parametri
+    if(!state || !record) return false; // Errore nei parametri
+
+    LOG_SYSTEM("status", "Tentativo di allocazione soccorritori per emergenza: %s", record->emergency.type.emergency_type_name);
+    
     emergency_types_t* type = &record->emergency.type;
     int total_rescuers_needed = record->emergency.rescuer_count;
 
@@ -341,7 +345,7 @@ static bool try_allocate_rescuers(state_t* state, emergency_record_t* record){
                 // copia il gemello digitale nell'array degli assegnati
                 if (idx < (size_t)record->emergency.rescuers_count) {
                     record->assigned_rescuers[idx++] = *best_rescuer;
-                    record->assigned_rescuers[idx-1] = EN_ROUTE_TO_SCENE;
+                    record->assigned_rescuers[idx-1].status = EN_ROUTE_TO_SCENE;
                     record->assigned_rescuers_count++;
 
                     state->rescuer_available_count--;
@@ -375,26 +379,30 @@ static bool try_allocate_rescuers(state_t* state, emergency_record_t* record){
                                            &state->emergencies_waiting_count, 
                                            &state->emergencies_waiting_capacity, 
                                            (void*)&record->emergency);
+                    LOG_SYSTEM("status", "Allocazione soccorritori per emergenza %s fallita", record->emergency.type.emergency_type_name);
                     return false; // Allocazione fallita
                 }
             }
         }
     }
+    LOG_SYSTEM("status", "Allocazione soccorritori per emergenza %s riuscita", record->emergency.type.emergency_type_name);
     return true;
 }
 
-// TODO COMMENTA
-
+// Prova ad allocare i soccorritori per un'emergenza preemptata
 static bool try_allocate_rescuers_for_preempted(state_t* state, emergency_record_t* record){
     if(!state || !record) return false; // Errore nei parametri
     if(!record->preempted) return false; // L'emergenza non è preemptata
-    // controlla quali ci sono
-    // contando per ogni tipo di soccorritore quanti ne servono ancora
+    
+    LOG_SYSTEM("status", "Tentativo di allocazione soccorritori per emergenza preemptata: %s", record->emergency.type.emergency_type_name);
+
     emergency_types_t* type = &record->emergency.type;
     int total_rescuers_needed = record->emergency.rescuer_count;
     if(record->assigned_rescuers_count == total_rescuers_needed){
+        LOG_SYSTEM("status", "Tutti i soccorritori già assegnati per l'emergenza preemptata: %s", record->emergency.type.emergency_type_name);
         // Tutti i soccorritori sono già assegnati
         record->preempted = false;
+        LOG_SYSTEM("status", "Rimozione del flag di preemption per l'emergenza: %s", record->emergency.type.emergency_type_name);
         return true;
     }
 
@@ -435,17 +443,21 @@ static bool try_allocate_rescuers_for_preempted(state_t* state, emergency_record
                         state->rescuer_in_use[state->rescuer_in_use_count++] = *best_rescuer;
                     }
                 } else {
+                    LOG_SYSTEM("status", "Allocazione soccorritori per emergenza preemptata %s fallita", record->emergency.type.emergency_type_name);
                     return false; // Non è stato possibile trovare un soccorritore disponibile
                 }
             }
         }
     }
+    LOG_SYSTEM("status", "Allocazione soccorritori per emergenza preemptata %s riuscita", record->emergency.type.emergency_type_name);
+    record->preempted = false;
     return true;
 }
 
-
+// Inizia la gestione di un'emergenza
 static bool start_emergency_management(state_t* state, emergency_record_t* record){
     if(!state || !record) return false; // Errore nei parametri
+    LOG_SYSTEM("status", "Inizio della gestione dell'emergenza: %s", record->emergency.type.emergency_type_name);
     record->starting_time = (unsigned int)time(NULL);
     record->emergency.status = ASSIGNED;
     // Rimuove l'emergenza dalla coda di attesa
@@ -461,11 +473,14 @@ static bool start_emergency_management(state_t* state, emergency_record_t* recor
                                &state->emergencies_in_progress_count, 
                                &state->emergencies_in_progress_capacity, 
                                (void*)&record->emergency);
+    LOG_SYSTEM("status", "Gestione dell'emergenza %s iniziata correttamente", record->emergency.type.emergency_type_name);
     return true;
 }
 
+// Calcola il tempo massimo per arrivare sulla scena dell'emergenza
 static unsigned int highest_time_to_scene(emergency_record_t* record){
     if(!record) return 0; // Errore nei parametri
+    LOG_SYSTEM("status", "Calcolo del tempo massimo per arrivare sulla scena dell'emergenza: %s", record->emergency.type.emergency_type_name);
     unsigned int max_time = 0;
     for(size_t i = 0; i < record->assigned_rescuers_count; ++i){
         rescuer_digital_twin_t* rescuer = record->assigned_rescuers[i];
@@ -476,21 +491,25 @@ static unsigned int highest_time_to_scene(emergency_record_t* record){
             max_time = time_to_scene;
         }
     }
+    LOG_SYSTEM("status", "Tempo massimo per arrivare sulla scena dell'emergenza %s calcolato: %u", record->emergency.type.emergency_type_name, max_time);
     return max_time;
 }
 
+// Verifica se tutti i soccorritori richiesti da un'emergenza sono ancora assegnati
 static bool check_all_rescuers_still_assigned(emergency_record_t* record){
     if(!record) return false; // Errore nei parametri
     return record->assigned_rescuers_count == record->emergency.rescuers_count;
 }
 
+// Incrementa il timeout di un'emergenza e verifica se ha raggiunto la soglia
 static void increment_emergency_timeout(emergency_record_t* record){
     if(!record) return; // Errore nei parametri
     if(record->emergency.status == IN_PROGRESS) return; // Non incrementa il timeout se l'emergenza è in corso
-    
+    LOG_SYSTEM("status", "Incremento del timeout per l'emergenza: %s", record->emergency.type.emergency_type_name);
     record->timeout++;
     const unsigned int TIMEOUT_THRESHOLD = (unsigned int)(record->emergency.type.priority == 2 ? 10 : (record->emergency.type.priority == 1 ? 30 : UINT_MAX));
     if(record->timeout >= TIMEOUT_THRESHOLD){
+        LOG_SYSTEM("status", "Timeout raggiunto per l'emergenza: %s", record->emergency.type.emergency_type_name);
         record->emergency.status = TIMEOUT;
     }
 }
@@ -519,6 +538,7 @@ static emergency_t* get_highest_priority_emergency(state_t* state){
                               &state->emergencies_in_progress_count, 
                               &state->emergencies_in_progress_capacity, 
                               (void*)highest);
+    LOG_SYSTEM("status", "Emergenza da risolvere con la priorità più alta trovata: %s, priorità %d", highest->type.emergency_type_name, highest->current_priority);
     return highest;
 }
 
@@ -603,8 +623,11 @@ void status_destroy(state_t* state) {
     }
     LOG_SYSTEM("status", "Distruzione dello stato");
 
-    // !!!  shutdown_mq(state);
-    
+    // Chiudi la message queue
+    LOG_SYSTEM("status", "Chiusura della message queue");
+    shutdown_mq(state);
+
+    LOG_SYSTEM("status", "Chiusura del mutex e delle condition variable");
     // Distruggi mutex e condition variable
     pthread_cond_destroy(&state->emergency_available_cond);
     pthread_cond_destroy(&state->rescuer_available_cond);
@@ -662,7 +685,7 @@ void status_join_worker_threads(state_t* state) {
 }
 
 
-// !!!!!!!!!!!!!11
+// !!!!!!!!!!!!!
 // Avvia i worker threads
 int status_start_worker_threads(state_t* state, size_t worker_threads_count) {
     if(!state) {
