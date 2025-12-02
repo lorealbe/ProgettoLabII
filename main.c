@@ -43,25 +43,35 @@ int main(){
     state_t status;
     if(status_init(&status, &rescuer_twins, dt_count) != 0){
         LOG_SYSTEM("main", "Errore nell'inizializzazione dello stato dell'applicazione");
-        return -1;
+        goto cleanup;
     }
 
-    // Avvio dei worker thread
-    if(status_start_worker_threads(&status) != 0){
-        LOG_SYSTEM("main", "Errore nell'avvio dei worker threads");
-        status_destroy(&status);
-        return -1;
-    }
-
-    // ------------------------------------------------------
-    // Inizializzazione della message queue
-    // ------------------------------------------------------
+    // -----------------------------------------------------------------------------------------------
+    // Inizializzazione della message queue e dei worker threads (avviene all'interno di start_mq)
+    // -----------------------------------------------------------------------------------------------
     mq_consumer_t consumer;
     if(start_mq(&consumer, &env_vars, &emergency_types, em_count) != 0){
         LOG_SYSTEM("main", "Errore nell'inizializzazione della message queue");
-        status_request_shutdown(&status);
-        status_join_worker_threads(&status);
-        status_destroy(&status);
-        return -1;
+        goto cleanup;
     }
+
+
+
+
+
+    // ------------------------------------------------------
+    // Shutdown dell'applicazione e pulizia della memoria
+    // ------------------------------------------------------
+cleanup:
+    LOG_SYSTEM("main", "Inizio shutdown dell'applicazione");
+    shutdown_mq(&consumer);
+    status_request_shutdown(&status);
+    status_join_worker_threads(&status);
+    status_destroy(&status);
+    free(env_vars.queue);
+    free(rescuer_types);
+    free(rescuer_twins);
+    free(emergency_types);
+    LOG_SYSTEM("main", "Applicazione terminata con successo");
+    return 0;
 }

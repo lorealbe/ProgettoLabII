@@ -1,0 +1,126 @@
+ProgettoLabII - Documentazione sintetica
+=======================================
+
+1) Obiettivo del progetto
+--------
+Gestione emergenze in una griglia ambientale: parsing di configurazioni,
+ricezione di richieste via message queue, assegnazione e monitoraggio di "rescuer" digital twin,
+gestione timeout, preemption e stato degli interventi.
+
+ATTENZIONE: questa documentazione esclude i file diagram.puml, generate_rescuer_conf_Version3.c, make e printAll.c.
+
+2) Organizzazione generale del codice
+-------------------------------------
+- Tipi e modelli (Types): definizioni delle strutture dati centrali (rescuer_type_t, rescuer_digital_twin_t,
+  emergency_type_t, rescuer_request_t, emergency_t, emergency_record_t, emergency_request_t) e enumerazioni
+  di stato (rescuer_status_t, emergency_status_t).
+- Runtime / Controller (Runtime): struttura di stato globale (state_t) con mutex/cond, code di emergenze
+  (waiting, in_progress, paused), pool di rescuers (available, in_use) e gestione thread (worker, timeout,
+  mq consumer).
+- Parser: funzioni per leggere ambiente (parse_env), tipi di rescuer (parse_rescuers) e tipi di emergenza
+  (parse_emergency_types).
+- MQ consumer: componente che legge la message queue, deserializza richieste di emergenza e notifica lo
+  status manager.
+- Logging: componente centralizzato che fornisce log strutturati e macro per categorie (LOG_SYSTEM, LOG_FILE_PARSING).
+- Worker threads: tentano di allocare rescuer a emergenze in attesa, avviano la gestione degli interventi e
+  coordinano preemption e rilascio risorse.
+- Timeout thread: aggiorna timer e genera timeout per emergenze in attesa/pausate.
+
+3) Tipi dati principali (sintesi)
+---------------------------------
+- rescuer_type_t
+  - nome tipo, speed, posizione (x,y)
+- rescuer_digital_twin_t
+  - id, posizione, puntatore al type, stato (rescuer_status_t)
+- rescuer_status_t (enum)
+  - IDLE, EN_ROUTE_TO_SCENE, ON_SCENE, RETURNING_TO_BASE
+- rescuer_request_t
+  - tipo richiesto, quantita' richiesta, tempo per gestire
+- emergency_type_t
+  - priority (short), nome emergenza, array rescuer_requests, count
+- emergency_request_t
+  - nome emergenza, coordinate (x,y), timestamp
+- emergency_t
+  - tipo (embed), stato (emergency_status_t), posizione, tempo, assigned_rescuers
+- emergency_record_t
+  - emergency_t, priority corrente (float), array di rescuers assegnati, tempi (total, remaining, timeout), flag preempted
+
+4) Stato runtime (state_t)
+--------------------------
+- mutex globale e due cond var principali:
+  - emergency_available_cond: per svegliare worker quando arrivano nuove emergenze
+  - rescuer_available_cond: per svegliare gestori quando risorse sono rilasciate
+- code contenenti pointers ad emergency_record_t: waiting, in_progress, paused (con rispettivi count)
+- pool di rescuers disponibili e in uso
+- array di worker thread + thread per MQ consumer e timeout
+- flag di shutdown atomico
+
+5) Flusso runtime/Sequenza (alto livello)
+-----------------------------------------
+- Avvio:
+  - parsers leggono env, definizioni rescuer e tipi emergenza; stato inizializzato con digital twin
+  - viene avviato il MQ consumer che esegue loop di mq_timedreceive()
+- Ricezione messaggi:
+  - MQ consumer deserializza emergency_request_t e chiama status_add_waiting(&state, &request, ...)
+  - status_add_waiting inserisce un emergency_record_t in queue waiting e segnala emergency_available_cond
+- Worker threads:
+  - in attesa su emergency_available_cond
+  - svegliati, provano a allocare risorse con try_allocate_rescuers()
+  - se assegnati, spostano emergency in in_progress e lanciano gestione (thread/controllo)
+  - gestiscono preemption, aggiornano emergency_record_t (time remaining, priority)
+- Timeout thread:
+  - periodicamente scorre paused/waiting per incrementare timeout e cambiare stato TIMEOUT quando necessario
+- Shutdown:
+  - main imposta shutdown_flag, notifica cond var e attende join dei thread
+
+6) Formato dei messaggi MQ
+--------------------------
+- Payload previsto: struttura emergency_request_t (o stringa serializzata che contiene:
+  emergency_name, x, y, timestamp)
+- Il consumer deve conoscere message_size e decodificare correttamente in emergency_request_t
+- Errori di parsing devono essere loggati e il messaggio scartato o riposizionato secondo policy
+
+7) Parser e configurazione
+--------------------------
+- parse_env: legge variabili ambiente (grid width/height, mq name, log level, ecc.)
+- parse_rescuers: legge file di definizione tipologie rescuer e istanzia i digital twin
+- parse_emergency_types: legge tipi emergenza con richieste di risorse e priorità
+- I parser validano valori e loggano errori critici; in caso di errori fatali l'applicazione non procede
+
+8) Logging
+----------
+- log_init() e log_shutdown()
+- Funzioni opzionali log_event / log_event_v per messaggi formattati
+- Macro per categorie: LOG_SYSTEM, LOG_FILE_PARSING
+- Consigli: usare livelli (DEBUG/INFO/WARN/ERROR) e includere timestamp + thread id
+
+9) Build ed esecuzione
+----------------------
+- Compilare con supporto pthread e libreria realtime (mq): gcc ... -lpthread -lrt
+- Esempio generico:
+  gcc -o ProgettoLabII *.c -lpthread -lrt
+  (escludere i file non richiesti o specifici se presenti)
+- Avviare l'eseguibile con le variabili d'ambiente o file di configurazione richiesti dai parser.
+- Eseguire in ambiente che supporti POSIX message queues (mq_open, mq_receive).
+
+10) Testing e debug
+-------------------
+- Test unitari per parser e per funzioni di manipolazione delle code (insert/remove)
+- Test di integrazione per flusso completo: invio di messaggi MQ simulati e osservazione assegnazione rescuer
+- Strumenti utili: valgrind per leak, gdb/strace per crash/IO, logger in file per post-mortem
+
+11) Errori noti e troubleshooting
+---------------------------------
+- PlantUML e diagram: attenzione a usare solo participant dichiarati se si esporta sequence diagram.
+- Race condition: assicurarsi che tutte le manipolazioni delle code condivise siano sotto mutex.
+- Deadlock: rispettare ordine di locking; usare cond var per non busy-wait.
+- MQ sizing: message_size coerente fra sender e consumer.
+
+12) Estensioni possibili
+------------------------
+- Supporto per priorità dinamiche e preemption avanzata
+- Interfaccia REST per status e comandi manuali
+- Visualizzazione runtime (web o client desktop) degli asset e emergenze
+- Persistenza dei log/record su DB
+
+Fine del documento.

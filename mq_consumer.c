@@ -14,38 +14,6 @@
 #define MAX_WORKER_THREADS 16
 
 
-static void estimate_rescuer_position(rescuer_digital_twin_t* rescuer, emergency_t* current_emergency, int* est_x, int* est_y) {
-    
-    // Il soccorritore si muove in linea retta verso la coordinata x dell'emergenza, poi verso y
-    int em_x = current_emergency->x;
-    int em_y = current_emergency->y;
-    int init_res_x = rescuer->x;
-    int init_res_y = rescuer->y;
-    int speed = rescuer->type->speed > 0 ? rescuer->type->speed : 1;
-    int distance = manhattan_distance(init_res_x, init_res_y, em_x, em_y);
-    time_t time_elapsed = time(NULL) - current_emergency->time;
-    int distance_covered = speed * time_elapsed;
-    if (distance_covered >= distance) { // Emergency reached
-        *est_x = em_x;
-        *est_y = em_y;
-    } else {
-        // Calcola la posizione stimata lungo il percorso
-        int remaining_distance = distance - distance_covered; // distanza rimanente
-        int total_x_diff = em_x - init_res_x;
-        int total_y_diff = em_y - init_res_y;
-        if(distance_covered > total_x_diff){
-            *est_x = em_x;
-            *est_y = init_res_y + (distance_covered - abs(total_x_diff)) * (total_y_diff > 0 ? 1 : -1);
-            return;
-        }
-        /*
-        float ratio = (float)(distance_covered) / distance;   
-        *est_x = init_res_x + (int)((em_x - init_res_x) * ratio);
-        *est_y = init_res_y + (int)((em_y - init_res_y) * ratio);
-        */
-    }
-}
-
 // --------------------------------------------------------------
 // Funzioni di gestione della message queue
 // --------------------------------------------------------------
@@ -128,7 +96,7 @@ void* mq_consumer_thread(void* arg) {
             for(size_t i = 0; i < threads_to_create; ++i) {
                 pthread_t new_thread;
                 if(pthread_create(&new_thread, NULL, worker_thread, (void*)&consumer->state) == 0) {
-                    // Aggiungi il nuovo thread all'array dei worker threads
+                    // Aggiunge il nuovo thread all'array dei worker threads
                     consumer->state.worker_threads = realloc(consumer->state.worker_threads, (consumer->state.worker_threads_count + 1) * sizeof(pthread_t));
                     if(consumer->state.worker_threads != NULL) {
                         consumer->state.worker_threads[consumer->state.worker_threads_count] = new_thread;

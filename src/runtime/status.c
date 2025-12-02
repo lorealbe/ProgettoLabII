@@ -35,6 +35,33 @@ static size_t find_idx(void** array, size_t count, void* element) {
     return (size_t)-1; // Elemento non trovato
 }
 
+// Stima la posizione attuale del soccorritore in base al tempo trascorso dall'inizio dell'emergenza
+static void estimate_rescuer_position(rescuer_digital_twin_t* rescuer, emergency_t* current_emergency, int* est_x, int* est_y) {
+    // Il soccorritore si muove in linea retta verso la coordinata x dell'emergenza, poi verso y
+
+    int em_x, em_y = {current_emergency->x, current_emergency->y};
+    int init_res_x, init_res_y = {rescuer->x, rescuer->y};
+    
+    int speed = rescuer->type->speed > 0 ? rescuer->type->speed : 1; // Garantisce che non ci siano velocità nulle o negative
+    int distance = manhattan_distance(init_res_x, init_res_y, em_x, em_y);
+    time_t time_elapsed = time(NULL) - current_emergency->starting_time;
+    int distance_covered = speed * time_elapsed;
+    if (distance_covered >= distance) { // Il soccorritore ha raggiunto l'emergenza
+        *est_x = em_x;
+        *est_y = em_y;
+    } else {
+        // Calcola la posizione stimata lungo il percorso
+        int remaining_distance = distance - distance_covered; // distanza rimanente
+        int total_x_diff = em_x - init_res_x;
+        int total_y_diff = em_y - init_res_y;
+        if(distance_covered > total_x_diff){
+            *est_x = em_x;
+            *est_y = init_res_y + (distance_covered - abs(total_x_diff)) * (total_y_diff > 0 ? 1 : -1);
+            return;
+        }
+    }
+}
+
 // Rimuove un elemento da una coda e ne aggiorna la dimensione
 static emergency_t* remove_emergency_from_general_queue(void** array, size_t* count, size_t index) {
     if(array == NULL || count == NULL || *count == 0 || index >= *count) {
@@ -52,6 +79,7 @@ static emergency_t* remove_emergency_from_general_queue(void** array, size_t* co
     return emergency;
 }
 
+// Rimuove un soccorritore da una coda e ne aggiorna la dimensione
 static rescuer_digital_twin_t* remove_rescuer_from_general_queue(void** array, size_t* count, size_t index) {
     if(array == NULL || count == NULL || *count == 0 || index >= *count) {
         return NULL; // Parametri non validi
@@ -270,15 +298,16 @@ static rescuer_digital_twin_t* find_best_rescuer_lower_priority(state_t* state, 
     emergency_t* rescuer_emergency = NULL;       // Emergenza da cui viene prelevato il soccorritore
     rescuer_digital_twin_t* best = NULL;         // Soccorritore che arriva prima all'emergenza
     time_t best_time = LONG_MAX;      
-    int idx = -1;                            // Indice del soccorritore trovato nell'array dei soccorritori in uso           
+    int idx = -1;                                // Indice del soccorritore trovato nell'array dei soccorritori in uso           
 
 
-
+    // Scorre tutti i soccorritori richiesti per l'emergenza
     for(size_t j = 0; j < (size_t)emergency->type.rescuers_req_number; ++j){
         rescuer_request_t* req = &emergency->type.rescuer_requests[j];
         
+        // Scorre tutti i soccorritori attualmente in uso in cerca di uno di tipo corrispondente
         for(size_t i = 0; i < state->rescuer_in_use_count; ++i){
-            rescuer_digital_twin_t* rescuer = state->rescuers_in_use[i]; // Rescuer_in_use contiene solo soccorritori non IDLE
+            rescuer_digital_twin_t* rescuer = state->rescuers_in_use[i]; // rescuer_in_use contiene solo soccorritori non IDLE
             
             if(strcmp(rescuer->type->rescuer_type_name, req->type->rescuer_type_name) == 0){
                 
@@ -293,8 +322,9 @@ static rescuer_digital_twin_t* find_best_rescuer_lower_priority(state_t* state, 
                     i--; // Decrementa per controllare il nuovo rescuer_in_use[i]
                 }
                 if(rescuer_emergency->type.priority >= emergency->type.priority) continue; // Il soccoritore si trova in un emergenza di priorità pari o superiore e viene quindi ignorato
-
-                int distance = manhattan_distance(rescuer->x, rescuer->y, emergency->x, emergency->y);
+                int est_x, est_y;
+                estimate_rescuer_position(rescuer, rescuer_emergency, &est_x, &est_y);
+                int distance = manhattan_distance(est_x, est_y, emergency->x, emergency->y);
                 int speed = rescuer->type->speed > 0 ? rescuer->type->speed : 1; // Garantisce che non ci siano velocità nulle o negative
                 time_t time_to_scene = (distance + speed - 1) / speed; // Calcola il tempo stimato per arrivare sulla scena approssimando per eccesso
                 if(time_to_scene < best_time && arrive_in_time(time_to_scene, emergency->type.priority) ){
@@ -320,6 +350,8 @@ static rescuer_digital_twin_t* find_best_rescuer_lower_priority(state_t* state, 
         remove_rescuer_from_general_queue((void***)&rescuer_emergency->assigned_rescuers, 
                                   &rescuer_emergency->rescuers_count, 
                                   idx);
+    } else {
+        LOG_SYSTEM("status", "Nessun soccorritore impegnato in un'emergenza di priorità inferiore trovato");
     }
     return best;
 }
@@ -484,7 +516,14 @@ static unsigned int highest_time_to_scene(emergency_record_t* record){
     unsigned int max_time = 0;
     for(size_t i = 0; i < record->assigned_rescuers_count; ++i){
         rescuer_digital_twin_t* rescuer = record->assigned_rescuers[i];
-        int distance = manhattan_distance(rescuer->x, rescuer->y, record->emergency.x, record->emergency.y);
+        int distance = 0;
+        if( rescuer->status == IDLE) distance = manhattan_distance(rescuer->x, rescuer->y, record->emergency.x, record->emergency.y);
+        else { // Il soccorritore è impegnato in un'emergenza
+            int est_x, est_y;
+            emergency_t* rescuer_emergency = find_emergency_by_rescuer(rescuer, state->emergencies_in_progress, state->emergencies_in_progress_count);
+            estimate_rescuer_position(rescuer, rescuer_emergency, &est_x, &est_y);
+            distance = manhattan_distance(est_x, est_y, record->emergency.x, record->emergency.y);
+        }
         int speed = rescuer->type->speed > 0 ? rescuer->type->speed : 1; // Garantisce che non ci siano velocità nulle o negative
         time_t time_to_scene = (distance + speed - 1) / speed; // Calcola il tempo stimato per arrivare sulla scena approssimando per eccesso
         if(time_to_scene > max_time){
@@ -684,52 +723,6 @@ void status_join_worker_threads(state_t* state) {
     }
 }
 
-
-// !!!!!!!!!!!!!
-// Avvia i worker threads
-int status_start_worker_threads(state_t* state, size_t worker_threads_count) {
-    if(!state) {
-        return -1; 
-    }
-    if(worker_threads_count == 0) {
-        worker_threads_count = MAX_WORKER_THREADS; 
-    }
-    LOG_SYSTEM("status", "Inizializzazione dei worker threads");
-    state->worker_threads = malloc(worker_threads_count * sizeof(pthread_t));
-    if(!state->worker_threads) {
-        return -1; // Errore di allocazione
-    }
-    state->worker_threads_count = worker_threads_count;
-
-    for(size_t i = 0; i < worker_threads_count; ++i) {
-        if(pthread_create(&state->worker_threads[i], NULL, worker_thread, (void*)state) != 0) {
-            LOG_SYSTEM("status", "Errore nella creazione del worker thread %zu, liberazione risorse in corso", i);
-            status_request_shutdown(state); // Richiedi lo shutdown in caso di errore
-            status_join_worker_threads(state); // Attendi la terminazione dei thread creati
-            free(state->worker_threads);
-            state->worker_threads = NULL;
-            state->worker_threads_count = 0;
-            return -1; // Errore nella creazione del thread
-        }
-    }
-    LOG_SYSTEM("status", "Worker threads creati con successo");
-
-
-    // Crea il thread per la gestione dei timeout delle emergenze
-    if(pthread_create(&state->timeout_thread, NULL, timeout_thread, (void*)state) != 0) {
-        LOG_SYSTEM("status", "Errore nella creazione del timeout thread, liberazione risorse in corso");
-        status_request_shutdown(state); // Richiedi lo shutdown in caso di errore
-        status_join_worker_threads(state); // Attendi la terminazione dei thread creati
-        free(state->worker_threads);
-        state->worker_threads = NULL;
-        state->worker_threads_count = 0;
-        return -1; // Errore nella creazione del thread
-    }
-    LOG_SYSTEM("status", "Timeout thread creato con successo");
-
-    return 0;   
-}
-
 // Assegna una nuova richiesta di emergenza
 int status_add_waiting(state_t* state, emergency_requests_t* request, emergency_type_t* emergency_types, size_t emergency_types_count){
     if(!state || !request || !emergency_types) {
@@ -779,6 +772,8 @@ int status_add_waiting(state_t* state, emergency_requests_t* request, emergency_
 *                                             Funzioni thread
 * ---------------------------------------------------------------------------------------------------
 */
+
+// Thread worker per la gestione delle emergenze
 void* worker_thread(void* arg){
     status_t* state = (status_t*)arg;
     if(!state) {
@@ -903,6 +898,7 @@ void* worker_thread(void* arg){
     return NULL;
 }
 
+// Thread worker per la gestione del timeout delle emergenze
 void* timeout_thread(void* arg){
     status_t* state = (status_t*)arg;
     if(!state) {
@@ -923,13 +919,13 @@ void* timeout_thread(void* arg){
             // Dopo 9 secondi la priorità aumenta di 1, garantendo che le emergenze di priorità 0 siano gestite in modo prioritario rispetto a quelle di priorità base 1
             // Dopo 72 secondi, una emergenza di priorità base 0 raggiunge la priorità 2
             // Le emergenze di priorià base 0 però non avranno precedenza su quelle di priorità base 2 quando queste sono in timeout da 1 secondo o più
-            record->emergency.current_priority = (float)record->emergency.type.priority + (float)(cbrt(((float)(record->timeout/9)))); // Aumenta la priorità in base al timeout
+            record->emergency.current_priority = (float)record->emergency.type.priority + (float)(cbrt(((float)(record->timeout/9))));
         }
         for(size_t i = 0; i < state->emergencies_waiting_count; ++i){
             emergency_record_t* record = state->emergencies_waiting[i];
             increment_emergency_timeout(record);
             // Aggiorna la priorità corrente in base alla formula: priorità_base + radice cubica di (timeout/9)
-            record->emergency.current_priority = (float)record->emergency.type.priority + (float)(cbrt(((float)(record->timeout/9)))); // Aumenta la priorità in base al timeout
+            record->emergency.current_priority = (float)record->emergency.type.priority + (float)(cbrt(((float)(record->timeout/9)))); 
             if(record->emergency.status == TIMEOUT){
                 timeout_emergency(state, &record->emergency);
                 // Rimuove l'emergenza dall'array delle emergenze in attesa
