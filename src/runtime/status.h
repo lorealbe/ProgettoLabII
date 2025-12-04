@@ -4,6 +4,7 @@
 #include <stdbool.h>
 #include <stddef.h>
 #include <time.h>
+#include <signal.h>
 
 #include "../../Types/emergency_types.h"
 #include "../../Types/rescuers.h"
@@ -12,7 +13,7 @@ typedef struct emergency_record_t{
     emergency_t emergency;
     float current_priority;
 
-    rescuers_digital_twin_t* assigned_rescuers;
+    rescuer_digital_twin_t* assigned_rescuers;
     size_t assigned_rescuers_count;
 
     unsigned int total_time_to_manage;
@@ -68,4 +69,8 @@ void status_request_shutdown(state_t* state);
 void status_join_worker_threads(state_t* state);
 
 
-int status_assign_request(state_t* state, emergency_requests_t* request, emergency_type_t* emergency_types, size_t emergency_types_count);
+int status_add_waiting(state_t* state, emergency_request_t* request, emergency_type_t* emergency_types, size_t emergency_types_count);
+
+
+void* worker_thread(void* arg);
+void* timeout_thread(void* arg);

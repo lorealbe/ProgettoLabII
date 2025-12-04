@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "typeinfo": "c",
-        "emergency_types.h": "c"
+        "emergency_types.h": "c",
+        "time.h": "c"
     }
 }

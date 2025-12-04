@@ -1,7 +1,7 @@
 #define _GNU_SOURCE
 #include <stdlib.h>
 #include <string.h> 
-#include "../Types/parse_env.h"
+#include "parse_env.h"
 #include <stdio.h>
 #include "../logging.h"
 

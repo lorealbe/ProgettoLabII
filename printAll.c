@@ -1,3 +1,4 @@
+/*
 #include <stdio.h>
 #include <stdlib.h>
 #include "parse_env.h" 
@@ -13,7 +14,7 @@ int main() {
     // printf("Environment Variables:\n");
     // printf("%-12s %-8s %-8s\n", "Queue", "Height", "Width");
     // printf("%-12s %-8d %-8d\n", env_vars.queue, env_vars.height, env_vars.width);
-    */
+    
 
     rescuer_type_t* rescuer_types = NULL;
     rescuer_digital_twin_t* rescuer_twins = NULL;
@@ -57,3 +58,5 @@ int main() {
     }
     return 0;
 }
+
+*/

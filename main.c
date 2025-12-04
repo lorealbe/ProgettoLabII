@@ -13,6 +13,7 @@
 #include "Parser/parse_rescuers.h"
 #include "mq_consumer.h"
 #include "src/runtime/status.h"
+#include "logging.h"
 
 
 #define QUEUE_NAME "/emergenze676878"
@@ -41,22 +42,19 @@ int main(){
     // ------------------------------------------------------
 
     state_t status;
-    if(status_init(&status, &rescuer_twins, dt_count) != 0){
+    if(status_init(&status, rescuer_twins, dt_count) != 0){
         LOG_SYSTEM("main", "Errore nell'inizializzazione dello stato dell'applicazione");
         goto cleanup;
     }
 
-    // -----------------------------------------------------------------------------------------------
-    // Inizializzazione della message queue e dei worker threads (avviene all'interno di start_mq)
-    // -----------------------------------------------------------------------------------------------
+    // --------------------------------------------
+    // Inizializzazione della message queue
+    // --------------------------------------------
     mq_consumer_t consumer;
-    if(start_mq(&consumer, &env_vars, &emergency_types, em_count) != 0){
+    if(start_mq(&consumer, &env_vars, emergency_types, em_count) != 0){
         LOG_SYSTEM("main", "Errore nell'inizializzazione della message queue");
         goto cleanup;
     }
-
-
-
 
 
     // ------------------------------------------------------

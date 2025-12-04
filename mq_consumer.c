@@ -10,6 +10,9 @@
 #include <unistd.h>
 #include <limits.h>
 #include <time.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <errno.h>
 
 #define MAX_WORKER_THREADS 16
 
@@ -89,19 +92,19 @@ void* mq_consumer_thread(void* arg) {
         }
 
         // Crea tutti i thread necessari per raggiungere il cap MAX_WORKER_THREADS
-        pthread_mutex_lock(&consumer->state.mutex);
-        size_t current_workers = consumer->state.worker_threads_count;
+        pthread_mutex_lock(&consumer->state->mutex);
+        size_t current_workers = consumer->state->worker_threads_count;
         if(current_workers < MAX_WORKER_THREADS) {
             size_t threads_to_create = MAX_WORKER_THREADS - current_workers;
             for(size_t i = 0; i < threads_to_create; ++i) {
                 pthread_t new_thread;
                 if(pthread_create(&new_thread, NULL, worker_thread, (void*)&consumer->state) == 0) {
                     // Aggiunge il nuovo thread all'array dei worker threads
-                    consumer->state.worker_threads = realloc(consumer->state.worker_threads, (consumer->state.worker_threads_count + 1) * sizeof(pthread_t));
-                    if(consumer->state.worker_threads != NULL) {
-                        consumer->state.worker_threads[consumer->state.worker_threads_count] = new_thread;
-                        consumer->state.worker_threads_count++;
-                        LOG_SYSTEM("mq_consumer", "Nuovo worker thread creato. Totale worker threads: %zu", consumer->state.worker_threads_count);
+                    consumer->state->worker_threads = realloc(consumer->state->worker_threads, (consumer->state->worker_threads_count + 1) * sizeof(pthread_t));
+                    if(consumer->state->worker_threads != NULL) {
+                        consumer->state->worker_threads[consumer->state->worker_threads_count] = new_thread;
+                        consumer->state->worker_threads_count++;
+                        LOG_SYSTEM("mq_consumer", "Nuovo worker thread creato. Totale worker threads: %zu", consumer->state->worker_threads_count);
                     } else {
                         LOG_SYSTEM("mq_consumer", "Errore nella reallocazione dell'array dei worker threads");
                         perror("Errore nella reallocazione dell'array dei worker threads");
@@ -112,7 +115,7 @@ void* mq_consumer_thread(void* arg) {
                 }
             }
         }
-        pthread_mutex_unlock(&consumer->state.mutex);
+        pthread_mutex_unlock(&consumer->state->mutex);
         
 
         buffer[bytes_received] = '\0'; // Termina il messaggio
@@ -121,7 +124,7 @@ void* mq_consumer_thread(void* arg) {
             LOG_SYSTEM("mq_consumer", "Richiesta di emergenza analizzata: %s %d %d %ld", request.emergency_name, request.x, request.y, request.timestamp);
             // Processa la richiesta di emergenza
             if(consumer->running){
-                if(status_add_waiting(&consumer->state, &request, consumer->emergency_types, consumer->emergency_types_count)) {
+                if(status_add_waiting(consumer->state, &request, consumer->emergency_types, consumer->emergency_types_count)) {
                     LOG_SYSTEM("mq_consumer", "Errore nell'assegnazione della richiesta di emergenza");
                 }
                 
@@ -136,7 +139,7 @@ void* mq_consumer_thread(void* arg) {
 }
 
 void initialize_mq(mq_consumer_t* consumer) {
-    if(!args) {
+    if(!consumer) {
         fprintf(stderr, "Errore: argomenti mq_consumer non validi\n");
         exit(1);
     }
@@ -155,7 +158,7 @@ void initialize_mq(mq_consumer_t* consumer) {
     LOG_SYSTEM("mq_consumer", "Struttura mq_consumer inizializzata. Nome coda: %s", consumer->mq_name);
 }
 
-int start_mq(mq_consumer_t* consumer, environment_t* environment, emergency_type_t* emergency_types, size_t emergency_types_count) {
+int start_mq(mq_consumer_t* consumer, environment_variable_t* environment, emergency_type_t* emergency_types, size_t emergency_types_count) {
     if(!consumer || !environment || !emergency_types || !consumer->mq) {
         LOG_SYSTEM("mq_consumer", "Argomenti non validi o coda non aperta");
         return -1; // Errore: argomenti non validi o coda non aperta
