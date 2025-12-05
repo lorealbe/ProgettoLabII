@@ -368,14 +368,15 @@ static rescuer_digital_twin_t* find_best_rescuer_lower_priority(state_t* state, 
         
         // Inserisce il soccorritore nell'array dei soccorritori assegnati all'emergenza da risolvere
         emergency->rescuers_count++;
-        insert_into_general_queue((void***)&emergency->assigned_rescuers, 
-                               (size_t*)&emergency->rescuers_count, 
-                               (size_t*)&emergency->rescuers_count, 
-                               (void*)best);
-        // Rimuove il soccorritore dall'emergenza in cui si trovava
-        remove_rescuer_from_general_queue((void**)&rescuer_emergency->assigned_rescuers, 
-                                  (size_t*)&rescuer_emergency->rescuers_count, 
-                                  idx);
+        LOG_SYSTEM("status", "Assegnazione del soccorritore %s all'emergenza %s", best->type->rescuer_type_name, emergency->type.emergency_name);
+        
+        int count = rescuer_emergency->rescuers_count;
+        if(count > 1 && idx < (size_t)count - 1){
+            memmove(&rescuer_emergency->assigned_rescuers[idx], 
+                    &rescuer_emergency->assigned_rescuers[idx + 1], 
+                    (count - idx - 1) * sizeof(rescuer_digital_twin_t));
+        }
+       
     } else {
         LOG_SYSTEM("status", "Nessun soccorritore impegnato in un'emergenza di priorità inferiore trovato");
     }
@@ -390,37 +391,44 @@ static bool try_allocate_rescuers(state_t* state, emergency_record_t* record){
     LOG_SYSTEM("status", "Tentativo di allocazione soccorritori per emergenza: %s", record->emergency.type.emergency_name);
     
     int total_rescuers_needed = record->emergency.rescuers_count;
+    // Alloca la memoria necessaria per l'array di soccorritori richiesti dall'emergenza
+    rescuer_digital_twin_t* new_allocation = realloc(record->assigned_rescuers, 
+                                                     total_rescuers_needed * sizeof(rescuer_digital_twin_t));
+    if (!new_allocation && total_rescuers_needed > 0) {
+        LOG_SYSTEM("status", "Errore di allocazione memoria per assigned_rescuers");
+        return false;
+    }
+    record->assigned_rescuers = new_allocation;
 
-    ensure_capacity((void***)&record->assigned_rescuers, &record->assigned_rescuers_count + 1, total_rescuers_needed);
 
     record->assigned_rescuers_count = 0;
     
-    // --- CORREZIONE: Loop su rescuers_req_number (tipi), non rescuers_count (teste) ---
+    // Loop sui tipi di soccorritori richiesti
     for (int i = 0; i < record->emergency.type.rescuers_req_number; i++) {
         rescuer_request_t req = record->emergency.type.rescuer_requests[i];
         
         for (int j = 0; j < req.required_count; j++) {
-            // Passiamo il nome del tipo specifico richiesto
+            // Cerchiamo il miglior soccorritore IDLE di questo tipo specifico
             rescuer_digital_twin_t* best_rescuer = find_best_idle_rescuer(state, record, req.type->rescuer_type_name);
             
             if (best_rescuer != NULL) {
                 int idx = find_idx((void**)state->rescuer_available, state->rescuer_available_count, best_rescuer);
                 if (idx < state->rescuer_available_count) {
+                    // Copia la struttura nel record locale
                     record->assigned_rescuers[record->assigned_rescuers_count++] = *best_rescuer;
-                    // Aggiorniamo stato nel record locale
+                    // Aggiorna lo stato nella copia locale
                     record->assigned_rescuers[record->assigned_rescuers_count-1].status = EN_ROUTE_TO_SCENE;
                     
-                    // Spostiamo il puntatore reale dall'available all'in_use
+                    // Sposta il puntatore originale dall'array available all'array in_use
                     remove_rescuer_from_general_queue((void**)state->rescuer_available, &state->rescuer_available_count, idx);
                     state->rescuers_in_use[state->rescuers_in_use_count++] = best_rescuer;
                 }
             } else if(record->emergency.type.priority != 0) {
+                // Se non ci sono IDLE, prova con priorità inferiore
                 best_rescuer = find_best_rescuer_lower_priority(state, record, req.type->rescuer_type_name);
                 if (best_rescuer != NULL) {
                      record->assigned_rescuers[record->assigned_rescuers_count++] = *best_rescuer;
                      record->assigned_rescuers[record->assigned_rescuers_count-1].status = EN_ROUTE_TO_SCENE;
-                     // Nota: find_best_rescuer_lower_priority ha già rimosso il rescuer dalla vecchia emergenza
-                     // Non serve rimuoverlo da available perché era già in use
                 } else {
                     goto allocation_failed;
                 }
@@ -433,13 +441,8 @@ static bool try_allocate_rescuers(state_t* state, emergency_record_t* record){
     return true;
 
 allocation_failed:
-    // Rollback
+    // Rollback in caso di fallimento parziale
     for (size_t k = 0; k < record->assigned_rescuers_count; k++) {
-        // Bisognerebbe rimetterli in available se erano stati presi da lì, 
-        // ma per semplicità li marchiamo IDLE e il sistema dovrà riconciliarli. 
-        // Nel tuo codice originale facevi solo status = IDLE.
-        // Una gestione corretta richiederebbe di rimettere i puntatori in state->rescuer_available.
-        // Per ora manteniamo la logica minima per sbloccare il loop:
         rescuer_digital_twin_t* twin_ptr = NULL;
         // Cerchiamo il puntatore originale in rescuers_in_use per rimetterlo in available
         for(size_t u=0; u<state->rescuers_in_use_count; u++){
@@ -460,7 +463,6 @@ allocation_failed:
     LOG_SYSTEM("status", "Allocazione soccorritori per emergenza %s fallita (Risorse insufficienti)", record->emergency.type.emergency_name);
     return false;
 }
-
 
 /*
 
