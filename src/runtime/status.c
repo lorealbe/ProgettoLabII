@@ -1,6 +1,7 @@
 #include "status.h"
 #include "../../mq_consumer.h"
 #include "../../logging.h"
+#include "../../Types/emergency_types.h"
 
 #include <errno.h>
 #include <limits.h>
@@ -9,6 +10,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <math.h>
 
 #define MAX_WORKER_THREADS 16
 
@@ -21,6 +23,27 @@ void* timeout_thread(void* arg);
 *                             Funzioni per la gestione delle emergenze
 * ---------------------------------------------------------------------------------------------------
 */
+
+// Trova un'emergenza dato un soccorritore 
+emergency_t* find_emergency_by_rescuer(rescuer_digital_twin_t* rescuer, emergency_record_t** emergency_array, int length){
+    LOG_SYSTEM("emergency_types", "Ricerca dell'emergenza assegnata al soccorritore: %s", rescuer->type->rescuer_type_name);
+    if(!rescuer || !emergency_array){
+        LOG_SYSTEM("emergency_types", "Parametri non validi per la ricerca dell'emergenza");
+        return NULL;
+    }
+    for(int i = 0; i < length; ++i){
+        emergency_record_t* record = emergency_array[i];
+        for(int j = 0; j < record->assigned_rescuers_count; ++j){
+            if(rescuer->id == record->assigned_rescuers[j].id){
+                LOG_SYSTEM("emergency_types", "Emergenza trovata per il soccorritore: %s", rescuer->type->rescuer_type_name);
+                return &record->emergency;
+            }
+        }
+    }
+    LOG_SYSTEM("emergency_types", "Nessuna emergenza trovata per il soccorritore: %s", rescuer->type->rescuer_type_name);
+    return NULL;
+}
+
 
 // Calcola la distanza di Manhattan tra due punti
 static int manhattan_distance(int x1, int y1, int x2, int y2) {
@@ -88,7 +111,7 @@ static emergency_t* remove_emergency_from_general_queue(void** array, size_t* co
 }
 
 // Rimuove un soccorritore da una coda e ne aggiorna la dimensione
-static rescuer_digital_twin_t* remove_rescuer_from_general_queue(void** array, size_t* count, size_t index) {
+static rescuer_digital_twin_t* remove_rescuer_from_general_queue(void*** array, size_t* count, size_t index) {
     if(array == NULL || count == NULL || *count == 0 || index >= *count) {
         return NULL; // Parametri non validi
     }
@@ -348,12 +371,12 @@ static rescuer_digital_twin_t* find_best_rescuer_lower_priority(state_t* state, 
         // Inserisce il soccorritore nell'array dei soccorritori assegnati all'emergenza da risolvere
         emergency->rescuers_count++;
         insert_into_general_queue((void***)&emergency->assigned_rescuers, 
-                               &emergency->rescuers_count, 
-                               &emergency->rescuers_count, 
+                               (size_t*)&emergency->rescuers_count, 
+                               (size_t*)&emergency->rescuers_count, 
                                (void*)best);
         // Rimuove il soccorritore dall'emergenza in cui si trovava
         remove_rescuer_from_general_queue((void***)&rescuer_emergency->assigned_rescuers, 
-                                  &rescuer_emergency->rescuers_count, 
+                                  (size_t*)&rescuer_emergency->rescuers_count, 
                                   idx);
     } else {
         LOG_SYSTEM("status", "Nessun soccorritore impegnato in un'emergenza di priorità inferiore trovato");
@@ -367,7 +390,6 @@ static bool try_allocate_rescuers(state_t* state, emergency_record_t* record){
 
     LOG_SYSTEM("status", "Tentativo di allocazione soccorritori per emergenza: %s", record->emergency.type.emergency_name);
     
-    emergency_type_t* type = &record->emergency.type;
     int total_rescuers_needed = record->emergency.rescuers_count;
 
     // Alloca la memoria necessaria per l'array di soccorritori richiesti dall'emergenza
@@ -415,8 +437,8 @@ static bool try_allocate_rescuers(state_t* state, emergency_record_t* record){
                     record->assigned_rescuers_count = 0;
                     // Rimette l'emergenza nella coda di attesa
                     insert_into_general_queue((void***)&state->emergencies_waiting, 
-                                           &state->emergencies_waiting_count, 
-                                           &state->emergencies_waiting_capacity, 
+                                           (size_t*)&state->emergencies_waiting_count, 
+                                           (size_t*)&state->emergencies_waiting_capacity, 
                                            (void*)&record->emergency);
                     LOG_SYSTEM("status", "Allocazione soccorritori per emergenza %s fallita", record->emergency.type.emergency_name);
                     return false; // Allocazione fallita
@@ -435,7 +457,6 @@ static bool try_allocate_rescuers_for_preempted(state_t* state, emergency_record
     
     LOG_SYSTEM("status", "Tentativo di allocazione soccorritori per emergenza preemptata: %s", record->emergency.type.emergency_name);
 
-    emergency_type_t* type = &record->emergency.type;
     int total_rescuers_needed = record->emergency.rescuers_count;
     if(record->assigned_rescuers_count == total_rescuers_needed){
         LOG_SYSTEM("status", "Tutti i soccorritori già assegnati per l'emergenza preemptata: %s", record->emergency.type.emergency_name);
@@ -506,13 +527,13 @@ static bool start_emergency_management(state_t* state, emergency_record_t* recor
     if(idx == (size_t)-1){
         return false; // Emergenza non trovata nell'array delle emergenze in attesa
     }
-    remove_from_general_queue(state->emergencies_waiting, 
+    remove_emergency_from_general_queue((void**)state->emergencies_waiting, 
                               &state->emergencies_waiting_count, 
                               idx);
     // Inserisce l'emergenza tra quelle in corso
     insert_into_general_queue((void***)&state->emergencies_in_progress, 
-                               &state->emergencies_in_progress_count, 
-                               &state->emergencies_in_progress_capacity, 
+                               (size_t*)&state->emergencies_in_progress_count, 
+                               (size_t*)&state->emergencies_in_progress_capacity, 
                                (void*)&record->emergency);
     LOG_SYSTEM("status", "Gestione dell'emergenza %s iniziata correttamente", record->emergency.type.emergency_name);
     return true;
@@ -563,7 +584,7 @@ static void increment_emergency_timeout(emergency_record_t* record){
 }
 
 // Restituisce l'emergenza da risolvere con la priorità più alta e la sposta nelle emergenze in corso
-static emergency_t* get_highest_priority_emergency(state_t* state){
+static emergency_record_t* get_highest_priority_emergency(state_t* state){
     if(!state) return NULL; // Errore nei parametri
     LOG_SYSTEM("status", "Ricerca dell'emergenza da risolvere con la priorità più alta");
     emergency_record_t* emergency = NULL;
@@ -581,12 +602,12 @@ static emergency_t* get_highest_priority_emergency(state_t* state){
         return NULL; // Nessuna emergenza in corso
     }
     size_t idx = find_idx((void**)state->emergencies_in_progress, state->emergencies_in_progress_count, (void*)highest);
-    remove_from_general_queue(state->emergencies_waiting, 
+    remove_emergency_from_general_queue((void**)state->emergencies_waiting, 
                               &state->emergencies_waiting_count, 
                               idx);
     insert_into_general_queue((void***)&state->emergencies_in_progress, 
-                              &state->emergencies_in_progress_count, 
-                              &state->emergencies_in_progress_capacity, 
+                              (size_t*)&state->emergencies_in_progress_count, 
+                              (size_t*)&state->emergencies_in_progress_capacity, 
                               (void*)highest);
     LOG_SYSTEM("status", "Emergenza da risolvere con la priorità più alta trovata: %s, priorità %d", highest->emergency.type.emergency_name, highest->current_priority);
     return highest;
@@ -664,10 +685,11 @@ int status_init(state_t* state, rescuer_digital_twin_t* rescuer_twins, size_t re
         LOG_SYSTEM("status", "Array dei soccorritori disponibili inizializzato con successo");
         return 0;
     }
+    return -1;
 }
 
 // Distrugge lo stato dell'applicazione
-void status_destroy(state_t* state) {
+void status_destroy(state_t* state, mq_consumer_t* consumer) {
     if(!state) {
         return; // Stato non valido
     }
@@ -675,7 +697,7 @@ void status_destroy(state_t* state) {
 
     // Chiudi la message queue
     LOG_SYSTEM("status", "Chiusura della message queue");
-    shutdown_mq(state);
+    shutdown_mq(consumer);
 
     LOG_SYSTEM("status", "Chiusura del mutex e delle condition variable");
     // Distruggi mutex e condition variable
@@ -767,9 +789,9 @@ int status_add_waiting(state_t* state, emergency_request_t* request, emergency_t
     }
 
     // Inserisce l'emergenza creata nella waiting queue
-    insert_in_general_queue((void***)&state->emergencies_waiting, 
-                           &state->emergencies_waiting_count, 
-                           &state->emergencies_waiting_capacity, 
+    insert_into_general_queue((void***)&state->emergencies_waiting, 
+                           (size_t*)&state->emergencies_waiting_count, 
+                           (size_t*)&state->emergencies_waiting_capacity, 
                            (void*)&emergency_record->emergency);
     LOG_SYSTEM("status", "Nuova emergenza inserita nella waiting queue, notifica i worker thread");
     pthread_cond_signal(&state->emergency_available_cond); // Notifica i worker thread dell'arrivo di una nuova emergenza
@@ -800,7 +822,7 @@ void* worker_thread(void* arg){
         }
         pthread_mutex_lock(&state->mutex);
         if(record && record->preempted){
-            if(!try_allocate_rescuers_for_preempted(&state, record)){
+            if(!try_allocate_rescuers_for_preempted(state, record)){
                 // Non è stato possibile riallocare i soccorritori, continua ad essere preemptata
                 pthread_mutex_unlock(&state->mutex);
 
@@ -813,35 +835,35 @@ void* worker_thread(void* arg){
                 continue;
             }
             record->preempted = false; 
-            remove_from_general_queue(state->emergencies_paused, 
+            remove_emergency_from_general_queue((void**)state->emergencies_paused, 
                                       &state->emergencies_paused_count, 
                                       find_idx((void**)state->emergencies_paused, state->emergencies_paused_count, (void*)&record->emergency));
             insert_into_general_queue((void***)&state->emergencies_in_progress, 
-                                   &state->emergencies_in_progress_count, 
-                                   &state->emergencies_in_progress_capacity, 
+                                   (size_t*)&state->emergencies_in_progress_count, 
+                                   (size_t*)&state->emergencies_in_progress_capacity, 
                                    (void*)&record->emergency);
         } else {
-            while(!&state->shutdown_flag && state->emergencies_waiting_count == 0){
+            while(!state->shutdown_flag && state->emergencies_waiting_count == 0){
                 // Attesa di una nuova emergenza
                 pthread_cond_wait(&state->emergency_available_cond, &state->mutex);
                 continue;
             }
-            record = get_highest_priority_emergency_record(state);
+            record = get_highest_priority_emergency(state);
             if(!record){
                 // Nessun record di emergenza disponibile
                 pthread_mutex_unlock(&state->mutex);
                 continue;
             }
-            if(!try_allocate_rescuers(&state, record)){
+            if(!try_allocate_rescuers(state, record)){
                 pthread_mutex_lock(&state->mutex);
                 insert_into_general_queue((void***)&state->emergencies_waiting, 
-                                    &state->emergencies_waiting_count, 
-                                    &state->emergencies_waiting_capacity, 
+                                    (size_t*)&state->emergencies_waiting_count, 
+                                    (size_t*)&state->emergencies_waiting_capacity, 
                                     (void*)&record->emergency);
                 pthread_mutex_unlock(&state->mutex);
                 continue;
             }
-            if(!start_emergency_management(&state, record) && !record->preempted){
+            if(!start_emergency_management(state, record) && !record->preempted){
                 for(size_t i = 0; i < record->assigned_rescuers_count; ++i){
                     record->assigned_rescuers[i].status = IDLE;
                 }
@@ -850,8 +872,8 @@ void* worker_thread(void* arg){
                 record->assigned_rescuers_count = 0;
 
                 insert_into_general_queue((void***)&state->emergencies_waiting, 
-                                    &state->emergencies_waiting_count, 
-                                    &state->emergencies_waiting_capacity, 
+                                    (size_t*)&state->emergencies_waiting_count, 
+                                    (size_t*)&state->emergencies_waiting_capacity, 
                                     (void*)&record->emergency);
                 pthread_mutex_unlock(&state->mutex);
                 continue;
@@ -892,8 +914,8 @@ void* worker_thread(void* arg){
             // Rimuove l'emergenza dall'array delle emergenze in corso
             size_t idx = find_idx((void**)state->emergencies_in_progress, state->emergencies_in_progress_count, (void*)&record->emergency);
             if(idx != (size_t)-1){
-                remove_from_general_queue(state->emergencies_in_progress, 
-                                          &state->emergencies_in_progress_count, 
+                remove_emergency_from_general_queue((void**)state->emergencies_in_progress, 
+                                          (size_t*)&state->emergencies_in_progress_count, 
                                           idx);
             }
             emergency_record_cleanup(record);
@@ -942,8 +964,8 @@ void* timeout_thread(void* arg){
                 // Rimuove l'emergenza dall'array delle emergenze in attesa
                 size_t idx = find_idx((void**)state->emergencies_waiting, state->emergencies_waiting_count, (void*)&record->emergency);
                 if(idx != (size_t)-1){
-                    remove_from_general_queue(state->emergencies_waiting, 
-                                              &state->emergencies_waiting_count, 
+                    remove_emergency_from_general_queue((void**)state->emergencies_waiting, 
+                                              (size_t*)&state->emergencies_waiting_count, 
                                               idx);
                     emergency_record_cleanup(record);
                     i--; // Decrementa l'indice per controllare il nuovo elemento in questa posizione

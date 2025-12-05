@@ -1,6 +1,8 @@
 #pragma once
 #include <stddef.h>
 #include "rescuers.h"
+
+
 #define EMERGENCY_NAME_LENGTH 64
 
 

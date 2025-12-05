@@ -11,8 +11,8 @@
 #include "Parser/parse_env.h"
 #include "Parser/parse_emergency_types.h"
 #include "Parser/parse_rescuers.h"
-#include "mq_consumer.h"
 #include "src/runtime/status.h"
+#include "mq_consumer.h"
 #include "logging.h"
 
 
@@ -41,8 +41,8 @@ int main(){
     // Inizializzazione dello stato dell'applicazione
     // ------------------------------------------------------
 
-    state_t status;
-    if(status_init(&status, rescuer_twins, dt_count) != 0){
+    state_t state;
+    if(status_init(&state, rescuer_twins, dt_count) != 0){
         LOG_SYSTEM("main", "Errore nell'inizializzazione dello stato dell'applicazione");
         goto cleanup;
     }
@@ -55,6 +55,9 @@ int main(){
         LOG_SYSTEM("main", "Errore nell'inizializzazione della message queue");
         goto cleanup;
     }
+    while(1){
+        pause(); // Attende un segnale per terminare
+    }
 
 
     // ------------------------------------------------------
@@ -63,9 +66,9 @@ int main(){
 cleanup:
     LOG_SYSTEM("main", "Inizio shutdown dell'applicazione");
     shutdown_mq(&consumer);
-    status_request_shutdown(&status);
-    status_join_worker_threads(&status);
-    status_destroy(&status);
+    status_request_shutdown(&state);
+    status_join_worker_threads(&state);
+    status_destroy(&state, &consumer);
     free(env_vars.queue);
     free(rescuer_types);
     free(rescuer_twins);

@@ -7,10 +7,10 @@ CSRC = $(filter-out ./main.c ./client.c,$(shell find . -name '*.c'))
 all: server client
 
 server: main.c $(CSRC)
-	$(CC) $(CFLAGS) main.c $(CSRC) -o server
+	$(CC) $(CFLAGS) main.c $(CSRC) -o server -lm
 
 client: client.c $(CSRC)
-	$(CC) $(CFLAGS) client.c $(CSRC) -o client
+	$(CC) $(CFLAGS) client.c -o client -lm
 
 run-server: server
 	@echo "Avvio del server in background..."

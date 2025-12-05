@@ -70,6 +70,7 @@ void* mq_consumer_thread(void* arg) {
     emergency_request_t request;
 
     while(consumer->running) {
+        LOG_SYSTEM("mq_consumer", "In attesa di un nuovo messaggio nella coda");
         struct timespec timeout;
         if(clock_gettime(CLOCK_REALTIME, &timeout) == -1) {
             perror("Errore nel recupero del tempo corrente");
@@ -79,9 +80,8 @@ void* mq_consumer_thread(void* arg) {
 
         ssize_t bytes_received = mq_timedreceive(consumer->mq, buffer, consumer->message_size, NULL, &timeout);
         if(bytes_received <= 0){
+            LOG_SYSTEM("mq_consumer", "Nessun messaggio ricevuto entro il timeout");
             if(errno != ETIMEDOUT || errno != EAGAIN) {
-                LOG_SYSTEM("mq_consumer", "Errore nella ricezione del messaggio dalla coda");
-                perror("Errore nella ricezione del messaggio dalla coda");
                 // Nessun messaggio disponibile entro il timeout
                 continue;
             } else if( errno == EINTR) {
@@ -90,11 +90,13 @@ void* mq_consumer_thread(void* arg) {
             } 
             continue;
         }
-
+        printf("Messaggio ricevuto: %s\n", buffer); 
         // Crea tutti i thread necessari per raggiungere il cap MAX_WORKER_THREADS
         pthread_mutex_lock(&consumer->state->mutex);
+        printf("Controllo del numero di worker threads attivi: %zu\n", consumer->state->worker_threads_count);
         size_t current_workers = consumer->state->worker_threads_count;
         if(current_workers < MAX_WORKER_THREADS) {
+            LOG_SYSTEM("mq_consumer", "Numero di worker threads (%zu) inferiore al massimo (%d), creazione di nuovi thread", current_workers, MAX_WORKER_THREADS);
             size_t threads_to_create = MAX_WORKER_THREADS - current_workers;
             for(size_t i = 0; i < threads_to_create; ++i) {
                 pthread_t new_thread;
@@ -134,6 +136,7 @@ void* mq_consumer_thread(void* arg) {
                 
     }
     LOG_SYSTEM("mq_consumer", "Terminazione del thread consumatore");
+
     free(buffer);
     pthread_exit(NULL);
 }
@@ -159,7 +162,16 @@ void initialize_mq(mq_consumer_t* consumer) {
 }
 
 int start_mq(mq_consumer_t* consumer, environment_variable_t* environment, emergency_type_t* emergency_types, size_t emergency_types_count) {
-    if(!consumer || !environment || !emergency_types || !consumer->mq) {
+    if(!consumer) {
+        LOG_SYSTEM("mq_consumer", "Consumer non valido");
+        return -1; // Errore: argomenti non validi
+    }
+    if(!environment) {
+        LOG_SYSTEM("mq_consumer", "Variabili d'ambiente non valide");
+        return -1; // Errore: variabili d'ambiente non valide
+    }
+    
+    if(!consumer || !environment || !emergency_types) {
         LOG_SYSTEM("mq_consumer", "Argomenti non validi o coda non aperta");
         return -1; // Errore: argomenti non validi o coda non aperta
     }
