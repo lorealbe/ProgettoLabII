@@ -6,6 +6,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <time.h>
+#include "logging.h"
 
 #define QUEUE_NAME "/emergenze676878"
 

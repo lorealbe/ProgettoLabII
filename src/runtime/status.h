@@ -9,6 +9,8 @@
 #include "../../Types/emergency_types.h"
 #include "../../Types/rescuers.h"
 
+#define MAX_WORKER_THREADS 16
+
 typedef struct mq_consumer_t mq_consumer_t; 
 
 typedef struct emergency_record_t{

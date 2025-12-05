@@ -51,6 +51,9 @@ int main(){
     // Inizializzazione della message queue
     // --------------------------------------------
     mq_consumer_t consumer;
+    
+    consumer.state = &state;
+
     if(start_mq(&consumer, &env_vars, emergency_types, em_count) != 0){
         LOG_SYSTEM("main", "Errore nell'inizializzazione della message queue");
         goto cleanup;

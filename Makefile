@@ -2,7 +2,7 @@ CC = gcc
 CFLAGS = -Wall
 
 # Trova tutti i .c del progetto (inclusi sottocartelle), escludendo main.c e client.c
-CSRC = $(filter-out ./main.c ./client.c,$(shell find . -name '*.c'))
+CSRC = $(filter-out ./main.c ./client.c ,$(shell find . -name '*.c'))
 
 all: server client
 
@@ -11,6 +11,7 @@ server: main.c $(CSRC)
 
 client: client.c $(CSRC)
 	$(CC) $(CFLAGS) client.c -o client -lm
+
 
 run-server: server
 	@echo "Avvio del server in background..."

@@ -14,7 +14,6 @@
 #include <stdlib.h>
 #include <errno.h>
 
-#define MAX_WORKER_THREADS 16
 
 
 // --------------------------------------------------------------
@@ -70,7 +69,6 @@ void* mq_consumer_thread(void* arg) {
     emergency_request_t request;
 
     while(consumer->running) {
-        LOG_SYSTEM("mq_consumer", "In attesa di un nuovo messaggio nella coda");
         struct timespec timeout;
         if(clock_gettime(CLOCK_REALTIME, &timeout) == -1) {
             perror("Errore nel recupero del tempo corrente");
@@ -80,17 +78,26 @@ void* mq_consumer_thread(void* arg) {
 
         ssize_t bytes_received = mq_timedreceive(consumer->mq, buffer, consumer->message_size, NULL, &timeout);
         if(bytes_received <= 0){
-            LOG_SYSTEM("mq_consumer", "Nessun messaggio ricevuto entro il timeout");
-            if(errno != ETIMEDOUT || errno != EAGAIN) {
+            if(errno == ETIMEDOUT || errno == EAGAIN) {
+                LOG_SYSTEM("mq_consumer", "Nessun messaggio disponibile entro il timeout, riprovo");
                 // Nessun messaggio disponibile entro il timeout
                 continue;
             } else if( errno == EINTR) {
                 LOG_SYSTEM("mq_consumer", "Ricezione del messaggio interrotta da segnale, riprovo");
                 continue; // Interrupted by signal, retry
-            } 
+            } else if (errno == EBADF) {
+                LOG_SYSTEM("mq_consumer", "Coda di messaggi chiusa, terminazione del thread consumatore");
+                break; // Message queue closed, exit the loop
+            } else if (errno == EINVAL) {
+                LOG_SYSTEM("mq_consumer", "Coda di messaggi non valida, terminazione del thread consumatore");
+                break; // Invalid message queue, exit the loop
+            } else if (errno == EMSGSIZE) {
+                LOG_SYSTEM("mq_consumer", "Messaggio troppo grande per il buffer, ignorando il messaggio");
+            }
             continue;
         }
         printf("Messaggio ricevuto: %s\n", buffer); 
+        printf("Verifica del numero di worker threads attivi...\n");
         // Crea tutti i thread necessari per raggiungere il cap MAX_WORKER_THREADS
         pthread_mutex_lock(&consumer->state->mutex);
         printf("Controllo del numero di worker threads attivi: %zu\n", consumer->state->worker_threads_count);
@@ -100,9 +107,8 @@ void* mq_consumer_thread(void* arg) {
             size_t threads_to_create = MAX_WORKER_THREADS - current_workers;
             for(size_t i = 0; i < threads_to_create; ++i) {
                 pthread_t new_thread;
-                if(pthread_create(&new_thread, NULL, worker_thread, (void*)&consumer->state) == 0) {
+                if(pthread_create(&new_thread, NULL, worker_thread, (void*)consumer->state) == 0) {
                     // Aggiunge il nuovo thread all'array dei worker threads
-                    consumer->state->worker_threads = realloc(consumer->state->worker_threads, (consumer->state->worker_threads_count + 1) * sizeof(pthread_t));
                     if(consumer->state->worker_threads != NULL) {
                         consumer->state->worker_threads[consumer->state->worker_threads_count] = new_thread;
                         consumer->state->worker_threads_count++;
@@ -185,8 +191,8 @@ int start_mq(mq_consumer_t* consumer, environment_variable_t* environment, emerg
 
     struct mq_attr attr;
     attr.mq_flags = 0;
-    attr.mq_maxmsg = 32;
-    attr.mq_msgsize = consumer->message_size;
+    attr.mq_maxmsg = 10;
+    attr.mq_msgsize = consumer->message_size; // 256
     attr.mq_curmsgs = 0;
 
     consumer->mq = mq_open(consumer->mq_name, O_RDONLY | O_CREAT, 0644, &attr);
@@ -195,7 +201,7 @@ int start_mq(mq_consumer_t* consumer, environment_variable_t* environment, emerg
         perror("Errore nell'apertura della coda di messaggi");
         return -1;
     }
-
+    printf("Coda di messaggi aperta: %s\n", consumer->mq_name);
     consumer->running = 1;
 
     int result = pthread_create(&consumer->consumer_thread, NULL, mq_consumer_thread, (void*)consumer);
@@ -206,6 +212,7 @@ int start_mq(mq_consumer_t* consumer, environment_variable_t* environment, emerg
         consumer->running = 0;
         return -1;
     }
+    printf("Thread consumatore creato\n");
     consumer->thread_created = true;
     LOG_SYSTEM("mq_consumer", "Message queue inizializzata correttamente");
 
@@ -232,6 +239,7 @@ void shutdown_mq(mq_consumer_t* consumer) {
     if (consumer->mq != (mqd_t)-1) {
         LOG_SYSTEM("mq_consumer", "Chiusura della coda di messaggi");
         mq_close(consumer->mq);
+        mq_unlink(consumer->mq_name);
         consumer->mq = (mqd_t)-1;
     }
 
