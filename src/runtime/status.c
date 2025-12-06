@@ -616,7 +616,7 @@ static unsigned int highest_time_to_scene(state_t* state, emergency_record_t* re
     for(size_t i = 0; i < record->assigned_rescuers_count; ++i){
         rescuer_digital_twin_t* rescuer = &record->assigned_rescuers[i];
         int distance = 0;
-        if(rescuer->status == IDLE) distance = manhattan_distance(rescuer->x, rescuer->y, record->emergency.x, record->emergency.y);
+        if(rescuer->status == IDLE || rescuer->status == EN_ROUTE_TO_SCENE) distance = manhattan_distance(rescuer->x, rescuer->y, record->emergency.x, record->emergency.y);
         else { // Il soccorritore è impegnato in un'emergenza
             int est_x, est_y;
             emergency_t* rescuer_emergency = find_emergency_by_rescuer(rescuer, state->emergencies_in_progress, state->emergencies_in_progress_count);
