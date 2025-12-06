@@ -25,7 +25,7 @@ int main(int argc, char *argv[]) {
         int delay = atoi(argv[4]);
 
         char messaggio[256];
-        snprintf(messaggio, sizeof(messaggio), "%s %d %d", nomeEmergenza, x, y);
+        snprintf(messaggio, sizeof(messaggio), "%s %d %d %ld", nomeEmergenza, x, y, time(NULL));
 
         // Attesa del delay specificato
         sleep(delay);

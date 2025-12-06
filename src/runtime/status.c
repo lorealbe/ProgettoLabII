@@ -327,6 +327,8 @@ static rescuer_digital_twin_t* find_best_rescuer_lower_priority(state_t* state, 
     time_t best_time = LONG_MAX;      
     int idx = -1;                                // Indice del soccorritore trovato nell'array dei soccorritori in uso           
 
+    int best_est_x = -1;
+    int best_est_y = -1;
 
     // Scorre tutti i soccorritori richiesti per l'emergenza
     for(size_t j = 0; j < (size_t)emergency->type.rescuers_req_number; ++j){
@@ -347,8 +349,9 @@ static rescuer_digital_twin_t* find_best_rescuer_lower_priority(state_t* state, 
                     state->rescuers_in_use_count--;
                     i--; // Decrementa per controllare il nuovo rescuer_in_use[i]
                 }
-                if(rescuer_emergency->type.priority >= emergency->type.priority) continue; // Il soccoritore si trova in un emergenza di priorità pari o superiore e viene quindi ignorato
-                int est_x, est_y;
+                if(rescuer_emergency->type.priority >= emergency->type.priority) continue; // Il soccorritore si trova in un emergenza di priorità pari o superiore e viene quindi ignorato
+                int est_x = rescuer->x;
+                int est_y = rescuer->y;
                 estimate_rescuer_position(rescuer, rescuer_emergency, &est_x, &est_y);
                 int distance = manhattan_distance(est_x, est_y, emergency->x, emergency->y);
                 int speed = rescuer->type->speed > 0 ? rescuer->type->speed : 1; // Garantisce che non ci siano velocità nulle o negative
@@ -356,6 +359,8 @@ static rescuer_digital_twin_t* find_best_rescuer_lower_priority(state_t* state, 
                 if(time_to_scene < best_time && arrive_in_time(time_to_scene, emergency->type.priority) ){
                     best = rescuer;
                     best_time = time_to_scene; 
+                    best_est_x = est_x;
+                    best_est_y = est_y;
                     idx = find_idx((void**)state->rescuers_in_use, state->rescuers_in_use_count, (void*)best);
                 }
             }
@@ -365,6 +370,9 @@ static rescuer_digital_twin_t* find_best_rescuer_lower_priority(state_t* state, 
     if(best != NULL){  
         LOG_SYSTEM("status", "Miglior soccorritore impegnato in un'emergenza di priorità inferiore trovato: %s", best->type->rescuer_type_name);
         rescuer_emergency->rescuers_count--;
+
+        best->x = best_est_x;
+        best->y = best_est_y;
         
         // Inserisce il soccorritore nell'array dei soccorritori assegnati all'emergenza da risolvere
         emergency->rescuers_count++;
@@ -586,13 +594,9 @@ static bool try_allocate_rescuers_for_preempted(state_t* state, emergency_record
 static bool start_emergency_management(state_t* state, emergency_record_t* record){
     if(!state || !record) return false; // Errore nei parametri
     LOG_SYSTEM("status", "Inizio della gestione dell'emergenza: %s", record->emergency.type.emergency_name);
+    
     record->starting_time = (unsigned int)time(NULL);
     record->emergency.status = ASSIGNED;
-    // Rimuove l'emergenza dalla coda di attesa
-    size_t idx = find_idx((void**)state->emergencies_waiting, state->emergencies_waiting_count, (void*)&record->emergency);
-    if(idx == (size_t)-1){
-        return false; // Emergenza non trovata nell'array delle emergenze in attesa
-    }
 
     // Inserisce l'emergenza tra quelle in corso
     insert_into_general_queue((void***)&state->emergencies_in_progress, 
@@ -608,18 +612,30 @@ static unsigned int highest_time_to_scene(state_t* state, emergency_record_t* re
     if(!record) return 0; // Errore nei parametri
     LOG_SYSTEM("status", "Calcolo del tempo massimo per arrivare sulla scena dell'emergenza: %s", record->emergency.type.emergency_name);
     unsigned int max_time = 0;
+
     for(size_t i = 0; i < record->assigned_rescuers_count; ++i){
         rescuer_digital_twin_t* rescuer = &record->assigned_rescuers[i];
         int distance = 0;
-        if( rescuer->status == IDLE) distance = manhattan_distance(rescuer->x, rescuer->y, record->emergency.x, record->emergency.y);
+        if(rescuer->status == IDLE) distance = manhattan_distance(rescuer->x, rescuer->y, record->emergency.x, record->emergency.y);
         else { // Il soccorritore è impegnato in un'emergenza
             int est_x, est_y;
             emergency_t* rescuer_emergency = find_emergency_by_rescuer(rescuer, state->emergencies_in_progress, state->emergencies_in_progress_count);
-            estimate_rescuer_position(rescuer, rescuer_emergency, &est_x, &est_y);
-            distance = manhattan_distance(est_x, est_y, record->emergency.x, record->emergency.y);
+            
+            if(!rescuer_emergency){
+                LOG_SYSTEM("status", "Warning: Emergenza non trovata per soccorritore %d, uso coordinate salvate.", rescuer->id);
+                distance = manhattan_distance(rescuer->x, rescuer->y, record->emergency.x, record->emergency.y);
+            } else {
+                estimate_rescuer_position(rescuer, rescuer_emergency, &est_x, &est_y);
+                distance = manhattan_distance(est_x, est_y, record->emergency.x, record->emergency.y);
+            }
         }
         int speed = rescuer->type->speed > 0 ? rescuer->type->speed : 1; // Garantisce che non ci siano velocità nulle o negative
         time_t time_to_scene = (distance + speed - 1) / speed; // Calcola il tempo stimato per arrivare sulla scena approssimando per eccesso
+
+        
+        LOG_SYSTEM("debug", "Rescuer: %d | Dist: %d | Speed: %d | Time: %ld", rescuer->id, distance, speed, (long)time_to_scene);
+
+
         if(time_to_scene > max_time){
             max_time = time_to_scene;
         }
@@ -650,29 +666,31 @@ static void increment_emergency_timeout(emergency_record_t* record){
 // Restituisce l'emergenza da risolvere con la priorità più alta e la sposta nelle emergenze in corso
 static emergency_record_t* get_highest_priority_emergency(state_t* state){
     if(!state) return NULL; // Errore nei parametri
-    LOG_SYSTEM("status", "Ricerca dell'emergenza da risolvere con la priorità più alta");
+    
+    // Ricerca dell'emergenza con la priorità più alta nella coda delle emergenze in attesa
+
     emergency_record_t* emergency = NULL;
     emergency_record_t* highest = NULL;
+    size_t idx = 0;
     
     // Cerca l'emergenza con la priorità più alta tra quelle in attesa
     for(size_t i = 0; i < state->emergencies_waiting_count; ++i){
 
         emergency = state->emergencies_waiting[i];
-
         if(!highest || emergency->current_priority > highest->current_priority){
             highest = emergency;
+            idx = i;
         }
     }
-    if(!highest) {
-        LOG_SYSTEM("status", "Nessuna emergenza da risolvere trovata");
-        return NULL; // Nessuna emergenza in corso
+    if(!highest) { // Nessuna emergenza trovata
+        return NULL;
     }
-    size_t idx = find_idx((void**)state->emergencies_in_progress, state->emergencies_in_progress_count, (void*)highest);
+    
     remove_emergency_from_general_queue((void**)state->emergencies_waiting, 
                               &state->emergencies_waiting_count, 
                               idx);
     
-    LOG_SYSTEM("status", "Emergenza da risolvere con la priorità più alta trovata: %s, priorità %d", highest->emergency.type.emergency_name, highest->current_priority);
+    LOG_SYSTEM("status", "Emergenza da risolvere con la priorità più alta trovata: %s, priorità %.2f", highest->emergency.type.emergency_name, highest->current_priority);
     return highest;
 }
 
@@ -969,18 +987,25 @@ void* worker_thread(void* arg){
             }
         }
 
+        unsigned int sleep_time = highest_time_to_scene(state, record); // Simula l'arrivo dei soccorritori sulla scena
+
         pthread_mutex_unlock(&state->mutex);
-        sleep(highest_time_to_scene(state, record)); // Simula l'arrivo dei soccorritori sulla scena
+
+        sleep(sleep_time); // Simula il tempo di arrivo sulla scena
+
+        LOG_SYSTEM("status", "Tutti i soccorritori sono arrivati sulla scena dell'emergenza: %s", record->emergency.type.emergency_name);
 
         pthread_mutex_lock(&state->mutex);
         if(!check_all_rescuers_still_assigned(record)){
             record->preempted = true;
         } else record->emergency.status = IN_PROGRESS;
 
+        LOG_SYSTEM("status", "Inizio della gestione dell'emergenza: %s", record->emergency.type.emergency_name);
         
         // Tutti i soccorritori sono arrivati sulla scena
         while(record->time_remaining > 0 && !record->preempted && !state->shutdown_flag){
             pthread_mutex_unlock(&state->mutex);
+            LOG_SYSTEM("status", "Gestione in corso dell'emergenza: %s, tempo rimanente: %u secondi", record->emergency.type.emergency_name, record->time_remaining);
             sleep(1); // Simula la gestione dell'emergenza
             pthread_mutex_lock(&state->mutex);
             record->time_remaining--;
@@ -989,6 +1014,7 @@ void* worker_thread(void* arg){
             } 
         }
         if(record->time_remaining == 0){
+            LOG_SYSTEM("status", "Emergenza risolta: %s", record->emergency.type.emergency_name);
             // Emergenza risolta
             record->emergency.status = COMPLETED;
             // Rilascia i soccorritori assegnati

@@ -6,11 +6,6 @@
 #include "../Types/rescuers.h"
 #include "../logging.h"
 
-
-// !!! RIGUARDA IL FUNZIONAMENTO
-
-
-
 // Cerca il rescuer dato il suo nome nella lista di digital twins
 static rescuer_type_t* find_rescuer_type_by_name(const char* name, rescuer_type_t* types_list) {
     LOG_SYSTEM("parse_emergency_types", "Ricerca del tipo di soccorritore: %s", name);
