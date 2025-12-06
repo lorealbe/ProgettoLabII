@@ -1,669 +1,412 @@
-[2025-12-06 12:07:39] [PARSE-ENV] [FILE_PARSING] Inizio parsing variabili d'ambiente da './Data/environment.conf'
-[2025-12-06 12:07:39] [PARSE-ENV] [FILE_PARSING] Aggiunta la 'queue' con nome 'emergenze676878' e dimensioni (600, 500)
-[2025-12-06 12:07:39] [PARSE-RESCUER-TYPES] [FILE_PARSING] Inizio parsing tipi di soccorritori da './Data/rescuers.conf'
-[2025-12-06 12:07:39] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Pompieri' con 16 gemelli da creare
-[2025-12-06 12:07:39] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Ambulanza' con 17 gemelli da creare
-[2025-12-06 12:07:39] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Polizia' con 16 gemelli da creare
-[2025-12-06 12:07:39] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'ProtezioneCivile' con 15 gemelli da creare
-[2025-12-06 12:07:39] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'NBCR' con 14 gemelli da creare
-[2025-12-06 12:07:39] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'TecniciElettrici' con 15 gemelli da creare
-[2025-12-06 12:07:39] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'SoccorsoAlpino' con 15 gemelli da creare
-[2025-12-06 12:07:39] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Pompieri' con 15 gemelli da creare
-[2025-12-06 12:07:39] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Ambulanza' con 15 gemelli da creare
-[2025-12-06 12:07:39] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Polizia' con 15 gemelli da creare
-[2025-12-06 12:07:39] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'ProtezioneCivile' con 14 gemelli da creare
-[2025-12-06 12:07:39] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'NBCR' con 13 gemelli da creare
-[2025-12-06 12:07:39] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'TecniciElettrici' con 14 gemelli da creare
-[2025-12-06 12:07:39] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'SoccorsoAlpino' con 15 gemelli da creare
-[2025-12-06 12:07:39] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Pompieri' con 14 gemelli da creare
-[2025-12-06 12:07:39] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Ambulanza' con 14 gemelli da creare
-[2025-12-06 12:07:39] [PARSE-RESCUER-TYPES] [FILE_PARSING] Allocazione memoria per 16 tipi di soccorritori e 237 gemelli digitali
-[2025-12-06 12:07:39] [PARSE-RESCUER-TYPES] [FILE_PARSING] Inizio popolamento array tipi di soccorritori e gemelli digitali da './Data/rescuers.conf'
-[2025-12-06 12:07:39] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Pompieri' con 16 gemelli
-[2025-12-06 12:07:39] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Ambulanza' con 17 gemelli
-[2025-12-06 12:07:39] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Polizia' con 16 gemelli
-[2025-12-06 12:07:39] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'ProtezioneCivile' con 15 gemelli
-[2025-12-06 12:07:39] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'NBCR' con 14 gemelli
-[2025-12-06 12:07:39] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'TecniciElettrici' con 15 gemelli
-[2025-12-06 12:07:39] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'SoccorsoAlpino' con 15 gemelli
-[2025-12-06 12:07:39] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Pompieri' con 15 gemelli
-[2025-12-06 12:07:39] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Ambulanza' con 15 gemelli
-[2025-12-06 12:07:39] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Polizia' con 15 gemelli
-[2025-12-06 12:07:39] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'ProtezioneCivile' con 14 gemelli
-[2025-12-06 12:07:39] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'NBCR' con 13 gemelli
-[2025-12-06 12:07:39] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'TecniciElettrici' con 14 gemelli
-[2025-12-06 12:07:39] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'SoccorsoAlpino' con 15 gemelli
-[2025-12-06 12:07:39] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Pompieri' con 14 gemelli
-[2025-12-06 12:07:39] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Ambulanza' con 14 gemelli
-[2025-12-06 12:07:39] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento completato con successo
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Inizio parsing tipi di emergenza da './Data/emergency.conf'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'Incendio'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'Incendio'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Polizia' per emergenza 'Incendio'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
+[2025-12-06 12:42:14] [PARSE-ENV] [FILE_PARSING] Inizio parsing variabili d'ambiente da './Data/environment.conf'
+[2025-12-06 12:42:14] [PARSE-ENV] [FILE_PARSING] Aggiunta la 'queue' con nome 'emergenze676878
+' e dimensioni (600, 500)
+[2025-12-06 12:42:14] [PARSE-RESCUER-TYPES] [FILE_PARSING] Inizio parsing tipi di soccorritori da './Data/rescuers.conf'
+[2025-12-06 12:42:14] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Pompieri' con 16 gemelli da creare
+[2025-12-06 12:42:14] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Ambulanza' con 17 gemelli da creare
+[2025-12-06 12:42:14] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Polizia' con 16 gemelli da creare
+[2025-12-06 12:42:14] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'ProtezioneCivile' con 15 gemelli da creare
+[2025-12-06 12:42:14] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'NBCR' con 14 gemelli da creare
+[2025-12-06 12:42:14] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'TecniciElettrici' con 15 gemelli da creare
+[2025-12-06 12:42:14] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'SoccorsoAlpino' con 15 gemelli da creare
+[2025-12-06 12:42:14] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Pompieri' con 15 gemelli da creare
+[2025-12-06 12:42:14] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Ambulanza' con 15 gemelli da creare
+[2025-12-06 12:42:14] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Polizia' con 15 gemelli da creare
+[2025-12-06 12:42:14] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'ProtezioneCivile' con 14 gemelli da creare
+[2025-12-06 12:42:14] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'NBCR' con 13 gemelli da creare
+[2025-12-06 12:42:14] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'TecniciElettrici' con 14 gemelli da creare
+[2025-12-06 12:42:14] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'SoccorsoAlpino' con 15 gemelli da creare
+[2025-12-06 12:42:14] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Pompieri' con 14 gemelli da creare
+[2025-12-06 12:42:14] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Ambulanza' con 14 gemelli da creare
+[2025-12-06 12:42:14] [PARSE-RESCUER-TYPES] [FILE_PARSING] Allocazione memoria per 16 tipi di soccorritori e 237 gemelli digitali
+[2025-12-06 12:42:14] [PARSE-RESCUER-TYPES] [FILE_PARSING] Inizio popolamento array tipi di soccorritori e gemelli digitali da './Data/rescuers.conf'
+[2025-12-06 12:42:14] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Pompieri' con 16 gemelli
+[2025-12-06 12:42:14] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Ambulanza' con 17 gemelli
+[2025-12-06 12:42:14] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Polizia' con 16 gemelli
+[2025-12-06 12:42:14] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'ProtezioneCivile' con 15 gemelli
+[2025-12-06 12:42:14] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'NBCR' con 14 gemelli
+[2025-12-06 12:42:14] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'TecniciElettrici' con 15 gemelli
+[2025-12-06 12:42:14] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'SoccorsoAlpino' con 15 gemelli
+[2025-12-06 12:42:14] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Pompieri' con 15 gemelli
+[2025-12-06 12:42:14] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Ambulanza' con 15 gemelli
+[2025-12-06 12:42:14] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Polizia' con 15 gemelli
+[2025-12-06 12:42:14] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'ProtezioneCivile' con 14 gemelli
+[2025-12-06 12:42:14] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'NBCR' con 13 gemelli
+[2025-12-06 12:42:14] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'TecniciElettrici' con 14 gemelli
+[2025-12-06 12:42:14] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'SoccorsoAlpino' con 15 gemelli
+[2025-12-06 12:42:14] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Pompieri' con 14 gemelli
+[2025-12-06 12:42:14] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Ambulanza' con 14 gemelli
+[2025-12-06 12:42:14] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento completato con successo
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Inizio parsing tipi di emergenza da './Data/emergency.conf'
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'Incendio'
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'Incendio'
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Polizia' per emergenza 'Incendio'
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
 ' per emergenza 'Incendio'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'Allagamento'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'Allagamento'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'Allagamento'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'Allagamento'
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'Allagamento'
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'Allagamento'
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
 ' per emergenza 'Allagamento'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'IncidenteStradale'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Polizia' per emergenza 'IncidenteStradale'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'IncidenteStradale'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'IncidenteStradale'
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Polizia' per emergenza 'IncidenteStradale'
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'IncidenteStradale'
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
 ' per emergenza 'IncidenteStradale'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'InfortunioSulLavoro'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Polizia' per emergenza 'InfortunioSulLavoro'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'InfortunioSulLavoro'
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Polizia' per emergenza 'InfortunioSulLavoro'
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
 ' per emergenza 'InfortunioSulLavoro'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'Esplosione'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'Esplosione'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Polizia' per emergenza 'Esplosione'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'NBCR' per emergenza 'Esplosione'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'Esplosione'
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'Esplosione'
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Polizia' per emergenza 'Esplosione'
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'NBCR' per emergenza 'Esplosione'
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
 ' per emergenza 'Esplosione'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Polizia' per emergenza 'Sommossa'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'Sommossa'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Polizia' per emergenza 'Sommossa'
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'Sommossa'
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
 ' per emergenza 'Sommossa'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'Frana'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'Frana'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'Frana'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'Frana'
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'Frana'
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'Frana'
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
 ' per emergenza 'Frana'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'Blackout'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'TecniciElettrici' per emergenza 'Blackout'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'Blackout'
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'TecniciElettrici' per emergenza 'Blackout'
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
 ' per emergenza 'Blackout'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'NBCR' per emergenza 'DisastroChimico'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'DisastroChimico'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'DisastroChimico'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'DisastroChimico'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'NBCR' per emergenza 'DisastroChimico'
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'DisastroChimico'
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'DisastroChimico'
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'DisastroChimico'
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
 ' per emergenza 'DisastroChimico'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'SoccorsoAlpino' per emergenza 'RicercaPersone'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'RicercaPersone'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'RicercaPersone'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'SoccorsoAlpino' per emergenza 'RicercaPersone'
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'RicercaPersone'
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'RicercaPersone'
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
 ' per emergenza 'RicercaPersone'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'IncendioBoschivo'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'IncendioBoschivo'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'SoccorsoAlpino' per emergenza 'IncendioBoschivo'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'IncendioBoschivo'
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'IncendioBoschivo'
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'SoccorsoAlpino' per emergenza 'IncendioBoschivo'
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
 ' per emergenza 'IncendioBoschivo'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'Evacuazione'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Polizia' per emergenza 'Evacuazione'
-[2025-12-06 12:07:39] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'Evacuazione'
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Polizia
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Polizia
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Polizia
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Polizia
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Polizia
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Polizia
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Polizia
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Polizia
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: NBCR
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: NBCR
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Polizia
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Polizia
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: TecniciElettrici
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: TecniciElettrici
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: NBCR
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: NBCR
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: SoccorsoAlpino
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: SoccorsoAlpino
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: SoccorsoAlpino
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: SoccorsoAlpino
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Polizia
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Polizia
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
-[2025-12-06 12:07:39] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
-[2025-12-06 12:07:39] [status] [SYSTEM] Inizializzazione dello stato
-[2025-12-06 12:07:39] [status] [SYSTEM] Inizializzazione dell'array dei soccorritori disponibili
-[2025-12-06 12:07:39] [status] [SYSTEM] Array dei soccorritori disponibili inizializzato con successo
-[2025-12-06 12:07:39] [mq_consumer] [SYSTEM] Inizializzazione della message queue
-[2025-12-06 12:07:39] [mq_consumer] [SYSTEM] Inizializzazione della struttura mq_consumer
-[2025-12-06 12:07:39] [mq_consumer] [SYSTEM] Struttura mq_consumer inizializzata. Nome coda: /emergenze676878
-[2025-12-06 12:07:39] [mq_consumer] [SYSTEM] Message queue inizializzata correttamente
-[2025-12-06 12:07:40] [mq_consumer] [SYSTEM] Nessun messaggio disponibile entro il timeout, riprovo
-[2025-12-06 12:07:41] [mq_consumer] [SYSTEM] Nessun messaggio disponibile entro il timeout, riprovo
-[2025-12-06 12:07:42] [mq_consumer] [SYSTEM] Nessun messaggio disponibile entro il timeout, riprovo
-[2025-12-06 12:07:43] [mq_consumer] [SYSTEM] Nessun messaggio disponibile entro il timeout, riprovo
-[2025-12-06 12:07:44] [mq_consumer] [SYSTEM] Nessun messaggio disponibile entro il timeout, riprovo
-[2025-12-06 12:07:46] [mq_consumer] [SYSTEM] Nessun messaggio disponibile entro il timeout, riprovo
-[2025-12-06 12:07:47] [mq_consumer] [SYSTEM] Nessun messaggio disponibile entro il timeout, riprovo
-[2025-12-06 12:07:48] [mq_consumer] [SYSTEM] Nessun messaggio disponibile entro il timeout, riprovo
-[2025-12-06 12:07:49] [mq_consumer] [SYSTEM] Nessun messaggio disponibile entro il timeout, riprovo
-[2025-12-06 12:07:50] [mq_consumer] [SYSTEM] Nessun messaggio disponibile entro il timeout, riprovo
-[2025-12-06 12:07:51] [mq_consumer] [SYSTEM] Nessun messaggio disponibile entro il timeout, riprovo
-[2025-12-06 12:07:52] [mq_consumer] [SYSTEM] Nessun messaggio disponibile entro il timeout, riprovo
-[2025-12-06 12:07:53] [mq_consumer] [SYSTEM] Nessun messaggio disponibile entro il timeout, riprovo
-[2025-12-06 12:07:54] [mq_consumer] [SYSTEM] Nessun messaggio disponibile entro il timeout, riprovo
-[2025-12-06 12:07:55] [mq_consumer] [SYSTEM] Nessun messaggio disponibile entro il timeout, riprovo
-[2025-12-06 12:07:56] [mq_consumer] [SYSTEM] Nessun messaggio disponibile entro il timeout, riprovo
-[2025-12-06 12:07:57] [mq_consumer] [SYSTEM] Nessun messaggio disponibile entro il timeout, riprovo
-[2025-12-06 12:07:58] [mq_consumer] [SYSTEM] Nessun messaggio disponibile entro il timeout, riprovo
-[2025-12-06 12:07:59] [mq_consumer] [SYSTEM] Nessun messaggio disponibile entro il timeout, riprovo
-[2025-12-06 12:08:00] [mq_consumer] [SYSTEM] Nessun messaggio disponibile entro il timeout, riprovo
-[2025-12-06 12:08:01] [mq_consumer] [SYSTEM] Nessun messaggio disponibile entro il timeout, riprovo
-[2025-12-06 12:08:02] [mq_consumer] [SYSTEM] Nessun messaggio disponibile entro il timeout, riprovo
-[2025-12-06 12:08:03] [mq_consumer] [SYSTEM] Nessun messaggio disponibile entro il timeout, riprovo
-[2025-12-06 12:08:04] [mq_consumer] [SYSTEM] Nessun messaggio disponibile entro il timeout, riprovo
-[2025-12-06 12:08:05] [mq_consumer] [SYSTEM] Numero di worker threads (0) inferiore al massimo (16), creazione di nuovi thread
-[2025-12-06 12:08:05] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 1
-[2025-12-06 12:08:05] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 2
-[2025-12-06 12:08:05] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 3
-[2025-12-06 12:08:05] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 4
-[2025-12-06 12:08:05] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 5
-[2025-12-06 12:08:05] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 6
-[2025-12-06 12:08:05] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 7
-[2025-12-06 12:08:05] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 8
-[2025-12-06 12:08:05] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 9
-[2025-12-06 12:08:05] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 10
-[2025-12-06 12:08:05] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 11
-[2025-12-06 12:08:05] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 12
-[2025-12-06 12:08:05] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 13
-[2025-12-06 12:08:05] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 14
-[2025-12-06 12:08:05] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 15
-[2025-12-06 12:08:05] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 16
-[2025-12-06 12:08:05] [mq_consumer] [SYSTEM] Messaggio ricevuto: Incendio 100 100
-[2025-12-06 12:08:05] [mq_consumer] [SYSTEM] Analisi del messaggio: Incendio 100 100
-[2025-12-06 12:08:05] [mq_consumer] [SYSTEM] Messaggio valido: Incendio 100 100 139264784337776
-[2025-12-06 12:08:05] [mq_consumer] [SYSTEM] Richiesta di emergenza creata: Incendio 100 100 139264784337776
-[2025-12-06 12:08:05] [mq_consumer] [SYSTEM] Richiesta di emergenza analizzata: Incendio 100 100 139264784337776
-[2025-12-06 12:08:05] [status] [SYSTEM] Assegnazione di una nuova richiesta di emergenza
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
-[2025-12-06 12:08:05] [emergency_types] [SYSTEM] Ricerca del tipo di emergenza: Incendio
-[2025-12-06 12:08:05] [emergency_types] [SYSTEM] Tipo di emergenza trovato: Incendio
-[2025-12-06 12:08:05] [status] [SYSTEM] Preparazione del record per l'emergenza: Incendio
-[2025-12-06 12:08:05] [emergency_types] [SYSTEM] Ricerca del tipo di emergenza: Incendio
-[2025-12-06 12:08:05] [emergency_types] [SYSTEM] Tipo di emergenza trovato: Incendio
-[2025-12-06 12:08:05] [status] [SYSTEM] Record per l'emergenza Incendio preparato correttamente
-[2025-12-06 12:08:05] [status] [SYSTEM] Allocazione della memoria necessaria per il nuovo elemento riuscita
-[2025-12-06 12:08:05] [status] [SYSTEM] Elemento inserito correttamente
-[2025-12-06 12:08:05] [status] [SYSTEM] Nuova emergenza inserita nella waiting queue, notifica i worker thread
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Allocazione della memoria necessaria per il nuovo elemento riuscita
-[2025-12-06 12:08:05] [status] [SYSTEM] Elemento inserito correttamente
-[2025-12-06 12:08:05] [status] [SYSTEM] Emergenza da risolvere con la priorità più alta trovata: Incendio, priorità 0
-[2025-12-06 12:08:05] [status] [SYSTEM] Tentativo di allocazione soccorritori per emergenza: Incendio
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Incendio
-[2025-12-06 12:08:05] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 210
-[2025-12-06 12:08:05] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 12:08:05] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Incendio
-[2025-12-06 12:08:05] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 211
-[2025-12-06 12:08:05] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 12:08:05] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Incendio
-[2025-12-06 12:08:05] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 212
-[2025-12-06 12:08:05] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 12:08:05] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Incendio
-[2025-12-06 12:08:05] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Ambulanza 124
-[2025-12-06 12:08:05] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 12:08:05] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Incendio
-[2025-12-06 12:08:05] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Ambulanza 125
-[2025-12-06 12:08:05] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 12:08:05] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Incendio
-[2025-12-06 12:08:05] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Polizia 34
-[2025-12-06 12:08:05] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 12:08:05] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 12:08:05] [status] [SYSTEM] Allocazione soccorritori per emergenza Incendio riuscita
-[2025-12-06 12:08:05] [status] [SYSTEM] Inizio della gestione dell'emergenza: Incendio
-[2025-12-06 12:08:05] [status] [SYSTEM] Allocazione della memoria necessaria per il nuovo elemento riuscita
-[2025-12-06 12:08:05] [status] [SYSTEM] Elemento inserito correttamente
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
-[2025-12-06 12:08:05] [status] [SYSTEM] Rimozione di un'emergenza dalla coda 
-[2025-12-06 12:08:05] [status] [SYSTEM] Emergenza rimossa correttamente
-[2025-12-06 12:08:05] [status] [SYSTEM] Allocazione della memoria necessaria per il nuovo elemento riuscita
-[2025-12-06 12:08:05] [status] [SYSTEM] Elemento inserito correttamente
-[2025-12-06 12:08:05] [status] [SYSTEM] Emergenza da risolvere con la priorità più alta trovata: Incendio, priorità 0
-[2025-12-06 12:08:05] [status] [SYSTEM] Tentativo di allocazione soccorritori per emergenza: Incendio
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Incendio
-[2025-12-06 12:08:05] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 213
-[2025-12-06 12:08:05] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 12:08:05] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Incendio
-[2025-12-06 12:08:05] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 214
-[2025-12-06 12:08:05] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 12:08:05] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Incendio
-[2025-12-06 12:08:05] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 215
-[2025-12-06 12:08:05] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 12:08:05] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Incendio
-[2025-12-06 12:08:05] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Ambulanza 126
-[2025-12-06 12:08:05] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 12:08:05] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Incendio
-[2025-12-06 12:08:05] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Ambulanza 127
-[2025-12-06 12:08:05] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 12:08:05] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 12:08:05] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Incendio
-[2025-12-06 12:08:05] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Polizia 35
-[2025-12-06 12:08:05] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 12:08:05] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 12:08:05] [status] [SYSTEM] Allocazione soccorritori per emergenza Incendio riuscita
-[2025-12-06 12:08:05] [status] [SYSTEM] Inizio della gestione dell'emergenza: Incendio
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'Evacuazione'
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Polizia' per emergenza 'Evacuazione'
+[2025-12-06 12:42:14] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'Evacuazione'
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Polizia
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Polizia
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Polizia
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Polizia
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Polizia
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Polizia
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Polizia
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Polizia
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: NBCR
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: NBCR
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Polizia
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Polizia
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: TecniciElettrici
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: TecniciElettrici
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: NBCR
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: NBCR
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: SoccorsoAlpino
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: SoccorsoAlpino
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: SoccorsoAlpino
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: SoccorsoAlpino
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Polizia
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Polizia
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
+[2025-12-06 12:42:14] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
+[2025-12-06 12:42:14] [status] [SYSTEM] Inizializzazione dello stato
+[2025-12-06 12:42:14] [status] [SYSTEM] Inizializzazione dell'array dei soccorritori disponibili
+[2025-12-06 12:42:14] [status] [SYSTEM] Array dei soccorritori disponibili inizializzato con successo
+[2025-12-06 12:42:14] [mq_consumer] [SYSTEM] Inizializzazione della message queue
+[2025-12-06 12:42:14] [mq_consumer] [SYSTEM] Inizializzazione della struttura mq_consumer
+[2025-12-06 12:42:14] [mq_consumer] [SYSTEM] Struttura mq_consumer inizializzata. Nome coda: /emergenze676878
+[2025-12-06 12:42:14] [mq_consumer] [SYSTEM] Message queue inizializzata correttamente
+[2025-12-06 12:42:15] [mq_consumer] [SYSTEM] Nessun messaggio disponibile entro il timeout, riprovo
+[2025-12-06 12:42:16] [mq_consumer] [SYSTEM] Nessun messaggio disponibile entro il timeout, riprovo
+[2025-12-06 12:42:17] [mq_consumer] [SYSTEM] Nessun messaggio disponibile entro il timeout, riprovo
+[2025-12-06 12:42:18] [mq_consumer] [SYSTEM] Nessun messaggio disponibile entro il timeout, riprovo
+[2025-12-06 12:42:19] [mq_consumer] [SYSTEM] Nessun messaggio disponibile entro il timeout, riprovo
+[2025-12-06 12:42:20] [mq_consumer] [SYSTEM] Nessun messaggio disponibile entro il timeout, riprovo
+[2025-12-06 12:42:21] [mq_consumer] [SYSTEM] Nessun messaggio disponibile entro il timeout, riprovo
+[2025-12-06 12:42:22] [mq_consumer] [SYSTEM] Nessun messaggio disponibile entro il timeout, riprovo
+[2025-12-06 12:42:23] [mq_consumer] [SYSTEM] Nessun messaggio disponibile entro il timeout, riprovo
+[2025-12-06 12:42:24] [mq_consumer] [SYSTEM] Nessun messaggio disponibile entro il timeout, riprovo
+[2025-12-06 12:42:25] [mq_consumer] [SYSTEM] Nessun messaggio disponibile entro il timeout, riprovo
+[2025-12-06 12:42:26] [mq_consumer] [SYSTEM] Nessun messaggio disponibile entro il timeout, riprovo
+[2025-12-06 12:42:27] [mq_consumer] [SYSTEM] Nessun messaggio disponibile entro il timeout, riprovo
+[2025-12-06 12:42:28] [mq_consumer] [SYSTEM] Nessun messaggio disponibile entro il timeout, riprovo
+[2025-12-06 12:42:28] [mq_consumer] [SYSTEM] Numero di worker threads (0) inferiore al massimo (16), creazione di nuovi thread
+[2025-12-06 12:42:28] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 1
+[2025-12-06 12:42:28] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 2
+[2025-12-06 12:42:28] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 3
+[2025-12-06 12:42:28] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 4
+[2025-12-06 12:42:28] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 5
+[2025-12-06 12:42:28] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 6
+[2025-12-06 12:42:28] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 7
+[2025-12-06 12:42:28] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 8
+[2025-12-06 12:42:28] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 9
+[2025-12-06 12:42:28] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 10
+[2025-12-06 12:42:28] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 11
+[2025-12-06 12:42:28] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 12
+[2025-12-06 12:42:28] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 13
+[2025-12-06 12:42:28] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 14
+[2025-12-06 12:42:28] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 15
+[2025-12-06 12:42:28] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 16
+[2025-12-06 12:42:28] [mq_consumer] [SYSTEM] Messaggio ricevuto: Incendio 100 100
+[2025-12-06 12:42:28] [mq_consumer] [SYSTEM] Analisi del messaggio: Incendio 100 100
+[2025-12-06 12:42:28] [mq_consumer] [SYSTEM] Messaggio valido: Incendio 100 100 132186007145328
+[2025-12-06 12:42:28] [mq_consumer] [SYSTEM] Richiesta di emergenza creata: Incendio 100 100 132186007145328
+[2025-12-06 12:42:28] [mq_consumer] [SYSTEM] Richiesta di emergenza analizzata: Incendio 100 100 132186007145328
+[2025-12-06 12:42:28] [status] [SYSTEM] Assegnazione di una nuova richiesta di emergenza
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Nessuna emergenza da risolvere trovata
+[2025-12-06 12:42:28] [emergency_types] [SYSTEM] Ricerca del tipo di emergenza: Incendio
+[2025-12-06 12:42:28] [emergency_types] [SYSTEM] Tipo di emergenza trovato: Incendio
+[2025-12-06 12:42:28] [status] [SYSTEM] Preparazione del record per l'emergenza: Incendio
+[2025-12-06 12:42:28] [emergency_types] [SYSTEM] Ricerca del tipo di emergenza: Incendio
+[2025-12-06 12:42:28] [emergency_types] [SYSTEM] Tipo di emergenza trovato: Incendio
+[2025-12-06 12:42:28] [status] [SYSTEM] Record per l'emergenza Incendio preparato correttamente
+[2025-12-06 12:42:28] [status] [SYSTEM] Allocazione della memoria necessaria per il nuovo elemento riuscita
+[2025-12-06 12:42:28] [status] [SYSTEM] Elemento inserito correttamente
+[2025-12-06 12:42:28] [status] [SYSTEM] Nuova emergenza inserita nella waiting queue, notifica i worker thread
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Emergenza da risolvere con la priorità più alta trovata: Incendio, priorità 0
+[2025-12-06 12:42:28] [status] [SYSTEM] Tentativo di allocazione soccorritori per emergenza: Incendio
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Incendio
+[2025-12-06 12:42:28] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 210
+[2025-12-06 12:42:28] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 12:42:28] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Incendio
+[2025-12-06 12:42:28] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 211
+[2025-12-06 12:42:28] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 12:42:28] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Incendio
+[2025-12-06 12:42:28] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 212
+[2025-12-06 12:42:28] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 12:42:28] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Incendio
+[2025-12-06 12:42:28] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Ambulanza 124
+[2025-12-06 12:42:28] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 12:42:28] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Incendio
+[2025-12-06 12:42:28] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Ambulanza 125
+[2025-12-06 12:42:28] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 12:42:28] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Incendio
+[2025-12-06 12:42:28] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Polizia 34
+[2025-12-06 12:42:28] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 12:42:28] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 12:42:28] [status] [SYSTEM] Allocazione soccorritori per emergenza Incendio riuscita
+[2025-12-06 12:42:28] [status] [SYSTEM] Inizio della gestione dell'emergenza: Incendio
+[2025-12-06 12:42:28] [status] [SYSTEM] Allocazione della memoria necessaria per il nuovo elemento riuscita
+[2025-12-06 12:42:28] [status] [SYSTEM] Elemento inserito correttamente
+[2025-12-06 12:42:28] [status] [SYSTEM] Gestione dell'emergenza Incendio iniziata correttamente
+[2025-12-06 12:42:28] [status] [SYSTEM] Ricerca dell'emergenza da risolvere con la priorità più alta
+[2025-12-06 12:42:28] [status] [SYSTEM] Rimozione di un'emergenza dalla coda 
+[2025-12-06 12:42:28] [status] [SYSTEM] Calcolo del tempo massimo per arrivare sulla scena dell'emergenza: Incendio
+[2025-12-06 12:42:28] [status] [SYSTEM] Emergenza rimossa correttamente
+[2025-12-06 12:42:28] [emergency_types] [SYSTEM] Ricerca dell'emergenza assegnata al soccorritore: Pompieri
+[2025-12-06 12:42:28] [emergency_types] [SYSTEM] Emergenza trovata per il soccorritore: Pompieri
+[2025-12-06 12:42:28] [status] [SYSTEM] Emergenza da risolvere con la priorità più alta trovata: Incendio, priorità 0
+[2025-12-06 12:42:28] [status] [SYSTEM] Tentativo di allocazione soccorritori per emergenza: Incendio
+[2025-12-06 12:42:28] [emergency_types] [SYSTEM] Ricerca dell'emergenza assegnata al soccorritore: Pompieri
+[2025-12-06 12:42:28] [emergency_types] [SYSTEM] Nessuna emergenza trovata per il soccorritore: Pompieri

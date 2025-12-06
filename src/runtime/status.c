@@ -593,14 +593,12 @@ static bool start_emergency_management(state_t* state, emergency_record_t* recor
     if(idx == (size_t)-1){
         return false; // Emergenza non trovata nell'array delle emergenze in attesa
     }
-    remove_emergency_from_general_queue((void**)state->emergencies_waiting, 
-                              &state->emergencies_waiting_count, 
-                              idx);
+
     // Inserisce l'emergenza tra quelle in corso
     insert_into_general_queue((void***)&state->emergencies_in_progress, 
                                (size_t*)&state->emergencies_in_progress_count, 
                                (size_t*)&state->emergencies_in_progress_capacity, 
-                               (void*)&record->emergency);
+                               (void*)record);
     LOG_SYSTEM("status", "Gestione dell'emergenza %s iniziata correttamente", record->emergency.type.emergency_name);
     return true;
 }
@@ -655,6 +653,8 @@ static emergency_record_t* get_highest_priority_emergency(state_t* state){
     LOG_SYSTEM("status", "Ricerca dell'emergenza da risolvere con la priorità più alta");
     emergency_record_t* emergency = NULL;
     emergency_record_t* highest = NULL;
+    
+    // Cerca l'emergenza con la priorità più alta tra quelle in attesa
     for(size_t i = 0; i < state->emergencies_waiting_count; ++i){
 
         emergency = state->emergencies_waiting[i];
@@ -671,12 +671,7 @@ static emergency_record_t* get_highest_priority_emergency(state_t* state){
     remove_emergency_from_general_queue((void**)state->emergencies_waiting, 
                               &state->emergencies_waiting_count, 
                               idx);
-    insert_into_general_queue((void***)&state->emergencies_in_progress, 
-                              (size_t*)&state->emergencies_in_progress_count, 
-                              (size_t*)&state->emergencies_in_progress_capacity, 
-                              (void*)highest);
-    state->emergencies_in_progress_count++;
-    state->emergencies_waiting_count--;
+    
     LOG_SYSTEM("status", "Emergenza da risolvere con la priorità più alta trovata: %s, priorità %d", highest->emergency.type.emergency_name, highest->current_priority);
     return highest;
 }
@@ -753,7 +748,7 @@ int status_init(state_t* state, rescuer_digital_twin_t* rescuer_twins, size_t re
     if(rescuer_twins_count > 0) {
         LOG_SYSTEM("status", "Inizializzazione dell'array dei soccorritori disponibili");
 
-        state->rescuer_available = calloc(rescuer_twins_count, sizeof(rescuer_digital_twin_t)); 
+        state->rescuer_available = calloc(rescuer_twins_count, sizeof(rescuer_digital_twin_t*)); 
 
         state->rescuers_in_use = calloc(rescuer_twins_count, sizeof(rescuer_digital_twin_t*));
 
