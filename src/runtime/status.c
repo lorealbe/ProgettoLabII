@@ -675,6 +675,8 @@ static emergency_record_t* get_highest_priority_emergency(state_t* state){
                               (size_t*)&state->emergencies_in_progress_count, 
                               (size_t*)&state->emergencies_in_progress_capacity, 
                               (void*)highest);
+    state->emergencies_in_progress_count++;
+    state->emergencies_waiting_count--;
     LOG_SYSTEM("status", "Emergenza da risolvere con la priorità più alta trovata: %s, priorità %d", highest->emergency.type.emergency_name, highest->current_priority);
     return highest;
 }
@@ -746,11 +748,16 @@ int status_init(state_t* state, rescuer_digital_twin_t* rescuer_twins, size_t re
         return -1;
     }
 
+
     // Inizializza l'array dei soccorritori disponibili
     if(rescuer_twins_count > 0) {
         LOG_SYSTEM("status", "Inizializzazione dell'array dei soccorritori disponibili");
+
         state->rescuer_available = calloc(rescuer_twins_count, sizeof(rescuer_digital_twin_t)); 
-        if(!state->rescuer_available) { // Errore di allocazione
+
+        state->rescuers_in_use = calloc(rescuer_twins_count, sizeof(rescuer_digital_twin_t*));
+
+        if(!state->rescuer_available || !state->rescuers_in_use) { // Errore di allocazione
             LOG_SYSTEM("status", "Errore di allocazione per l'array dei soccorritori disponibili");
             pthread_cond_destroy(&state->rescuer_available_cond);
             pthread_cond_destroy(&state->emergency_available_cond);
@@ -763,6 +770,8 @@ int status_init(state_t* state, rescuer_digital_twin_t* rescuer_twins, size_t re
             state->rescuer_available[i]->status = IDLE;
         }
         state->rescuer_available_count = rescuer_twins_count;
+        state->rescuers_in_use_count = 0;
+
         LOG_SYSTEM("status", "Array dei soccorritori disponibili inizializzato con successo");
         return 0;
     }
@@ -791,6 +800,7 @@ void status_destroy(state_t* state, mq_consumer_t* consumer) {
     LOG_SYSTEM("status", "Libera memoria allocata per gli array di soccorritori e worker threads");
     // Libera memoria allocata per gli array    
     free(state->rescuer_available);
+    free(state->rescuers_in_use);
     free(state->worker_threads);
 
     LOG_SYSTEM("status", "Libera memoria per le emergenze");
