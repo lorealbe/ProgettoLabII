@@ -374,10 +374,9 @@ static rescuer_digital_twin_t* find_best_rescuer_lower_priority(state_t* state, 
         emergency_t* old_em_ptr = find_emergency_by_rescuer(best, state->emergencies_in_progress, state->emergencies_in_progress_count);
         
         if(old_em_ptr) {
-            // Cast sicuro perché emergency_t è il primo membro di emergency_record_t
             emergency_record_t* old_record = (emergency_record_t*)old_em_ptr;
             
-            // CERCA L'INDICE LOCALE (Fondamentale!)
+            // FIX: Cerca l'indice LOCALE nell'array dell'emergenza
             int local_idx = -1;
             for(size_t k = 0; k < old_record->assigned_rescuers_count; k++){
                 if(old_record->assigned_rescuers[k].id == best->id){
@@ -387,21 +386,16 @@ static rescuer_digital_twin_t* find_best_rescuer_lower_priority(state_t* state, 
             }
 
             if(local_idx != -1){
-                // Rimuovi usando l'indice LOCALE, non quello globale
                 size_t count = old_record->assigned_rescuers_count;
                 if(count > 1 && local_idx < count - 1){
                     memmove(&old_record->assigned_rescuers[local_idx], 
                             &old_record->assigned_rescuers[local_idx + 1], 
                             (count - local_idx - 1) * sizeof(rescuer_digital_twin_t));
                 }
-                // Decrementa il numero di soccorritori ASSEGNATI, non quelli RICHIESTI
-                old_record->assigned_rescuers_count--; 
-                
-                // Opzionale: Realloc per risparmiare memoria (non strettamente necessario ma pulito)
-                // old_record->assigned_rescuers = realloc(...) 
+                old_record->assigned_rescuers_count--; // Decrementa contatore locale
             }
         }
-    } 
+    }
     return best;
 }
 
@@ -959,6 +953,9 @@ void* worker_thread(void* arg){
                     pthread_mutex_unlock(&state->mutex);
                     break;
                 }   
+
+                sleep(1); // Attende prima di riprovare
+
                 continue;
             }
             record->preempted = false; 
