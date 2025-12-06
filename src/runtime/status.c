@@ -447,6 +447,8 @@ static bool try_allocate_rescuers(state_t* state, emergency_record_t* record){
                     record->assigned_rescuers[record->assigned_rescuers_count++] = *best_rescuer;
                     // Aggiorna lo stato nella copia locale
                     record->assigned_rescuers[record->assigned_rescuers_count-1].status = EN_ROUTE_TO_SCENE;
+
+                    best_rescuer->status = EN_ROUTE_TO_SCENE; // Aggiorna lo stato del soccorritore originale
                     
                     // Sposta il puntatore originale dall'array available all'array in_use
                     remove_rescuer_from_general_queue((void**)state->rescuer_available, &state->rescuer_available_count, idx);
@@ -498,10 +500,6 @@ static bool try_allocate_rescuers_for_preempted(state_t* state, emergency_record
     if(!state || !record) return false; 
     if(!record->preempted) return false; 
     
-    // int total_rescuers_needed = record->emergency.rescuers_count; 
-    // Attenzione: qui serve logica più fine se ne mancano solo alcuni, 
-    // ma assumiamo di dover riempire i buchi.
-
     // Iteriamo sui TIPI richiesti
     for (int i = 0; i < record->emergency.type.rescuers_req_number; i++) {
         rescuer_request_t req = record->emergency.type.rescuer_requests[i];
@@ -516,24 +514,32 @@ static bool try_allocate_rescuers_for_preempted(state_t* state, emergency_record
 
         int need = req.required_count - have_count;
         for(int j=0; j < need; j++){
-             rescuer_digital_twin_t* best_rescuer = find_best_idle_rescuer(state, record, req.type->rescuer_type_name);
-             if (best_rescuer != NULL) {
-                 // Logica di assegnazione come sopra...
-                  int idx = find_idx((void**)state->rescuer_available, state->rescuer_available_count, best_rescuer);
-                  if (idx < state->rescuer_available_count) {
-                      // Realloc se necessario (record->assigned_rescuers)
-                      record->assigned_rescuers = realloc(record->assigned_rescuers, (record->assigned_rescuers_count + 1) * sizeof(rescuer_digital_twin_t));
-                      record->assigned_rescuers[record->assigned_rescuers_count++] = *best_rescuer;
-                      record->assigned_rescuers[record->assigned_rescuers_count-1].status = EN_ROUTE_TO_SCENE;
-                      
-                      remove_rescuer_from_general_queue((void**)state->rescuer_available, &state->rescuer_available_count, idx);
-                      state->rescuers_in_use[state->rescuers_in_use_count++] = best_rescuer;
-                  }
-             } else {
-                 // Try lower priority... con parametro req.type->rescuer_type_name
-                 // Se fallisce:
-                 return false;
-             }
+            rescuer_digital_twin_t* best_rescuer = find_best_idle_rescuer(state, record, req.type->rescuer_type_name);
+            if (best_rescuer != NULL) {
+                // Logica di assegnazione come sopra...
+                int idx = find_idx((void**)state->rescuer_available, state->rescuer_available_count, best_rescuer);
+                if (idx < state->rescuer_available_count) {
+                    // Realloc se necessario (record->assigned_rescuers)
+                    record->assigned_rescuers = realloc(record->assigned_rescuers, (record->assigned_rescuers_count + 1) * sizeof(rescuer_digital_twin_t));
+                    record->assigned_rescuers[record->assigned_rescuers_count++] = *best_rescuer;
+                    record->assigned_rescuers[record->assigned_rescuers_count-1].status = EN_ROUTE_TO_SCENE;
+                    
+                    best_rescuer->status = EN_ROUTE_TO_SCENE;
+
+                    remove_rescuer_from_general_queue((void**)state->rescuer_available, &state->rescuer_available_count, idx);
+                    state->rescuers_in_use[state->rescuers_in_use_count++] = best_rescuer;
+                }
+            } else {
+                best_rescuer = find_best_rescuer_lower_priority(state, record, req.type->rescuer_type_name);
+                if (best_rescuer != NULL) {
+                    record->assigned_rescuers = realloc(record->assigned_rescuers, (record->assigned_rescuers_count + 1) * sizeof(rescuer_digital_twin_t));
+                    record->assigned_rescuers[record->assigned_rescuers_count++] = *best_rescuer;
+                    record->assigned_rescuers[record->assigned_rescuers_count-1].status = EN_ROUTE_TO_SCENE;
+                    best_rescuer->status = EN_ROUTE_TO_SCENE;
+                } else {
+                    return false;
+                }
+            }
         }
     }
     
@@ -1042,6 +1048,17 @@ void* worker_thread(void* arg){
             for(size_t i = 0; i < record->assigned_rescuers_count; ++i){
                 record->assigned_rescuers[i].status = IDLE;
                 state->rescuer_available[state->rescuer_available_count++] = &record->assigned_rescuers[i];
+                // Rimuove il soccorritore dall'array in_use
+                size_t idx = find_idx((void**)state->rescuers_in_use, state->rescuers_in_use_count, (void*)&record->assigned_rescuers[i]);
+                if(idx != (size_t)-1){
+                    remove_rescuer_from_general_queue((void**)state->rescuers_in_use, 
+                                              (size_t*)&state->rescuers_in_use_count, 
+                                              idx);
+                }
+                // Inserisce il soccorritore nell'array available
+                state->rescuer_available[state->rescuer_available_count++] = &record->assigned_rescuers[i];
+                // Notifica eventuali thread in attesa di soccorritori
+                LOG_SYSTEM("debug", "Soccorritore %d rilasciato e ora IDLE", record->assigned_rescuers[i].id);
             }
             record->assigned_rescuers_count = 0;
             free(record->assigned_rescuers);
@@ -1063,6 +1080,7 @@ void* worker_thread(void* arg){
         }
     }
     pthread_mutex_unlock(&state->mutex);
+    pthread_cond_broadcast(&state->rescuer_available_cond); // Notifica eventuali thread in attesa di soccorritori
     state->worker_threads_count--;
     return NULL;
 }
