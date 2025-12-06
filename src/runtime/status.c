@@ -326,41 +326,31 @@ static rescuer_digital_twin_t* find_best_idle_rescuer(state_t* state, emergency_
 static rescuer_digital_twin_t* find_best_rescuer_lower_priority(state_t* state, emergency_record_t* record, char* required_type_name){
     if(!state || !record) return NULL;
 
-    LOG_SYSTEM("status", "Ricerca del miglior soccorritore impegnato in un'emergenza di priorità inferiore per l'emergenza: %s", record->emergency.type.emergency_name);
+    LOG_SYSTEM("status", "Ricerca preemption per: %s", record->emergency.type.emergency_name);
 
-    emergency_t* emergency = &record->emergency; 
-    emergency_t* rescuer_emergency_t = NULL;       
+    emergency_t* emergency = &record->emergency;
     rescuer_digital_twin_t* best = NULL;         
     time_t best_time = LONG_MAX;      
     
     int best_est_x = -1;
     int best_est_y = -1;
 
-    // Scorre tutti i soccorritori attualmente in uso
+    // 1. Trova il miglior candidato
     for(size_t i = 0; i < state->rescuers_in_use_count; ++i){
         rescuer_digital_twin_t* rescuer = state->rescuers_in_use[i]; 
         
-        // Verifica tipo
         if(strcmp(rescuer->type->rescuer_type_name, required_type_name) != 0) continue;
-        
-        // Verifica stato
         if(rescuer->status != EN_ROUTE_TO_SCENE && rescuer->status != ON_SCENE) continue; 
         
-        // Trova l'emergenza a cui è assegnato questo soccorritore
-        rescuer_emergency_t = find_emergency_by_rescuer(rescuer, state->emergencies_in_progress, state->emergencies_in_progress_count);
+        // Passiamo 'rescuer' corrente, NON 'best'
+        emergency_t* curr_em = find_emergency_by_rescuer(rescuer, state->emergencies_in_progress, state->emergencies_in_progress_count);
+        if(!curr_em) continue; 
         
-        if(!rescuer_emergency_t){
-            // Se non troviamo l'emergenza, c'è un problema di consistenza, saltiamo questo soccorritore
-            continue; 
-        }
-        
-        // Verifica priorità
-        if(rescuer_emergency_t->type.priority >= emergency->type.priority) continue; 
+        if(curr_em->type.priority >= emergency->type.priority) continue; 
 
-        // Calcoli stima
         int est_x = rescuer->x;
         int est_y = rescuer->y;
-        estimate_rescuer_position(rescuer, rescuer_emergency_t, &est_x, &est_y);
+        estimate_rescuer_position(rescuer, curr_em, &est_x, &est_y);
         
         int distance = manhattan_distance(est_x, est_y, emergency->x, emergency->y);
         int speed = rescuer->type->speed > 0 ? rescuer->type->speed : 1; 
@@ -374,20 +364,22 @@ static rescuer_digital_twin_t* find_best_rescuer_lower_priority(state_t* state, 
         }
     }
 
+    // 2. Se trovato, rimuovilo CORRETTAMENTE dalla vecchia emergenza
     if(best != NULL){  
-        LOG_SYSTEM("status", "Miglior soccorritore preemption trovato: %s (ID %d)", best->type->rescuer_type_name, best->id);
-        
-        // Aggiorna posizione stimata
+        LOG_SYSTEM("status", "Preemption: rubato soccorritore %s (ID %d)", best->type->rescuer_type_name, best->id);
         best->x = best_est_x;
         best->y = best_est_y;
 
+        // Ritroviamo il record dell'emergenza a cui apparteneva
         emergency_t* old_em_ptr = find_emergency_by_rescuer(best, state->emergencies_in_progress, state->emergencies_in_progress_count);
+        
         if(old_em_ptr) {
+            // Cast sicuro perché emergency_t è il primo membro di emergency_record_t
             emergency_record_t* old_record = (emergency_record_t*)old_em_ptr;
             
-            // Cerchiamo l'indice LOCALE nell'array dell'emergenza vecchia
+            // CERCA L'INDICE LOCALE (Fondamentale!)
             int local_idx = -1;
-            for(size_t k=0; k < old_record->assigned_rescuers_count; k++){
+            for(size_t k = 0; k < old_record->assigned_rescuers_count; k++){
                 if(old_record->assigned_rescuers[k].id == best->id){
                     local_idx = k;
                     break;
@@ -395,20 +387,21 @@ static rescuer_digital_twin_t* find_best_rescuer_lower_priority(state_t* state, 
             }
 
             if(local_idx != -1){
-                // Rimuoviamo dalla vecchia emergenza
+                // Rimuovi usando l'indice LOCALE, non quello globale
                 size_t count = old_record->assigned_rescuers_count;
                 if(count > 1 && local_idx < count - 1){
                     memmove(&old_record->assigned_rescuers[local_idx], 
                             &old_record->assigned_rescuers[local_idx + 1], 
                             (count - local_idx - 1) * sizeof(rescuer_digital_twin_t));
                 }
-                old_record->assigned_rescuers_count--; // Decrementiamo il contatore degli assegnati (non dei richiesti!)
+                // Decrementa il numero di soccorritori ASSEGNATI, non quelli RICHIESTI
+                old_record->assigned_rescuers_count--; 
+                
+                // Opzionale: Realloc per risparmiare memoria (non strettamente necessario ma pulito)
+                // old_record->assigned_rescuers = realloc(...) 
             }
         }
-       
-    } else {
-        LOG_SYSTEM("status", "Nessun soccorritore impegnato in un'emergenza di priorità inferiore trovato");
-    }
+    } 
     return best;
 }
 
@@ -994,6 +987,9 @@ void* worker_thread(void* arg){
                                     (size_t*)&state->emergencies_waiting_capacity, 
                                     (void*)&record->emergency);
                 pthread_mutex_unlock(&state->mutex);
+
+                sleep(1); // Attende prima di riprovare
+
                 continue;
             }
             if(!start_emergency_management(state, record) && !record->preempted){
