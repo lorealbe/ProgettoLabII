@@ -311,78 +311,99 @@ static rescuer_digital_twin_t* find_best_idle_rescuer(state_t* state, emergency_
             }
         }
     }
-    LOG_SYSTEM("status", "Miglior soccorritore IDLE trovato: %s %d", best ? best->type->rescuer_type_name : "Nessuno", best->id);
+    if (best) {
+    LOG_SYSTEM("status", "Miglior soccorritore IDLE trovato: %s %d", best->type->rescuer_type_name, best->id);
+    } else {
+        LOG_SYSTEM("status", "Miglior soccorritore IDLE trovato: Nessuno");
+    }
+
     return best;
 }
 
 // Trova il miglior soccorritore impegnato in un'emergenza di priorità inferiore
+// Sostituisci interamente questa funzione in src/runtime/status.c
+
 static rescuer_digital_twin_t* find_best_rescuer_lower_priority(state_t* state, emergency_record_t* record, char* required_type_name){
-    if(!state || !record) return NULL; // Errore nei parametri
+    if(!state || !record) return NULL;
 
     LOG_SYSTEM("status", "Ricerca del miglior soccorritore impegnato in un'emergenza di priorità inferiore per l'emergenza: %s", record->emergency.type.emergency_name);
 
-    emergency_t* emergency = &record->emergency; // Emergenza da risolvere
-    emergency_t* rescuer_emergency = NULL;       // Emergenza da cui viene prelevato il soccorritore
-    rescuer_digital_twin_t* best = NULL;         // Soccorritore che arriva prima all'emergenza
+    emergency_t* emergency = &record->emergency; 
+    emergency_t* rescuer_emergency_t = NULL;       
+    rescuer_digital_twin_t* best = NULL;         
     time_t best_time = LONG_MAX;      
-    int idx = -1;                                // Indice del soccorritore trovato nell'array dei soccorritori in uso           
-
+    
     int best_est_x = -1;
     int best_est_y = -1;
 
-    // Scorre tutti i soccorritori richiesti per l'emergenza
-    for(size_t j = 0; j < (size_t)emergency->type.rescuers_req_number; ++j){
+    // Scorre tutti i soccorritori attualmente in uso
+    for(size_t i = 0; i < state->rescuers_in_use_count; ++i){
+        rescuer_digital_twin_t* rescuer = state->rescuers_in_use[i]; 
         
-        // Scorre tutti i soccorritori attualmente in uso in cerca di uno di tipo corrispondente
-        for(size_t i = 0; i < state->rescuers_in_use_count; ++i){
-            rescuer_digital_twin_t* rescuer = state->rescuers_in_use[i]; // rescuer_in_use contiene solo soccorritori non IDLE
-            
-            if(strcmp(rescuer->type->rescuer_type_name, required_type_name) == 0){
-                
-                if(rescuer->status != EN_ROUTE_TO_SCENE && rescuer->status != ON_SCENE) continue; // Ignora i soccorritori RETURNING_TO_BASE
-                
-                rescuer_emergency = find_emergency_by_rescuer(best, state->emergencies_in_progress, state->emergencies_in_progress_count);
-                if(!rescuer_emergency){
-                    // L'emergenza non esiste
-                    // Il soccorritore viene rimosso dall'array rescuers_in_use
-                    memmove(&state->rescuers_in_use[i], &state->rescuers_in_use[i+1], (state->rescuers_in_use_count - i - 1) * sizeof(rescuer_digital_twin_t*));
-                    state->rescuers_in_use_count--;
-                    i--; // Decrementa per controllare il nuovo rescuer_in_use[i]
-                }
-                if(rescuer_emergency->type.priority >= emergency->type.priority) continue; // Il soccorritore si trova in un emergenza di priorità pari o superiore e viene quindi ignorato
-                int est_x = rescuer->x;
-                int est_y = rescuer->y;
-                estimate_rescuer_position(rescuer, rescuer_emergency, &est_x, &est_y);
-                int distance = manhattan_distance(est_x, est_y, emergency->x, emergency->y);
-                int speed = rescuer->type->speed > 0 ? rescuer->type->speed : 1; // Garantisce che non ci siano velocità nulle o negative
-                time_t time_to_scene = (distance + speed - 1) / speed; // Calcola il tempo stimato per arrivare sulla scena approssimando per eccesso
-                if(time_to_scene < best_time && arrive_in_time(time_to_scene, emergency->type.priority) ){
-                    best = rescuer;
-                    best_time = time_to_scene; 
-                    best_est_x = est_x;
-                    best_est_y = est_y;
-                    idx = find_idx((void**)state->rescuers_in_use, state->rescuers_in_use_count, (void*)best);
-                }
-            }
+        // Verifica tipo
+        if(strcmp(rescuer->type->rescuer_type_name, required_type_name) != 0) continue;
+        
+        // Verifica stato
+        if(rescuer->status != EN_ROUTE_TO_SCENE && rescuer->status != ON_SCENE) continue; 
+        
+        // Trova l'emergenza a cui è assegnato questo soccorritore
+        rescuer_emergency_t = find_emergency_by_rescuer(rescuer, state->emergencies_in_progress, state->emergencies_in_progress_count);
+        
+        if(!rescuer_emergency_t){
+            // Se non troviamo l'emergenza, c'è un problema di consistenza, saltiamo questo soccorritore
+            continue; 
+        }
+        
+        // Verifica priorità
+        if(rescuer_emergency_t->type.priority >= emergency->type.priority) continue; 
+
+        // Calcoli stima
+        int est_x = rescuer->x;
+        int est_y = rescuer->y;
+        estimate_rescuer_position(rescuer, rescuer_emergency_t, &est_x, &est_y);
+        
+        int distance = manhattan_distance(est_x, est_y, emergency->x, emergency->y);
+        int speed = rescuer->type->speed > 0 ? rescuer->type->speed : 1; 
+        time_t time_to_scene = (distance + speed - 1) / speed; 
+
+        if(time_to_scene < best_time && arrive_in_time(time_to_scene, emergency->type.priority) ){
+            best = rescuer;
+            best_time = time_to_scene; 
+            best_est_x = est_x;
+            best_est_y = est_y;
         }
     }
 
     if(best != NULL){  
-        LOG_SYSTEM("status", "Miglior soccorritore impegnato in un'emergenza di priorità inferiore trovato: %s", best->type->rescuer_type_name);
-        rescuer_emergency->rescuers_count--;
-
+        LOG_SYSTEM("status", "Miglior soccorritore preemption trovato: %s (ID %d)", best->type->rescuer_type_name, best->id);
+        
+        // Aggiorna posizione stimata
         best->x = best_est_x;
         best->y = best_est_y;
-        
-        // Inserisce il soccorritore nell'array dei soccorritori assegnati all'emergenza da risolvere
-        emergency->rescuers_count++;
-        LOG_SYSTEM("status", "Assegnazione del soccorritore %s all'emergenza %s", best->type->rescuer_type_name, emergency->type.emergency_name);
-        
-        int count = rescuer_emergency->rescuers_count;
-        if(count > 1 && idx < (size_t)count - 1){
-            memmove(&rescuer_emergency->assigned_rescuers[idx], 
-                    &rescuer_emergency->assigned_rescuers[idx + 1], 
-                    (count - idx - 1) * sizeof(rescuer_digital_twin_t));
+
+        emergency_t* old_em_ptr = find_emergency_by_rescuer(best, state->emergencies_in_progress, state->emergencies_in_progress_count);
+        if(old_em_ptr) {
+            emergency_record_t* old_record = (emergency_record_t*)old_em_ptr;
+            
+            // Cerchiamo l'indice LOCALE nell'array dell'emergenza vecchia
+            int local_idx = -1;
+            for(size_t k=0; k < old_record->assigned_rescuers_count; k++){
+                if(old_record->assigned_rescuers[k].id == best->id){
+                    local_idx = k;
+                    break;
+                }
+            }
+
+            if(local_idx != -1){
+                // Rimuoviamo dalla vecchia emergenza
+                size_t count = old_record->assigned_rescuers_count;
+                if(count > 1 && local_idx < count - 1){
+                    memmove(&old_record->assigned_rescuers[local_idx], 
+                            &old_record->assigned_rescuers[local_idx + 1], 
+                            (count - local_idx - 1) * sizeof(rescuer_digital_twin_t));
+                }
+                old_record->assigned_rescuers_count--; // Decrementiamo il contatore degli assegnati (non dei richiesti!)
+            }
         }
        
     } else {
@@ -1003,7 +1024,7 @@ void* worker_thread(void* arg){
         LOG_SYSTEM("status", "Inizio della gestione dell'emergenza: %s", record->emergency.type.emergency_name);
         
         // Tutti i soccorritori sono arrivati sulla scena
-        while(record->time_remaining > 0 && !(*record->preempted) && !(*state->shutdown_flag)){
+        while(record->time_remaining > 0 && !record->preempted && !(*state->shutdown_flag)){
             pthread_mutex_unlock(&state->mutex);
             LOG_SYSTEM("status", "Gestione in corso dell'emergenza: %s, tempo rimanente: %u secondi", record->emergency.type.emergency_name, record->time_remaining);
             sleep(1); // Simula la gestione dell'emergenza
