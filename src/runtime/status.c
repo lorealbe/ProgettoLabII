@@ -989,7 +989,6 @@ void* worker_thread(void* arg){
                 continue;
             }
             if(!try_allocate_rescuers(state, record)){
-                pthread_mutex_lock(&state->mutex);
                 insert_into_general_queue((void***)&state->emergencies_waiting, 
                                     (size_t*)&state->emergencies_waiting_count, 
                                     (size_t*)&state->emergencies_waiting_capacity, 

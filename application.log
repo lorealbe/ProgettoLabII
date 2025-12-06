@@ -1,736 +1,736 @@
-[2025-12-06 20:38:25] [PARSE-ENV] [FILE_PARSING] Inizio parsing variabili d'ambiente da './Data/environment.conf'
-[2025-12-06 20:38:25] [PARSE-ENV] [FILE_PARSING] Aggiunta la 'queue' con nome 'emergenze676878
+[2025-12-06 20:50:40] [PARSE-ENV] [FILE_PARSING] Inizio parsing variabili d'ambiente da './Data/environment.conf'
+[2025-12-06 20:50:40] [PARSE-ENV] [FILE_PARSING] Aggiunta la 'queue' con nome 'emergenze676878
 ' e dimensioni (600, 500)
-[2025-12-06 20:38:25] [PARSE-RESCUER-TYPES] [FILE_PARSING] Inizio parsing tipi di soccorritori da './Data/rescuers.conf'
-[2025-12-06 20:38:25] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Pompieri' con 16 gemelli da creare
-[2025-12-06 20:38:25] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Ambulanza' con 17 gemelli da creare
-[2025-12-06 20:38:25] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Polizia' con 16 gemelli da creare
-[2025-12-06 20:38:25] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'ProtezioneCivile' con 15 gemelli da creare
-[2025-12-06 20:38:25] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'NBCR' con 14 gemelli da creare
-[2025-12-06 20:38:25] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'TecniciElettrici' con 15 gemelli da creare
-[2025-12-06 20:38:25] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'SoccorsoAlpino' con 15 gemelli da creare
-[2025-12-06 20:38:25] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Pompieri' con 15 gemelli da creare
-[2025-12-06 20:38:25] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Ambulanza' con 15 gemelli da creare
-[2025-12-06 20:38:25] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Polizia' con 15 gemelli da creare
-[2025-12-06 20:38:25] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'ProtezioneCivile' con 14 gemelli da creare
-[2025-12-06 20:38:25] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'NBCR' con 13 gemelli da creare
-[2025-12-06 20:38:25] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'TecniciElettrici' con 14 gemelli da creare
-[2025-12-06 20:38:25] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'SoccorsoAlpino' con 15 gemelli da creare
-[2025-12-06 20:38:25] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Pompieri' con 14 gemelli da creare
-[2025-12-06 20:38:25] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Ambulanza' con 14 gemelli da creare
-[2025-12-06 20:38:25] [PARSE-RESCUER-TYPES] [FILE_PARSING] Allocazione memoria per 16 tipi di soccorritori e 237 gemelli digitali
-[2025-12-06 20:38:25] [PARSE-RESCUER-TYPES] [FILE_PARSING] Inizio popolamento array tipi di soccorritori e gemelli digitali da './Data/rescuers.conf'
-[2025-12-06 20:38:25] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Pompieri' con 16 gemelli
-[2025-12-06 20:38:25] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Ambulanza' con 17 gemelli
-[2025-12-06 20:38:25] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Polizia' con 16 gemelli
-[2025-12-06 20:38:25] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'ProtezioneCivile' con 15 gemelli
-[2025-12-06 20:38:25] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'NBCR' con 14 gemelli
-[2025-12-06 20:38:25] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'TecniciElettrici' con 15 gemelli
-[2025-12-06 20:38:25] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'SoccorsoAlpino' con 15 gemelli
-[2025-12-06 20:38:25] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Pompieri' con 15 gemelli
-[2025-12-06 20:38:25] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Ambulanza' con 15 gemelli
-[2025-12-06 20:38:25] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Polizia' con 15 gemelli
-[2025-12-06 20:38:25] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'ProtezioneCivile' con 14 gemelli
-[2025-12-06 20:38:25] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'NBCR' con 13 gemelli
-[2025-12-06 20:38:25] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'TecniciElettrici' con 14 gemelli
-[2025-12-06 20:38:25] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'SoccorsoAlpino' con 15 gemelli
-[2025-12-06 20:38:25] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Pompieri' con 14 gemelli
-[2025-12-06 20:38:25] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Ambulanza' con 14 gemelli
-[2025-12-06 20:38:25] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento completato con successo
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Inizio parsing tipi di emergenza da './Data/emergency.conf'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'Incendio'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'Incendio'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Polizia' per emergenza 'Incendio'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
+[2025-12-06 20:50:40] [PARSE-RESCUER-TYPES] [FILE_PARSING] Inizio parsing tipi di soccorritori da './Data/rescuers.conf'
+[2025-12-06 20:50:40] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Pompieri' con 16 gemelli da creare
+[2025-12-06 20:50:40] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Ambulanza' con 17 gemelli da creare
+[2025-12-06 20:50:40] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Polizia' con 16 gemelli da creare
+[2025-12-06 20:50:40] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'ProtezioneCivile' con 15 gemelli da creare
+[2025-12-06 20:50:40] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'NBCR' con 14 gemelli da creare
+[2025-12-06 20:50:40] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'TecniciElettrici' con 15 gemelli da creare
+[2025-12-06 20:50:40] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'SoccorsoAlpino' con 15 gemelli da creare
+[2025-12-06 20:50:40] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Pompieri' con 15 gemelli da creare
+[2025-12-06 20:50:40] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Ambulanza' con 15 gemelli da creare
+[2025-12-06 20:50:40] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Polizia' con 15 gemelli da creare
+[2025-12-06 20:50:40] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'ProtezioneCivile' con 14 gemelli da creare
+[2025-12-06 20:50:40] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'NBCR' con 13 gemelli da creare
+[2025-12-06 20:50:40] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'TecniciElettrici' con 14 gemelli da creare
+[2025-12-06 20:50:40] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'SoccorsoAlpino' con 15 gemelli da creare
+[2025-12-06 20:50:40] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Pompieri' con 14 gemelli da creare
+[2025-12-06 20:50:40] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Ambulanza' con 14 gemelli da creare
+[2025-12-06 20:50:40] [PARSE-RESCUER-TYPES] [FILE_PARSING] Allocazione memoria per 16 tipi di soccorritori e 237 gemelli digitali
+[2025-12-06 20:50:40] [PARSE-RESCUER-TYPES] [FILE_PARSING] Inizio popolamento array tipi di soccorritori e gemelli digitali da './Data/rescuers.conf'
+[2025-12-06 20:50:40] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Pompieri' con 16 gemelli
+[2025-12-06 20:50:40] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Ambulanza' con 17 gemelli
+[2025-12-06 20:50:40] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Polizia' con 16 gemelli
+[2025-12-06 20:50:40] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'ProtezioneCivile' con 15 gemelli
+[2025-12-06 20:50:40] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'NBCR' con 14 gemelli
+[2025-12-06 20:50:40] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'TecniciElettrici' con 15 gemelli
+[2025-12-06 20:50:40] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'SoccorsoAlpino' con 15 gemelli
+[2025-12-06 20:50:40] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Pompieri' con 15 gemelli
+[2025-12-06 20:50:40] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Ambulanza' con 15 gemelli
+[2025-12-06 20:50:40] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Polizia' con 15 gemelli
+[2025-12-06 20:50:40] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'ProtezioneCivile' con 14 gemelli
+[2025-12-06 20:50:40] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'NBCR' con 13 gemelli
+[2025-12-06 20:50:40] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'TecniciElettrici' con 14 gemelli
+[2025-12-06 20:50:40] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'SoccorsoAlpino' con 15 gemelli
+[2025-12-06 20:50:40] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Pompieri' con 14 gemelli
+[2025-12-06 20:50:40] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Ambulanza' con 14 gemelli
+[2025-12-06 20:50:40] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento completato con successo
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Inizio parsing tipi di emergenza da './Data/emergency.conf'
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'Incendio'
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'Incendio'
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Polizia' per emergenza 'Incendio'
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
 ' per emergenza 'Incendio'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'Allagamento'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'Allagamento'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'Allagamento'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'Allagamento'
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'Allagamento'
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'Allagamento'
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
 ' per emergenza 'Allagamento'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'IncidenteStradale'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Polizia' per emergenza 'IncidenteStradale'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'IncidenteStradale'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'IncidenteStradale'
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Polizia' per emergenza 'IncidenteStradale'
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'IncidenteStradale'
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
 ' per emergenza 'IncidenteStradale'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'InfortunioSulLavoro'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Polizia' per emergenza 'InfortunioSulLavoro'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'InfortunioSulLavoro'
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Polizia' per emergenza 'InfortunioSulLavoro'
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
 ' per emergenza 'InfortunioSulLavoro'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'Esplosione'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'Esplosione'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Polizia' per emergenza 'Esplosione'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'NBCR' per emergenza 'Esplosione'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'Esplosione'
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'Esplosione'
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Polizia' per emergenza 'Esplosione'
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'NBCR' per emergenza 'Esplosione'
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
 ' per emergenza 'Esplosione'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Polizia' per emergenza 'Sommossa'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'Sommossa'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Polizia' per emergenza 'Sommossa'
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'Sommossa'
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
 ' per emergenza 'Sommossa'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'Frana'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'Frana'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'Frana'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'Frana'
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'Frana'
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'Frana'
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
 ' per emergenza 'Frana'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'Blackout'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'TecniciElettrici' per emergenza 'Blackout'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'Blackout'
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'TecniciElettrici' per emergenza 'Blackout'
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
 ' per emergenza 'Blackout'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'NBCR' per emergenza 'DisastroChimico'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'DisastroChimico'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'DisastroChimico'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'DisastroChimico'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'NBCR' per emergenza 'DisastroChimico'
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'DisastroChimico'
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'DisastroChimico'
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'DisastroChimico'
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
 ' per emergenza 'DisastroChimico'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'SoccorsoAlpino' per emergenza 'RicercaPersone'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'RicercaPersone'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'RicercaPersone'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'SoccorsoAlpino' per emergenza 'RicercaPersone'
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'RicercaPersone'
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'RicercaPersone'
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
 ' per emergenza 'RicercaPersone'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'IncendioBoschivo'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'IncendioBoschivo'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'SoccorsoAlpino' per emergenza 'IncendioBoschivo'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'IncendioBoschivo'
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'IncendioBoschivo'
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'SoccorsoAlpino' per emergenza 'IncendioBoschivo'
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
 ' per emergenza 'IncendioBoschivo'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'Evacuazione'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Polizia' per emergenza 'Evacuazione'
-[2025-12-06 20:38:25] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'Evacuazione'
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Polizia
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Polizia
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Polizia
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Polizia
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Polizia
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Polizia
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Polizia
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Polizia
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: NBCR
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: NBCR
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Polizia
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Polizia
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: TecniciElettrici
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: TecniciElettrici
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: NBCR
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: NBCR
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: SoccorsoAlpino
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: SoccorsoAlpino
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: SoccorsoAlpino
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: SoccorsoAlpino
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Polizia
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Polizia
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
-[2025-12-06 20:38:25] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
-[2025-12-06 20:38:25] [status] [SYSTEM] Inizializzazione dello stato
-[2025-12-06 20:38:25] [status] [SYSTEM] Inizializzazione dell'array dei soccorritori disponibili
-[2025-12-06 20:38:25] [status] [SYSTEM] Array dei soccorritori disponibili inizializzato con successo
-[2025-12-06 20:38:25] [mq_consumer] [SYSTEM] Inizializzazione della message queue
-[2025-12-06 20:38:25] [mq_consumer] [SYSTEM] Inizializzazione della struttura mq_consumer
-[2025-12-06 20:38:25] [mq_consumer] [SYSTEM] Struttura mq_consumer inizializzata. Nome coda: /emergenze676878
-[2025-12-06 20:38:25] [mq_consumer] [SYSTEM] Message queue inizializzata correttamente
-[2025-12-06 20:38:32] [mq_consumer] [SYSTEM] Numero di worker threads (0) inferiore al massimo (16), creazione di nuovi thread
-[2025-12-06 20:38:32] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 1
-[2025-12-06 20:38:32] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 2
-[2025-12-06 20:38:32] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 3
-[2025-12-06 20:38:32] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 4
-[2025-12-06 20:38:32] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 5
-[2025-12-06 20:38:32] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 6
-[2025-12-06 20:38:32] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 7
-[2025-12-06 20:38:32] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 8
-[2025-12-06 20:38:32] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 9
-[2025-12-06 20:38:32] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 10
-[2025-12-06 20:38:32] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 11
-[2025-12-06 20:38:32] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 12
-[2025-12-06 20:38:32] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 13
-[2025-12-06 20:38:32] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 14
-[2025-12-06 20:38:32] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 15
-[2025-12-06 20:38:32] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 16
-[2025-12-06 20:38:32] [mq_consumer] [SYSTEM] Messaggio ricevuto: Incendio 120 210 1765049910
-[2025-12-06 20:38:32] [mq_consumer] [SYSTEM] Analisi del messaggio: Incendio 120 210 1765049910
-[2025-12-06 20:38:32] [mq_consumer] [SYSTEM] Messaggio valido: Incendio 120 210 1765049910
-[2025-12-06 20:38:32] [mq_consumer] [SYSTEM] Richiesta di emergenza creata: Incendio 120 210 1765049910
-[2025-12-06 20:38:32] [mq_consumer] [SYSTEM] Richiesta di emergenza analizzata: Incendio 120 210 1765049910
-[2025-12-06 20:38:32] [status] [SYSTEM] Assegnazione di una nuova richiesta di emergenza
-[2025-12-06 20:38:32] [emergency_types] [SYSTEM] Ricerca del tipo di emergenza: Incendio
-[2025-12-06 20:38:32] [emergency_types] [SYSTEM] Tipo di emergenza trovato: Incendio
-[2025-12-06 20:38:32] [status] [SYSTEM] Preparazione del record per l'emergenza: Incendio
-[2025-12-06 20:38:32] [emergency_types] [SYSTEM] Ricerca del tipo di emergenza: Incendio
-[2025-12-06 20:38:32] [emergency_types] [SYSTEM] Tipo di emergenza trovato: Incendio
-[2025-12-06 20:38:32] [status] [SYSTEM] Record per l'emergenza Incendio preparato correttamente
-[2025-12-06 20:38:32] [status] [SYSTEM] Allocazione della memoria necessaria per il nuovo elemento riuscita
-[2025-12-06 20:38:32] [status] [SYSTEM] Elemento inserito correttamente
-[2025-12-06 20:38:32] [status] [SYSTEM] Nuova emergenza inserita nella waiting queue, notifica i worker thread
-[2025-12-06 20:38:32] [status] [SYSTEM] Rimozione di un'emergenza dalla coda 
-[2025-12-06 20:38:32] [status] [SYSTEM] Emergenza rimossa correttamente
-[2025-12-06 20:38:32] [status] [SYSTEM] Emergenza da risolvere con la priorità più alta trovata: Incendio, priorità 2.00
-[2025-12-06 20:38:32] [status] [SYSTEM] Tentativo di allocazione soccorritori per emergenza: Incendio
-[2025-12-06 20:38:32] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Incendio
-[2025-12-06 20:38:32] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 1
-[2025-12-06 20:38:32] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:38:32] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:38:32] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Incendio
-[2025-12-06 20:38:32] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 2
-[2025-12-06 20:38:32] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:38:32] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:38:32] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Incendio
-[2025-12-06 20:38:32] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 3
-[2025-12-06 20:38:32] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:38:32] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:38:32] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Incendio
-[2025-12-06 20:38:32] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Ambulanza 17
-[2025-12-06 20:38:32] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:38:32] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:38:32] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Incendio
-[2025-12-06 20:38:32] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Ambulanza 18
-[2025-12-06 20:38:32] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:38:32] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:38:32] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Incendio
-[2025-12-06 20:38:32] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Polizia 34
-[2025-12-06 20:38:32] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:38:32] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:38:32] [status] [SYSTEM] Allocazione soccorritori per emergenza Incendio riuscita
-[2025-12-06 20:38:32] [status] [SYSTEM] Inizio della gestione dell'emergenza: Incendio
-[2025-12-06 20:38:32] [status] [SYSTEM] Allocazione della memoria necessaria per il nuovo elemento riuscita
-[2025-12-06 20:38:32] [status] [SYSTEM] Elemento inserito correttamente
-[2025-12-06 20:38:32] [status] [SYSTEM] Gestione dell'emergenza Incendio iniziata correttamente
-[2025-12-06 20:38:32] [status] [SYSTEM] Calcolo del tempo massimo per arrivare sulla scena dell'emergenza: Incendio
-[2025-12-06 20:38:32] [debug] [SYSTEM] Rescuer: 1 | Dist: 30 | Speed: 32 | Time: 1
-[2025-12-06 20:38:32] [debug] [SYSTEM] Rescuer: 2 | Dist: 30 | Speed: 32 | Time: 1
-[2025-12-06 20:38:32] [debug] [SYSTEM] Rescuer: 3 | Dist: 30 | Speed: 32 | Time: 1
-[2025-12-06 20:38:32] [debug] [SYSTEM] Rescuer: 17 | Dist: 70 | Speed: 48 | Time: 2
-[2025-12-06 20:38:32] [debug] [SYSTEM] Rescuer: 18 | Dist: 70 | Speed: 48 | Time: 2
-[2025-12-06 20:38:32] [debug] [SYSTEM] Rescuer: 34 | Dist: 10 | Speed: 44 | Time: 1
-[2025-12-06 20:38:32] [status] [SYSTEM] Tempo massimo per arrivare sulla scena dell'emergenza Incendio calcolato: 2
-[2025-12-06 20:38:34] [status] [SYSTEM] Tutti i soccorritori sono arrivati sulla scena dell'emergenza: Incendio
-[2025-12-06 20:38:34] [status] [SYSTEM] Inizio della gestione dell'emergenza: Incendio
-[2025-12-06 20:38:34] [status] [SYSTEM] Gestione in corso dell'emergenza: Incendio, tempo rimanente: 20 secondi
-[2025-12-06 20:38:35] [status] [SYSTEM] Gestione in corso dell'emergenza: Incendio, tempo rimanente: 19 secondi
-[2025-12-06 20:38:36] [status] [SYSTEM] Gestione in corso dell'emergenza: Incendio, tempo rimanente: 18 secondi
-[2025-12-06 20:38:37] [status] [SYSTEM] Gestione in corso dell'emergenza: Incendio, tempo rimanente: 17 secondi
-[2025-12-06 20:38:38] [status] [SYSTEM] Gestione in corso dell'emergenza: Incendio, tempo rimanente: 16 secondi
-[2025-12-06 20:38:39] [status] [SYSTEM] Gestione in corso dell'emergenza: Incendio, tempo rimanente: 15 secondi
-[2025-12-06 20:38:40] [status] [SYSTEM] Gestione in corso dell'emergenza: Incendio, tempo rimanente: 14 secondi
-[2025-12-06 20:38:41] [status] [SYSTEM] Gestione in corso dell'emergenza: Incendio, tempo rimanente: 13 secondi
-[2025-12-06 20:38:42] [status] [SYSTEM] Gestione in corso dell'emergenza: Incendio, tempo rimanente: 12 secondi
-[2025-12-06 20:38:43] [status] [SYSTEM] Gestione in corso dell'emergenza: Incendio, tempo rimanente: 11 secondi
-[2025-12-06 20:38:44] [status] [SYSTEM] Gestione in corso dell'emergenza: Incendio, tempo rimanente: 10 secondi
-[2025-12-06 20:38:45] [status] [SYSTEM] Gestione in corso dell'emergenza: Incendio, tempo rimanente: 9 secondi
-[2025-12-06 20:38:46] [status] [SYSTEM] Gestione in corso dell'emergenza: Incendio, tempo rimanente: 8 secondi
-[2025-12-06 20:38:47] [status] [SYSTEM] Gestione in corso dell'emergenza: Incendio, tempo rimanente: 7 secondi
-[2025-12-06 20:38:48] [status] [SYSTEM] Gestione in corso dell'emergenza: Incendio, tempo rimanente: 6 secondi
-[2025-12-06 20:38:49] [status] [SYSTEM] Gestione in corso dell'emergenza: Incendio, tempo rimanente: 5 secondi
-[2025-12-06 20:38:50] [status] [SYSTEM] Gestione in corso dell'emergenza: Incendio, tempo rimanente: 4 secondi
-[2025-12-06 20:38:51] [status] [SYSTEM] Gestione in corso dell'emergenza: Incendio, tempo rimanente: 3 secondi
-[2025-12-06 20:38:52] [status] [SYSTEM] Gestione in corso dell'emergenza: Incendio, tempo rimanente: 2 secondi
-[2025-12-06 20:38:53] [status] [SYSTEM] Gestione in corso dell'emergenza: Incendio, tempo rimanente: 1 secondi
-[2025-12-06 20:38:54] [status] [SYSTEM] Emergenza risolta: Incendio
-[2025-12-06 20:38:54] [debug] [SYSTEM] Soccorritore 1 rilasciato e ora IDLE
-[2025-12-06 20:38:54] [debug] [SYSTEM] Soccorritore 2 rilasciato e ora IDLE
-[2025-12-06 20:38:54] [debug] [SYSTEM] Soccorritore 3 rilasciato e ora IDLE
-[2025-12-06 20:38:54] [debug] [SYSTEM] Soccorritore 17 rilasciato e ora IDLE
-[2025-12-06 20:38:54] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:38:54] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:38:54] [debug] [SYSTEM] Soccorritore 18 rilasciato e ora IDLE
-[2025-12-06 20:38:54] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:38:54] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:38:54] [debug] [SYSTEM] Soccorritore 34 rilasciato e ora IDLE
-[2025-12-06 20:38:54] [status] [SYSTEM] Rimozione di un'emergenza dalla coda 
-[2025-12-06 20:38:54] [status] [SYSTEM] Emergenza rimossa correttamente
-[2025-12-06 20:38:54] [status] [SYSTEM] Pulizia della struttura di emergenza per l'emergenza di tipo Incendio
-[2025-12-06 20:38:54] [status] [SYSTEM] Struttura pulita con successo
-[2025-12-06 20:39:18] [mq_consumer] [SYSTEM] Numero di worker threads (15) inferiore al massimo (16), creazione di nuovi thread
-[2025-12-06 20:39:18] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 16
-[2025-12-06 20:39:18] [mq_consumer] [SYSTEM] Messaggio ricevuto: IncendioBoschivo 100 100 1765049958
-[2025-12-06 20:39:18] [mq_consumer] [SYSTEM] Analisi del messaggio: IncendioBoschivo 100 100 1765049958
-[2025-12-06 20:39:18] [mq_consumer] [SYSTEM] Messaggio valido: IncendioBoschivo 100 100 1765049958
-[2025-12-06 20:39:18] [mq_consumer] [SYSTEM] Richiesta di emergenza creata: IncendioBoschivo 100 100 1765049958
-[2025-12-06 20:39:18] [mq_consumer] [SYSTEM] Richiesta di emergenza analizzata: IncendioBoschivo 100 100 1765049958
-[2025-12-06 20:39:18] [status] [SYSTEM] Assegnazione di una nuova richiesta di emergenza
-[2025-12-06 20:39:18] [emergency_types] [SYSTEM] Ricerca del tipo di emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [emergency_types] [SYSTEM] Tipo di emergenza trovato: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Preparazione del record per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [emergency_types] [SYSTEM] Ricerca del tipo di emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [emergency_types] [SYSTEM] Tipo di emergenza trovato: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Record per l'emergenza IncendioBoschivo preparato correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Allocazione della memoria necessaria per il nuovo elemento riuscita
-[2025-12-06 20:39:18] [status] [SYSTEM] Elemento inserito correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Nuova emergenza inserita nella waiting queue, notifica i worker thread
-[2025-12-06 20:39:18] [mq_consumer] [SYSTEM] Messaggio ricevuto: IncendioBoschivo 100 100 1765049958
-[2025-12-06 20:39:18] [mq_consumer] [SYSTEM] Analisi del messaggio: IncendioBoschivo 100 100 1765049958
-[2025-12-06 20:39:18] [mq_consumer] [SYSTEM] Messaggio valido: IncendioBoschivo 100 100 1765049958
-[2025-12-06 20:39:18] [mq_consumer] [SYSTEM] Richiesta di emergenza creata: IncendioBoschivo 100 100 1765049958
-[2025-12-06 20:39:18] [mq_consumer] [SYSTEM] Richiesta di emergenza analizzata: IncendioBoschivo 100 100 1765049958
-[2025-12-06 20:39:18] [status] [SYSTEM] Assegnazione di una nuova richiesta di emergenza
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un'emergenza dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Emergenza rimossa correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Emergenza da risolvere con la priorità più alta trovata: IncendioBoschivo, priorità 1.00
-[2025-12-06 20:39:18] [status] [SYSTEM] Tentativo di allocazione soccorritori per emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 210
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 211
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 212
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 213
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 214
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 215
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: ProtezioneCivile 50
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: ProtezioneCivile 51
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: ProtezioneCivile 52
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: ProtezioneCivile 53
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: SoccorsoAlpino 195
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: SoccorsoAlpino 196
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Allocazione soccorritori per emergenza IncendioBoschivo riuscita
-[2025-12-06 20:39:18] [status] [SYSTEM] Inizio della gestione dell'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Allocazione della memoria necessaria per il nuovo elemento riuscita
-[2025-12-06 20:39:18] [status] [SYSTEM] Elemento inserito correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Gestione dell'emergenza IncendioBoschivo iniziata correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Calcolo del tempo massimo per arrivare sulla scena dell'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 210 | Dist: 90 | Speed: 35 | Time: 3
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 211 | Dist: 90 | Speed: 35 | Time: 3
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 212 | Dist: 90 | Speed: 35 | Time: 3
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 213 | Dist: 90 | Speed: 35 | Time: 3
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 214 | Dist: 90 | Speed: 35 | Time: 3
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 215 | Dist: 90 | Speed: 35 | Time: 3
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 50 | Dist: 400 | Speed: 28 | Time: 15
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 51 | Dist: 400 | Speed: 28 | Time: 15
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 52 | Dist: 400 | Speed: 28 | Time: 15
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 53 | Dist: 400 | Speed: 28 | Time: 15
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 195 | Dist: 710 | Speed: 24 | Time: 30
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 196 | Dist: 710 | Speed: 24 | Time: 30
-[2025-12-06 20:39:18] [status] [SYSTEM] Tempo massimo per arrivare sulla scena dell'emergenza IncendioBoschivo calcolato: 30
-[2025-12-06 20:39:18] [emergency_types] [SYSTEM] Ricerca del tipo di emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [emergency_types] [SYSTEM] Tipo di emergenza trovato: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Preparazione del record per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [emergency_types] [SYSTEM] Ricerca del tipo di emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [emergency_types] [SYSTEM] Tipo di emergenza trovato: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Record per l'emergenza IncendioBoschivo preparato correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Allocazione della memoria necessaria per il nuovo elemento riuscita
-[2025-12-06 20:39:18] [status] [SYSTEM] Elemento inserito correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Nuova emergenza inserita nella waiting queue, notifica i worker thread
-[2025-12-06 20:39:18] [mq_consumer] [SYSTEM] Messaggio ricevuto: IncendioBoschivo 100 100 1765049958
-[2025-12-06 20:39:18] [mq_consumer] [SYSTEM] Analisi del messaggio: IncendioBoschivo 100 100 1765049958
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un'emergenza dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Emergenza rimossa correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Emergenza da risolvere con la priorità più alta trovata: IncendioBoschivo, priorità 1.00
-[2025-12-06 20:39:18] [status] [SYSTEM] Tentativo di allocazione soccorritori per emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 216
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 217
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 218
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 219
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 220
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 221
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: ProtezioneCivile 54
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: ProtezioneCivile 55
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: ProtezioneCivile 56
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: ProtezioneCivile 57
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [mq_consumer] [SYSTEM] Messaggio valido: IncendioBoschivo 100 100 1765049958
-[2025-12-06 20:39:18] [mq_consumer] [SYSTEM] Richiesta di emergenza creata: IncendioBoschivo 100 100 1765049958
-[2025-12-06 20:39:18] [mq_consumer] [SYSTEM] Richiesta di emergenza analizzata: IncendioBoschivo 100 100 1765049958
-[2025-12-06 20:39:18] [status] [SYSTEM] Assegnazione di una nuova richiesta di emergenza
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: SoccorsoAlpino 197
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: SoccorsoAlpino 198
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Allocazione soccorritori per emergenza IncendioBoschivo riuscita
-[2025-12-06 20:39:18] [status] [SYSTEM] Inizio della gestione dell'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Allocazione della memoria necessaria per il nuovo elemento riuscita
-[2025-12-06 20:39:18] [status] [SYSTEM] Elemento inserito correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Gestione dell'emergenza IncendioBoschivo iniziata correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Calcolo del tempo massimo per arrivare sulla scena dell'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 216 | Dist: 90 | Speed: 35 | Time: 3
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 217 | Dist: 90 | Speed: 35 | Time: 3
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 218 | Dist: 90 | Speed: 35 | Time: 3
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 219 | Dist: 90 | Speed: 35 | Time: 3
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 220 | Dist: 90 | Speed: 35 | Time: 3
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 221 | Dist: 90 | Speed: 35 | Time: 3
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 54 | Dist: 400 | Speed: 28 | Time: 15
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 55 | Dist: 400 | Speed: 28 | Time: 15
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 56 | Dist: 400 | Speed: 28 | Time: 15
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 57 | Dist: 400 | Speed: 28 | Time: 15
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 197 | Dist: 710 | Speed: 24 | Time: 30
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 198 | Dist: 710 | Speed: 24 | Time: 30
-[2025-12-06 20:39:18] [status] [SYSTEM] Tempo massimo per arrivare sulla scena dell'emergenza IncendioBoschivo calcolato: 30
-[2025-12-06 20:39:18] [emergency_types] [SYSTEM] Ricerca del tipo di emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [emergency_types] [SYSTEM] Tipo di emergenza trovato: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Preparazione del record per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [emergency_types] [SYSTEM] Ricerca del tipo di emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [emergency_types] [SYSTEM] Tipo di emergenza trovato: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Record per l'emergenza IncendioBoschivo preparato correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Allocazione della memoria necessaria per il nuovo elemento riuscita
-[2025-12-06 20:39:18] [status] [SYSTEM] Elemento inserito correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Nuova emergenza inserita nella waiting queue, notifica i worker thread
-[2025-12-06 20:39:18] [mq_consumer] [SYSTEM] Messaggio ricevuto: IncendioBoschivo 100 100 1765049958
-[2025-12-06 20:39:18] [mq_consumer] [SYSTEM] Analisi del messaggio: IncendioBoschivo 100 100 1765049958
-[2025-12-06 20:39:18] [mq_consumer] [SYSTEM] Messaggio valido: IncendioBoschivo 100 100 1765049958
-[2025-12-06 20:39:18] [mq_consumer] [SYSTEM] Richiesta di emergenza creata: IncendioBoschivo 100 100 1765049958
-[2025-12-06 20:39:18] [mq_consumer] [SYSTEM] Richiesta di emergenza analizzata: IncendioBoschivo 100 100 1765049958
-[2025-12-06 20:39:18] [status] [SYSTEM] Assegnazione di una nuova richiesta di emergenza
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un'emergenza dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Emergenza rimossa correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Emergenza da risolvere con la priorità più alta trovata: IncendioBoschivo, priorità 1.00
-[2025-12-06 20:39:18] [status] [SYSTEM] Tentativo di allocazione soccorritori per emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 222
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 223
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 4
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 5
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 6
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 7
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: ProtezioneCivile 58
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: ProtezioneCivile 59
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: ProtezioneCivile 60
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: ProtezioneCivile 61
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: SoccorsoAlpino 199
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: SoccorsoAlpino 200
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Allocazione soccorritori per emergenza IncendioBoschivo riuscita
-[2025-12-06 20:39:18] [status] [SYSTEM] Inizio della gestione dell'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Allocazione della memoria necessaria per il nuovo elemento riuscita
-[2025-12-06 20:39:18] [status] [SYSTEM] Elemento inserito correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Gestione dell'emergenza IncendioBoschivo iniziata correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Calcolo del tempo massimo per arrivare sulla scena dell'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 222 | Dist: 90 | Speed: 35 | Time: 3
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 223 | Dist: 90 | Speed: 35 | Time: 3
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 4 | Dist: 100 | Speed: 32 | Time: 4
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 5 | Dist: 100 | Speed: 32 | Time: 4
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 6 | Dist: 100 | Speed: 32 | Time: 4
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 7 | Dist: 100 | Speed: 32 | Time: 4
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 58 | Dist: 400 | Speed: 28 | Time: 15
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 59 | Dist: 400 | Speed: 28 | Time: 15
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 60 | Dist: 400 | Speed: 28 | Time: 15
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 61 | Dist: 400 | Speed: 28 | Time: 15
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 199 | Dist: 710 | Speed: 24 | Time: 30
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 200 | Dist: 710 | Speed: 24 | Time: 30
-[2025-12-06 20:39:18] [status] [SYSTEM] Tempo massimo per arrivare sulla scena dell'emergenza IncendioBoschivo calcolato: 30
-[2025-12-06 20:39:18] [emergency_types] [SYSTEM] Ricerca del tipo di emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [emergency_types] [SYSTEM] Tipo di emergenza trovato: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Preparazione del record per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [emergency_types] [SYSTEM] Ricerca del tipo di emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [emergency_types] [SYSTEM] Tipo di emergenza trovato: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Record per l'emergenza IncendioBoschivo preparato correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Allocazione della memoria necessaria per il nuovo elemento riuscita
-[2025-12-06 20:39:18] [status] [SYSTEM] Elemento inserito correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Nuova emergenza inserita nella waiting queue, notifica i worker thread
-[2025-12-06 20:39:18] [mq_consumer] [SYSTEM] Messaggio ricevuto: IncendioBoschivo 100 100 1765049958
-[2025-12-06 20:39:18] [mq_consumer] [SYSTEM] Analisi del messaggio: IncendioBoschivo 100 100 1765049958
-[2025-12-06 20:39:18] [mq_consumer] [SYSTEM] Messaggio valido: IncendioBoschivo 100 100 1765049958
-[2025-12-06 20:39:18] [mq_consumer] [SYSTEM] Richiesta di emergenza creata: IncendioBoschivo 100 100 1765049958
-[2025-12-06 20:39:18] [mq_consumer] [SYSTEM] Richiesta di emergenza analizzata: IncendioBoschivo 100 100 1765049958
-[2025-12-06 20:39:18] [status] [SYSTEM] Assegnazione di una nuova richiesta di emergenza
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un'emergenza dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Emergenza rimossa correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Emergenza da risolvere con la priorità più alta trovata: IncendioBoschivo, priorità 1.00
-[2025-12-06 20:39:18] [status] [SYSTEM] Tentativo di allocazione soccorritori per emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 8
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 9
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 10
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 11
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 12
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 13
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: ProtezioneCivile 62
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: ProtezioneCivile 63
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: ProtezioneCivile 64
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: ProtezioneCivile 154
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: SoccorsoAlpino 201
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: SoccorsoAlpino 202
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Allocazione soccorritori per emergenza IncendioBoschivo riuscita
-[2025-12-06 20:39:18] [status] [SYSTEM] Inizio della gestione dell'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Allocazione della memoria necessaria per il nuovo elemento riuscita
-[2025-12-06 20:39:18] [status] [SYSTEM] Elemento inserito correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Gestione dell'emergenza IncendioBoschivo iniziata correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Calcolo del tempo massimo per arrivare sulla scena dell'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 8 | Dist: 100 | Speed: 32 | Time: 4
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 9 | Dist: 100 | Speed: 32 | Time: 4
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 10 | Dist: 100 | Speed: 32 | Time: 4
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 11 | Dist: 100 | Speed: 32 | Time: 4
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 12 | Dist: 100 | Speed: 32 | Time: 4
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 13 | Dist: 100 | Speed: 32 | Time: 4
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 62 | Dist: 400 | Speed: 28 | Time: 15
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 63 | Dist: 400 | Speed: 28 | Time: 15
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 64 | Dist: 400 | Speed: 28 | Time: 15
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 154 | Dist: 400 | Speed: 26 | Time: 16
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 201 | Dist: 710 | Speed: 24 | Time: 30
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 202 | Dist: 710 | Speed: 24 | Time: 30
-[2025-12-06 20:39:18] [status] [SYSTEM] Tempo massimo per arrivare sulla scena dell'emergenza IncendioBoschivo calcolato: 30
-[2025-12-06 20:39:18] [emergency_types] [SYSTEM] Ricerca del tipo di emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [emergency_types] [SYSTEM] Tipo di emergenza trovato: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Preparazione del record per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [emergency_types] [SYSTEM] Ricerca del tipo di emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [emergency_types] [SYSTEM] Tipo di emergenza trovato: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Record per l'emergenza IncendioBoschivo preparato correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Allocazione della memoria necessaria per il nuovo elemento riuscita
-[2025-12-06 20:39:18] [status] [SYSTEM] Elemento inserito correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Nuova emergenza inserita nella waiting queue, notifica i worker thread
-[2025-12-06 20:39:18] [mq_consumer] [SYSTEM] Messaggio ricevuto: IncendioBoschivo 100 100 1765049958
-[2025-12-06 20:39:18] [mq_consumer] [SYSTEM] Analisi del messaggio: IncendioBoschivo 100 100 1765049958
-[2025-12-06 20:39:18] [mq_consumer] [SYSTEM] Messaggio valido: IncendioBoschivo 100 100 1765049958
-[2025-12-06 20:39:18] [mq_consumer] [SYSTEM] Richiesta di emergenza creata: IncendioBoschivo 100 100 1765049958
-[2025-12-06 20:39:18] [mq_consumer] [SYSTEM] Richiesta di emergenza analizzata: IncendioBoschivo 100 100 1765049958
-[2025-12-06 20:39:18] [status] [SYSTEM] Assegnazione di una nuova richiesta di emergenza
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un'emergenza dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Emergenza rimossa correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Emergenza da risolvere con la priorità più alta trovata: IncendioBoschivo, priorità 1.00
-[2025-12-06 20:39:18] [status] [SYSTEM] Tentativo di allocazione soccorritori per emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 14
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 15
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 16
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 109
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 110
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 111
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: ProtezioneCivile 155
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: ProtezioneCivile 156
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: ProtezioneCivile 157
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: ProtezioneCivile 158
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: SoccorsoAlpino 203
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Miglior soccorritore IDLE trovato: SoccorsoAlpino 204
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Allocazione soccorritori per emergenza IncendioBoschivo riuscita
-[2025-12-06 20:39:18] [status] [SYSTEM] Inizio della gestione dell'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Allocazione della memoria necessaria per il nuovo elemento riuscita
-[2025-12-06 20:39:18] [status] [SYSTEM] Elemento inserito correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Gestione dell'emergenza IncendioBoschivo iniziata correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Calcolo del tempo massimo per arrivare sulla scena dell'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 14 | Dist: 100 | Speed: 32 | Time: 4
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 15 | Dist: 100 | Speed: 32 | Time: 4
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 16 | Dist: 100 | Speed: 32 | Time: 4
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 109 | Dist: 120 | Speed: 30 | Time: 4
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 110 | Dist: 120 | Speed: 30 | Time: 4
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 111 | Dist: 120 | Speed: 30 | Time: 4
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 155 | Dist: 400 | Speed: 26 | Time: 16
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 156 | Dist: 400 | Speed: 26 | Time: 16
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 157 | Dist: 400 | Speed: 26 | Time: 16
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 158 | Dist: 400 | Speed: 26 | Time: 16
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 203 | Dist: 710 | Speed: 24 | Time: 30
-[2025-12-06 20:39:18] [debug] [SYSTEM] Rescuer: 204 | Dist: 710 | Speed: 24 | Time: 30
-[2025-12-06 20:39:18] [status] [SYSTEM] Tempo massimo per arrivare sulla scena dell'emergenza IncendioBoschivo calcolato: 30
-[2025-12-06 20:39:18] [emergency_types] [SYSTEM] Ricerca del tipo di emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [emergency_types] [SYSTEM] Tipo di emergenza trovato: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Preparazione del record per l'emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [emergency_types] [SYSTEM] Ricerca del tipo di emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [emergency_types] [SYSTEM] Tipo di emergenza trovato: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Record per l'emergenza IncendioBoschivo preparato correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Allocazione della memoria necessaria per il nuovo elemento riuscita
-[2025-12-06 20:39:18] [status] [SYSTEM] Elemento inserito correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Nuova emergenza inserita nella waiting queue, notifica i worker thread
-[2025-12-06 20:39:18] [status] [SYSTEM] Rimozione di un'emergenza dalla coda 
-[2025-12-06 20:39:18] [status] [SYSTEM] Emergenza rimossa correttamente
-[2025-12-06 20:39:18] [status] [SYSTEM] Emergenza da risolvere con la priorità più alta trovata: IncendioBoschivo, priorità 1.00
-[2025-12-06 20:39:18] [status] [SYSTEM] Tentativo di allocazione soccorritori per emergenza: IncendioBoschivo
-[2025-12-06 20:39:18] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'Evacuazione'
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Polizia' per emergenza 'Evacuazione'
+[2025-12-06 20:50:40] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'Evacuazione'
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Polizia
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Polizia
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Polizia
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Polizia
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Polizia
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Polizia
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Polizia
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Polizia
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: NBCR
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: NBCR
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Polizia
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Polizia
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: TecniciElettrici
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: TecniciElettrici
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: NBCR
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: NBCR
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: SoccorsoAlpino
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: SoccorsoAlpino
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: SoccorsoAlpino
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: SoccorsoAlpino
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Polizia
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Polizia
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
+[2025-12-06 20:50:40] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
+[2025-12-06 20:50:40] [status] [SYSTEM] Inizializzazione dello stato
+[2025-12-06 20:50:40] [status] [SYSTEM] Inizializzazione dell'array dei soccorritori disponibili
+[2025-12-06 20:50:40] [status] [SYSTEM] Array dei soccorritori disponibili inizializzato con successo
+[2025-12-06 20:50:40] [mq_consumer] [SYSTEM] Inizializzazione della message queue
+[2025-12-06 20:50:40] [mq_consumer] [SYSTEM] Inizializzazione della struttura mq_consumer
+[2025-12-06 20:50:40] [mq_consumer] [SYSTEM] Struttura mq_consumer inizializzata. Nome coda: /emergenze676878
+[2025-12-06 20:50:40] [mq_consumer] [SYSTEM] Message queue inizializzata correttamente
+[2025-12-06 20:51:06] [mq_consumer] [SYSTEM] Numero di worker threads (0) inferiore al massimo (16), creazione di nuovi thread
+[2025-12-06 20:51:06] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 1
+[2025-12-06 20:51:06] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 2
+[2025-12-06 20:51:06] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 3
+[2025-12-06 20:51:06] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 4
+[2025-12-06 20:51:06] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 5
+[2025-12-06 20:51:06] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 6
+[2025-12-06 20:51:06] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 7
+[2025-12-06 20:51:06] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 8
+[2025-12-06 20:51:06] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 9
+[2025-12-06 20:51:06] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 10
+[2025-12-06 20:51:06] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 11
+[2025-12-06 20:51:06] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 12
+[2025-12-06 20:51:06] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 13
+[2025-12-06 20:51:06] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 14
+[2025-12-06 20:51:06] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 15
+[2025-12-06 20:51:06] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 16
+[2025-12-06 20:51:06] [mq_consumer] [SYSTEM] Messaggio ricevuto: Incendio 120 210 1765050664
+[2025-12-06 20:51:06] [mq_consumer] [SYSTEM] Analisi del messaggio: Incendio 120 210 1765050664
+[2025-12-06 20:51:06] [mq_consumer] [SYSTEM] Messaggio valido: Incendio 120 210 1765050664
+[2025-12-06 20:51:06] [mq_consumer] [SYSTEM] Richiesta di emergenza creata: Incendio 120 210 1765050664
+[2025-12-06 20:51:06] [mq_consumer] [SYSTEM] Richiesta di emergenza analizzata: Incendio 120 210 1765050664
+[2025-12-06 20:51:06] [status] [SYSTEM] Assegnazione di una nuova richiesta di emergenza
+[2025-12-06 20:51:06] [emergency_types] [SYSTEM] Ricerca del tipo di emergenza: Incendio
+[2025-12-06 20:51:06] [emergency_types] [SYSTEM] Tipo di emergenza trovato: Incendio
+[2025-12-06 20:51:06] [status] [SYSTEM] Preparazione del record per l'emergenza: Incendio
+[2025-12-06 20:51:06] [emergency_types] [SYSTEM] Ricerca del tipo di emergenza: Incendio
+[2025-12-06 20:51:06] [emergency_types] [SYSTEM] Tipo di emergenza trovato: Incendio
+[2025-12-06 20:51:06] [status] [SYSTEM] Record per l'emergenza Incendio preparato correttamente
+[2025-12-06 20:51:06] [status] [SYSTEM] Allocazione della memoria necessaria per il nuovo elemento riuscita
+[2025-12-06 20:51:06] [status] [SYSTEM] Elemento inserito correttamente
+[2025-12-06 20:51:06] [status] [SYSTEM] Nuova emergenza inserita nella waiting queue, notifica i worker thread
+[2025-12-06 20:51:06] [status] [SYSTEM] Rimozione di un'emergenza dalla coda 
+[2025-12-06 20:51:06] [status] [SYSTEM] Emergenza rimossa correttamente
+[2025-12-06 20:51:06] [status] [SYSTEM] Emergenza da risolvere con la priorità più alta trovata: Incendio, priorità 2.00
+[2025-12-06 20:51:06] [status] [SYSTEM] Tentativo di allocazione soccorritori per emergenza: Incendio
+[2025-12-06 20:51:06] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Incendio
+[2025-12-06 20:51:06] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 1
+[2025-12-06 20:51:06] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:06] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:06] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Incendio
+[2025-12-06 20:51:06] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 2
+[2025-12-06 20:51:06] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:06] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:06] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Incendio
+[2025-12-06 20:51:06] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 3
+[2025-12-06 20:51:06] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:06] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:06] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Incendio
+[2025-12-06 20:51:06] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Ambulanza 17
+[2025-12-06 20:51:06] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:06] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:06] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Incendio
+[2025-12-06 20:51:06] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Ambulanza 18
+[2025-12-06 20:51:06] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:06] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:06] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Incendio
+[2025-12-06 20:51:06] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Polizia 34
+[2025-12-06 20:51:06] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:06] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:06] [status] [SYSTEM] Allocazione soccorritori per emergenza Incendio riuscita
+[2025-12-06 20:51:06] [status] [SYSTEM] Inizio della gestione dell'emergenza: Incendio
+[2025-12-06 20:51:06] [status] [SYSTEM] Allocazione della memoria necessaria per il nuovo elemento riuscita
+[2025-12-06 20:51:06] [status] [SYSTEM] Elemento inserito correttamente
+[2025-12-06 20:51:06] [status] [SYSTEM] Gestione dell'emergenza Incendio iniziata correttamente
+[2025-12-06 20:51:06] [status] [SYSTEM] Calcolo del tempo massimo per arrivare sulla scena dell'emergenza: Incendio
+[2025-12-06 20:51:06] [debug] [SYSTEM] Rescuer: 1 | Dist: 30 | Speed: 32 | Time: 1
+[2025-12-06 20:51:06] [debug] [SYSTEM] Rescuer: 2 | Dist: 30 | Speed: 32 | Time: 1
+[2025-12-06 20:51:06] [debug] [SYSTEM] Rescuer: 3 | Dist: 30 | Speed: 32 | Time: 1
+[2025-12-06 20:51:06] [debug] [SYSTEM] Rescuer: 17 | Dist: 70 | Speed: 48 | Time: 2
+[2025-12-06 20:51:06] [debug] [SYSTEM] Rescuer: 18 | Dist: 70 | Speed: 48 | Time: 2
+[2025-12-06 20:51:06] [debug] [SYSTEM] Rescuer: 34 | Dist: 10 | Speed: 44 | Time: 1
+[2025-12-06 20:51:06] [status] [SYSTEM] Tempo massimo per arrivare sulla scena dell'emergenza Incendio calcolato: 2
+[2025-12-06 20:51:08] [status] [SYSTEM] Tutti i soccorritori sono arrivati sulla scena dell'emergenza: Incendio
+[2025-12-06 20:51:08] [status] [SYSTEM] Inizio della gestione dell'emergenza: Incendio
+[2025-12-06 20:51:08] [status] [SYSTEM] Gestione in corso dell'emergenza: Incendio, tempo rimanente: 20 secondi
+[2025-12-06 20:51:09] [status] [SYSTEM] Gestione in corso dell'emergenza: Incendio, tempo rimanente: 19 secondi
+[2025-12-06 20:51:10] [status] [SYSTEM] Gestione in corso dell'emergenza: Incendio, tempo rimanente: 18 secondi
+[2025-12-06 20:51:11] [status] [SYSTEM] Gestione in corso dell'emergenza: Incendio, tempo rimanente: 17 secondi
+[2025-12-06 20:51:12] [status] [SYSTEM] Gestione in corso dell'emergenza: Incendio, tempo rimanente: 16 secondi
+[2025-12-06 20:51:13] [status] [SYSTEM] Gestione in corso dell'emergenza: Incendio, tempo rimanente: 15 secondi
+[2025-12-06 20:51:14] [status] [SYSTEM] Gestione in corso dell'emergenza: Incendio, tempo rimanente: 14 secondi
+[2025-12-06 20:51:15] [status] [SYSTEM] Gestione in corso dell'emergenza: Incendio, tempo rimanente: 13 secondi
+[2025-12-06 20:51:16] [status] [SYSTEM] Gestione in corso dell'emergenza: Incendio, tempo rimanente: 12 secondi
+[2025-12-06 20:51:17] [status] [SYSTEM] Gestione in corso dell'emergenza: Incendio, tempo rimanente: 11 secondi
+[2025-12-06 20:51:18] [status] [SYSTEM] Gestione in corso dell'emergenza: Incendio, tempo rimanente: 10 secondi
+[2025-12-06 20:51:19] [status] [SYSTEM] Gestione in corso dell'emergenza: Incendio, tempo rimanente: 9 secondi
+[2025-12-06 20:51:20] [status] [SYSTEM] Gestione in corso dell'emergenza: Incendio, tempo rimanente: 8 secondi
+[2025-12-06 20:51:21] [status] [SYSTEM] Gestione in corso dell'emergenza: Incendio, tempo rimanente: 7 secondi
+[2025-12-06 20:51:22] [status] [SYSTEM] Gestione in corso dell'emergenza: Incendio, tempo rimanente: 6 secondi
+[2025-12-06 20:51:23] [status] [SYSTEM] Gestione in corso dell'emergenza: Incendio, tempo rimanente: 5 secondi
+[2025-12-06 20:51:24] [status] [SYSTEM] Gestione in corso dell'emergenza: Incendio, tempo rimanente: 4 secondi
+[2025-12-06 20:51:25] [status] [SYSTEM] Gestione in corso dell'emergenza: Incendio, tempo rimanente: 3 secondi
+[2025-12-06 20:51:26] [status] [SYSTEM] Gestione in corso dell'emergenza: Incendio, tempo rimanente: 2 secondi
+[2025-12-06 20:51:27] [status] [SYSTEM] Gestione in corso dell'emergenza: Incendio, tempo rimanente: 1 secondi
+[2025-12-06 20:51:28] [status] [SYSTEM] Emergenza risolta: Incendio
+[2025-12-06 20:51:28] [debug] [SYSTEM] Soccorritore 1 rilasciato e ora IDLE
+[2025-12-06 20:51:28] [debug] [SYSTEM] Soccorritore 2 rilasciato e ora IDLE
+[2025-12-06 20:51:28] [debug] [SYSTEM] Soccorritore 3 rilasciato e ora IDLE
+[2025-12-06 20:51:28] [debug] [SYSTEM] Soccorritore 17 rilasciato e ora IDLE
+[2025-12-06 20:51:28] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:28] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:28] [debug] [SYSTEM] Soccorritore 18 rilasciato e ora IDLE
+[2025-12-06 20:51:28] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:28] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:28] [debug] [SYSTEM] Soccorritore 34 rilasciato e ora IDLE
+[2025-12-06 20:51:28] [status] [SYSTEM] Rimozione di un'emergenza dalla coda 
+[2025-12-06 20:51:28] [status] [SYSTEM] Emergenza rimossa correttamente
+[2025-12-06 20:51:28] [status] [SYSTEM] Pulizia della struttura di emergenza per l'emergenza di tipo Incendio
+[2025-12-06 20:51:28] [status] [SYSTEM] Struttura pulita con successo
+[2025-12-06 20:51:38] [mq_consumer] [SYSTEM] Numero di worker threads (15) inferiore al massimo (16), creazione di nuovi thread
+[2025-12-06 20:51:38] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 16
+[2025-12-06 20:51:38] [mq_consumer] [SYSTEM] Messaggio ricevuto: IncendioBoschivo 100 100 1765050698
+[2025-12-06 20:51:38] [mq_consumer] [SYSTEM] Analisi del messaggio: IncendioBoschivo 100 100 1765050698
+[2025-12-06 20:51:38] [mq_consumer] [SYSTEM] Messaggio valido: IncendioBoschivo 100 100 1765050698
+[2025-12-06 20:51:38] [mq_consumer] [SYSTEM] Richiesta di emergenza creata: IncendioBoschivo 100 100 1765050698
+[2025-12-06 20:51:38] [mq_consumer] [SYSTEM] Richiesta di emergenza analizzata: IncendioBoschivo 100 100 1765050698
+[2025-12-06 20:51:38] [status] [SYSTEM] Assegnazione di una nuova richiesta di emergenza
+[2025-12-06 20:51:38] [emergency_types] [SYSTEM] Ricerca del tipo di emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [emergency_types] [SYSTEM] Tipo di emergenza trovato: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Preparazione del record per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [emergency_types] [SYSTEM] Ricerca del tipo di emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [emergency_types] [SYSTEM] Tipo di emergenza trovato: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Record per l'emergenza IncendioBoschivo preparato correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Allocazione della memoria necessaria per il nuovo elemento riuscita
+[2025-12-06 20:51:38] [status] [SYSTEM] Elemento inserito correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Nuova emergenza inserita nella waiting queue, notifica i worker thread
+[2025-12-06 20:51:38] [mq_consumer] [SYSTEM] Messaggio ricevuto: IncendioBoschivo 100 100 1765050698
+[2025-12-06 20:51:38] [mq_consumer] [SYSTEM] Analisi del messaggio: IncendioBoschivo 100 100 1765050698
+[2025-12-06 20:51:38] [mq_consumer] [SYSTEM] Messaggio valido: IncendioBoschivo 100 100 1765050698
+[2025-12-06 20:51:38] [mq_consumer] [SYSTEM] Richiesta di emergenza creata: IncendioBoschivo 100 100 1765050698
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un'emergenza dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Emergenza rimossa correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Emergenza da risolvere con la priorità più alta trovata: IncendioBoschivo, priorità 1.00
+[2025-12-06 20:51:38] [status] [SYSTEM] Tentativo di allocazione soccorritori per emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [mq_consumer] [SYSTEM] Richiesta di emergenza analizzata: IncendioBoschivo 100 100 1765050698
+[2025-12-06 20:51:38] [status] [SYSTEM] Assegnazione di una nuova richiesta di emergenza
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 210
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 211
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 212
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 213
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 214
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 215
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: ProtezioneCivile 50
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: ProtezioneCivile 51
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: ProtezioneCivile 52
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: ProtezioneCivile 53
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: SoccorsoAlpino 195
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: SoccorsoAlpino 196
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Allocazione soccorritori per emergenza IncendioBoschivo riuscita
+[2025-12-06 20:51:38] [status] [SYSTEM] Inizio della gestione dell'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Allocazione della memoria necessaria per il nuovo elemento riuscita
+[2025-12-06 20:51:38] [status] [SYSTEM] Elemento inserito correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Gestione dell'emergenza IncendioBoschivo iniziata correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Calcolo del tempo massimo per arrivare sulla scena dell'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 210 | Dist: 90 | Speed: 35 | Time: 3
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 211 | Dist: 90 | Speed: 35 | Time: 3
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 212 | Dist: 90 | Speed: 35 | Time: 3
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 213 | Dist: 90 | Speed: 35 | Time: 3
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 214 | Dist: 90 | Speed: 35 | Time: 3
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 215 | Dist: 90 | Speed: 35 | Time: 3
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 50 | Dist: 400 | Speed: 28 | Time: 15
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 51 | Dist: 400 | Speed: 28 | Time: 15
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 52 | Dist: 400 | Speed: 28 | Time: 15
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 53 | Dist: 400 | Speed: 28 | Time: 15
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 195 | Dist: 710 | Speed: 24 | Time: 30
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 196 | Dist: 710 | Speed: 24 | Time: 30
+[2025-12-06 20:51:38] [status] [SYSTEM] Tempo massimo per arrivare sulla scena dell'emergenza IncendioBoschivo calcolato: 30
+[2025-12-06 20:51:38] [emergency_types] [SYSTEM] Ricerca del tipo di emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [emergency_types] [SYSTEM] Tipo di emergenza trovato: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Preparazione del record per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [emergency_types] [SYSTEM] Ricerca del tipo di emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [emergency_types] [SYSTEM] Tipo di emergenza trovato: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Record per l'emergenza IncendioBoschivo preparato correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Allocazione della memoria necessaria per il nuovo elemento riuscita
+[2025-12-06 20:51:38] [status] [SYSTEM] Elemento inserito correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Nuova emergenza inserita nella waiting queue, notifica i worker thread
+[2025-12-06 20:51:38] [mq_consumer] [SYSTEM] Messaggio ricevuto: IncendioBoschivo 100 100 1765050698
+[2025-12-06 20:51:38] [mq_consumer] [SYSTEM] Analisi del messaggio: IncendioBoschivo 100 100 1765050698
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un'emergenza dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Emergenza rimossa correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Emergenza da risolvere con la priorità più alta trovata: IncendioBoschivo, priorità 1.00
+[2025-12-06 20:51:38] [status] [SYSTEM] Tentativo di allocazione soccorritori per emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [mq_consumer] [SYSTEM] Messaggio valido: IncendioBoschivo 100 100 1765050698
+[2025-12-06 20:51:38] [mq_consumer] [SYSTEM] Richiesta di emergenza creata: IncendioBoschivo 100 100 1765050698
+[2025-12-06 20:51:38] [mq_consumer] [SYSTEM] Richiesta di emergenza analizzata: IncendioBoschivo 100 100 1765050698
+[2025-12-06 20:51:38] [status] [SYSTEM] Assegnazione di una nuova richiesta di emergenza
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 216
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 217
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 218
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 219
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 220
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 221
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: ProtezioneCivile 54
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: ProtezioneCivile 55
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: ProtezioneCivile 56
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: ProtezioneCivile 57
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: SoccorsoAlpino 197
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: SoccorsoAlpino 198
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Allocazione soccorritori per emergenza IncendioBoschivo riuscita
+[2025-12-06 20:51:38] [status] [SYSTEM] Inizio della gestione dell'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Allocazione della memoria necessaria per il nuovo elemento riuscita
+[2025-12-06 20:51:38] [status] [SYSTEM] Elemento inserito correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Gestione dell'emergenza IncendioBoschivo iniziata correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Calcolo del tempo massimo per arrivare sulla scena dell'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 216 | Dist: 90 | Speed: 35 | Time: 3
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 217 | Dist: 90 | Speed: 35 | Time: 3
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 218 | Dist: 90 | Speed: 35 | Time: 3
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 219 | Dist: 90 | Speed: 35 | Time: 3
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 220 | Dist: 90 | Speed: 35 | Time: 3
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 221 | Dist: 90 | Speed: 35 | Time: 3
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 54 | Dist: 400 | Speed: 28 | Time: 15
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 55 | Dist: 400 | Speed: 28 | Time: 15
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 56 | Dist: 400 | Speed: 28 | Time: 15
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 57 | Dist: 400 | Speed: 28 | Time: 15
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 197 | Dist: 710 | Speed: 24 | Time: 30
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 198 | Dist: 710 | Speed: 24 | Time: 30
+[2025-12-06 20:51:38] [status] [SYSTEM] Tempo massimo per arrivare sulla scena dell'emergenza IncendioBoschivo calcolato: 30
+[2025-12-06 20:51:38] [emergency_types] [SYSTEM] Ricerca del tipo di emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [emergency_types] [SYSTEM] Tipo di emergenza trovato: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Preparazione del record per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [emergency_types] [SYSTEM] Ricerca del tipo di emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [emergency_types] [SYSTEM] Tipo di emergenza trovato: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Record per l'emergenza IncendioBoschivo preparato correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Allocazione della memoria necessaria per il nuovo elemento riuscita
+[2025-12-06 20:51:38] [status] [SYSTEM] Elemento inserito correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Nuova emergenza inserita nella waiting queue, notifica i worker thread
+[2025-12-06 20:51:38] [mq_consumer] [SYSTEM] Messaggio ricevuto: IncendioBoschivo 100 100 1765050698
+[2025-12-06 20:51:38] [mq_consumer] [SYSTEM] Analisi del messaggio: IncendioBoschivo 100 100 1765050698
+[2025-12-06 20:51:38] [mq_consumer] [SYSTEM] Messaggio valido: IncendioBoschivo 100 100 1765050698
+[2025-12-06 20:51:38] [mq_consumer] [SYSTEM] Richiesta di emergenza creata: IncendioBoschivo 100 100 1765050698
+[2025-12-06 20:51:38] [mq_consumer] [SYSTEM] Richiesta di emergenza analizzata: IncendioBoschivo 100 100 1765050698
+[2025-12-06 20:51:38] [status] [SYSTEM] Assegnazione di una nuova richiesta di emergenza
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un'emergenza dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Emergenza rimossa correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Emergenza da risolvere con la priorità più alta trovata: IncendioBoschivo, priorità 1.00
+[2025-12-06 20:51:38] [status] [SYSTEM] Tentativo di allocazione soccorritori per emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 222
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 223
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 4
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 5
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 6
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 7
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: ProtezioneCivile 58
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: ProtezioneCivile 59
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: ProtezioneCivile 60
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: ProtezioneCivile 61
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: SoccorsoAlpino 199
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: SoccorsoAlpino 200
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Allocazione soccorritori per emergenza IncendioBoschivo riuscita
+[2025-12-06 20:51:38] [status] [SYSTEM] Inizio della gestione dell'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Allocazione della memoria necessaria per il nuovo elemento riuscita
+[2025-12-06 20:51:38] [status] [SYSTEM] Elemento inserito correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Gestione dell'emergenza IncendioBoschivo iniziata correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Calcolo del tempo massimo per arrivare sulla scena dell'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 222 | Dist: 90 | Speed: 35 | Time: 3
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 223 | Dist: 90 | Speed: 35 | Time: 3
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 4 | Dist: 100 | Speed: 32 | Time: 4
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 5 | Dist: 100 | Speed: 32 | Time: 4
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 6 | Dist: 100 | Speed: 32 | Time: 4
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 7 | Dist: 100 | Speed: 32 | Time: 4
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 58 | Dist: 400 | Speed: 28 | Time: 15
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 59 | Dist: 400 | Speed: 28 | Time: 15
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 60 | Dist: 400 | Speed: 28 | Time: 15
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 61 | Dist: 400 | Speed: 28 | Time: 15
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 199 | Dist: 710 | Speed: 24 | Time: 30
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 200 | Dist: 710 | Speed: 24 | Time: 30
+[2025-12-06 20:51:38] [status] [SYSTEM] Tempo massimo per arrivare sulla scena dell'emergenza IncendioBoschivo calcolato: 30
+[2025-12-06 20:51:38] [emergency_types] [SYSTEM] Ricerca del tipo di emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [emergency_types] [SYSTEM] Tipo di emergenza trovato: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Preparazione del record per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [emergency_types] [SYSTEM] Ricerca del tipo di emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [emergency_types] [SYSTEM] Tipo di emergenza trovato: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Record per l'emergenza IncendioBoschivo preparato correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Allocazione della memoria necessaria per il nuovo elemento riuscita
+[2025-12-06 20:51:38] [status] [SYSTEM] Elemento inserito correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Nuova emergenza inserita nella waiting queue, notifica i worker thread
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un'emergenza dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Emergenza rimossa correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Emergenza da risolvere con la priorità più alta trovata: IncendioBoschivo, priorità 1.00
+[2025-12-06 20:51:38] [status] [SYSTEM] Tentativo di allocazione soccorritori per emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 8
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 9
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 10
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 11
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 12
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 13
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: ProtezioneCivile 62
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: ProtezioneCivile 63
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: ProtezioneCivile 64
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: ProtezioneCivile 154
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: SoccorsoAlpino 201
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: SoccorsoAlpino 202
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Allocazione soccorritori per emergenza IncendioBoschivo riuscita
+[2025-12-06 20:51:38] [status] [SYSTEM] Inizio della gestione dell'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Allocazione della memoria necessaria per il nuovo elemento riuscita
+[2025-12-06 20:51:38] [status] [SYSTEM] Elemento inserito correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Gestione dell'emergenza IncendioBoschivo iniziata correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Calcolo del tempo massimo per arrivare sulla scena dell'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 8 | Dist: 100 | Speed: 32 | Time: 4
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 9 | Dist: 100 | Speed: 32 | Time: 4
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 10 | Dist: 100 | Speed: 32 | Time: 4
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 11 | Dist: 100 | Speed: 32 | Time: 4
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 12 | Dist: 100 | Speed: 32 | Time: 4
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 13 | Dist: 100 | Speed: 32 | Time: 4
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 62 | Dist: 400 | Speed: 28 | Time: 15
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 63 | Dist: 400 | Speed: 28 | Time: 15
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 64 | Dist: 400 | Speed: 28 | Time: 15
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 154 | Dist: 400 | Speed: 26 | Time: 16
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 201 | Dist: 710 | Speed: 24 | Time: 30
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 202 | Dist: 710 | Speed: 24 | Time: 30
+[2025-12-06 20:51:38] [status] [SYSTEM] Tempo massimo per arrivare sulla scena dell'emergenza IncendioBoschivo calcolato: 30
+[2025-12-06 20:51:38] [mq_consumer] [SYSTEM] Messaggio ricevuto: IncendioBoschivo 100 100 1765050698
+[2025-12-06 20:51:38] [mq_consumer] [SYSTEM] Analisi del messaggio: IncendioBoschivo 100 100 1765050698
+[2025-12-06 20:51:38] [mq_consumer] [SYSTEM] Messaggio valido: IncendioBoschivo 100 100 1765050698
+[2025-12-06 20:51:38] [mq_consumer] [SYSTEM] Richiesta di emergenza creata: IncendioBoschivo 100 100 1765050698
+[2025-12-06 20:51:38] [mq_consumer] [SYSTEM] Richiesta di emergenza analizzata: IncendioBoschivo 100 100 1765050698
+[2025-12-06 20:51:38] [status] [SYSTEM] Assegnazione di una nuova richiesta di emergenza
+[2025-12-06 20:51:38] [emergency_types] [SYSTEM] Ricerca del tipo di emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [emergency_types] [SYSTEM] Tipo di emergenza trovato: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Preparazione del record per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [emergency_types] [SYSTEM] Ricerca del tipo di emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [emergency_types] [SYSTEM] Tipo di emergenza trovato: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Record per l'emergenza IncendioBoschivo preparato correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Allocazione della memoria necessaria per il nuovo elemento riuscita
+[2025-12-06 20:51:38] [status] [SYSTEM] Elemento inserito correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Nuova emergenza inserita nella waiting queue, notifica i worker thread
+[2025-12-06 20:51:38] [mq_consumer] [SYSTEM] Messaggio ricevuto: IncendioBoschivo 100 100 1765050698
+[2025-12-06 20:51:38] [mq_consumer] [SYSTEM] Analisi del messaggio: IncendioBoschivo 100 100 1765050698
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un'emergenza dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Emergenza rimossa correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Emergenza da risolvere con la priorità più alta trovata: IncendioBoschivo, priorità 1.00
+[2025-12-06 20:51:38] [status] [SYSTEM] Tentativo di allocazione soccorritori per emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 14
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 15
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 16
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 109
+[2025-12-06 20:51:38] [mq_consumer] [SYSTEM] Messaggio valido: IncendioBoschivo 100 100 1765050698
+[2025-12-06 20:51:38] [mq_consumer] [SYSTEM] Richiesta di emergenza creata: IncendioBoschivo 100 100 1765050698
+[2025-12-06 20:51:38] [mq_consumer] [SYSTEM] Richiesta di emergenza analizzata: IncendioBoschivo 100 100 1765050698
+[2025-12-06 20:51:38] [status] [SYSTEM] Assegnazione di una nuova richiesta di emergenza
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 110
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 111
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: ProtezioneCivile 155
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: ProtezioneCivile 156
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: ProtezioneCivile 157
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: ProtezioneCivile 158
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: SoccorsoAlpino 203
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Miglior soccorritore IDLE trovato: SoccorsoAlpino 204
+[2025-12-06 20:51:38] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 20:51:38] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Allocazione soccorritori per emergenza IncendioBoschivo riuscita
+[2025-12-06 20:51:38] [status] [SYSTEM] Inizio della gestione dell'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [status] [SYSTEM] Allocazione della memoria necessaria per il nuovo elemento riuscita
+[2025-12-06 20:51:38] [status] [SYSTEM] Elemento inserito correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Gestione dell'emergenza IncendioBoschivo iniziata correttamente
+[2025-12-06 20:51:38] [status] [SYSTEM] Calcolo del tempo massimo per arrivare sulla scena dell'emergenza: IncendioBoschivo
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 14 | Dist: 100 | Speed: 32 | Time: 4
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 15 | Dist: 100 | Speed: 32 | Time: 4
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 16 | Dist: 100 | Speed: 32 | Time: 4
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 109 | Dist: 120 | Speed: 30 | Time: 4
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 110 | Dist: 120 | Speed: 30 | Time: 4
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 111 | Dist: 120 | Speed: 30 | Time: 4
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 155 | Dist: 400 | Speed: 26 | Time: 16
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 156 | Dist: 400 | Speed: 26 | Time: 16
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 157 | Dist: 400 | Speed: 26 | Time: 16
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 158 | Dist: 400 | Speed: 26 | Time: 16
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 203 | Dist: 710 | Speed: 24 | Time: 30
+[2025-12-06 20:51:38] [debug] [SYSTEM] Rescuer: 204 | Dist: 710 | Speed: 24 | Time: 30
+[2025-12-06 20:51:38] [status] [SYSTEM] Tempo massimo per arrivare sulla scena dell'emergenza IncendioBoschivo calcolato: 30
+[2025-12-06 20:51:39] [emergency_types] [SYSTEM] Ricerca del tipo di emergenza: IncendioBoschivo
+[2025-12-06 20:51:39] [emergency_types] [SYSTEM] Tipo di emergenza trovato: IncendioBoschivo
+[2025-12-06 20:51:39] [status] [SYSTEM] Preparazione del record per l'emergenza: IncendioBoschivo
+[2025-12-06 20:51:39] [emergency_types] [SYSTEM] Ricerca del tipo di emergenza: IncendioBoschivo
+[2025-12-06 20:51:39] [emergency_types] [SYSTEM] Tipo di emergenza trovato: IncendioBoschivo
+[2025-12-06 20:51:39] [status] [SYSTEM] Record per l'emergenza IncendioBoschivo preparato correttamente
+[2025-12-06 20:51:39] [status] [SYSTEM] Allocazione della memoria necessaria per il nuovo elemento riuscita
+[2025-12-06 20:51:39] [status] [SYSTEM] Elemento inserito correttamente
+[2025-12-06 20:51:39] [status] [SYSTEM] Nuova emergenza inserita nella waiting queue, notifica i worker thread
+[2025-12-06 20:51:39] [status] [SYSTEM] Rimozione di un'emergenza dalla coda 
+[2025-12-06 20:51:39] [status] [SYSTEM] Emergenza rimossa correttamente
+[2025-12-06 20:51:39] [status] [SYSTEM] Emergenza da risolvere con la priorità più alta trovata: IncendioBoschivo, priorità 1.00
+[2025-12-06 20:51:39] [status] [SYSTEM] Tentativo di allocazione soccorritori per emergenza: IncendioBoschivo
+[2025-12-06 20:51:39] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: IncendioBoschivo
