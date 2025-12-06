@@ -1003,7 +1003,7 @@ void* worker_thread(void* arg){
         LOG_SYSTEM("status", "Inizio della gestione dell'emergenza: %s", record->emergency.type.emergency_name);
         
         // Tutti i soccorritori sono arrivati sulla scena
-        while(record->time_remaining > 0 && !record->preempted && !state->shutdown_flag){
+        while(record->time_remaining > 0 && !record->preempted && !(*state->shutdown_flag)){
             pthread_mutex_unlock(&state->mutex);
             LOG_SYSTEM("status", "Gestione in corso dell'emergenza: %s, tempo rimanente: %u secondi", record->emergency.type.emergency_name, record->time_remaining);
             sleep(1); // Simula la gestione dell'emergenza
