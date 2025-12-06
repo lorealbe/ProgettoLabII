@@ -1,533 +1,248 @@
-[2025-12-06 18:15:01] [PARSE-ENV] [FILE_PARSING] Inizio parsing variabili d'ambiente da './Data/environment.conf'
-[2025-12-06 18:15:01] [PARSE-ENV] [FILE_PARSING] Aggiunta la 'queue' con nome 'emergenze676878' e dimensioni (600, 500)
-[2025-12-06 18:15:01] [PARSE-RESCUER-TYPES] [FILE_PARSING] Inizio parsing tipi di soccorritori da './Data/rescuers.conf'
-[2025-12-06 18:15:01] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Pompieri' con 16 gemelli da creare
-[2025-12-06 18:15:01] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Ambulanza' con 17 gemelli da creare
-[2025-12-06 18:15:01] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Polizia' con 16 gemelli da creare
-[2025-12-06 18:15:01] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'ProtezioneCivile' con 15 gemelli da creare
-[2025-12-06 18:15:01] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'NBCR' con 14 gemelli da creare
-[2025-12-06 18:15:01] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'TecniciElettrici' con 15 gemelli da creare
-[2025-12-06 18:15:01] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'SoccorsoAlpino' con 15 gemelli da creare
-[2025-12-06 18:15:01] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Pompieri' con 15 gemelli da creare
-[2025-12-06 18:15:01] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Ambulanza' con 15 gemelli da creare
-[2025-12-06 18:15:01] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Polizia' con 15 gemelli da creare
-[2025-12-06 18:15:01] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'ProtezioneCivile' con 14 gemelli da creare
-[2025-12-06 18:15:01] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'NBCR' con 13 gemelli da creare
-[2025-12-06 18:15:01] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'TecniciElettrici' con 14 gemelli da creare
-[2025-12-06 18:15:01] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'SoccorsoAlpino' con 15 gemelli da creare
-[2025-12-06 18:15:01] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Pompieri' con 14 gemelli da creare
-[2025-12-06 18:15:01] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Ambulanza' con 14 gemelli da creare
-[2025-12-06 18:15:01] [PARSE-RESCUER-TYPES] [FILE_PARSING] Allocazione memoria per 16 tipi di soccorritori e 237 gemelli digitali
-[2025-12-06 18:15:01] [PARSE-RESCUER-TYPES] [FILE_PARSING] Inizio popolamento array tipi di soccorritori e gemelli digitali da './Data/rescuers.conf'
-[2025-12-06 18:15:01] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Pompieri' con 16 gemelli
-[2025-12-06 18:15:01] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Ambulanza' con 17 gemelli
-[2025-12-06 18:15:01] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Polizia' con 16 gemelli
-[2025-12-06 18:15:01] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'ProtezioneCivile' con 15 gemelli
-[2025-12-06 18:15:01] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'NBCR' con 14 gemelli
-[2025-12-06 18:15:01] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'TecniciElettrici' con 15 gemelli
-[2025-12-06 18:15:01] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'SoccorsoAlpino' con 15 gemelli
-[2025-12-06 18:15:01] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Pompieri' con 15 gemelli
-[2025-12-06 18:15:01] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Ambulanza' con 15 gemelli
-[2025-12-06 18:15:01] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Polizia' con 15 gemelli
-[2025-12-06 18:15:01] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'ProtezioneCivile' con 14 gemelli
-[2025-12-06 18:15:01] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'NBCR' con 13 gemelli
-[2025-12-06 18:15:01] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'TecniciElettrici' con 14 gemelli
-[2025-12-06 18:15:01] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'SoccorsoAlpino' con 15 gemelli
-[2025-12-06 18:15:01] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Pompieri' con 14 gemelli
-[2025-12-06 18:15:01] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Ambulanza' con 14 gemelli
-[2025-12-06 18:15:01] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento completato con successo
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Inizio parsing tipi di emergenza da './Data/emergency.conf'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'Incendio'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'Incendio'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Polizia' per emergenza 'Incendio'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
+[2025-12-06 18:25:05] [PARSE-ENV] [FILE_PARSING] Inizio parsing variabili d'ambiente da './Data/environment.conf'
+[2025-12-06 18:25:05] [PARSE-ENV] [FILE_PARSING] Aggiunta la 'queue' con nome 'emergenze676878' e dimensioni (600, 500)
+[2025-12-06 18:25:05] [PARSE-RESCUER-TYPES] [FILE_PARSING] Inizio parsing tipi di soccorritori da './Data/rescuers.conf'
+[2025-12-06 18:25:05] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Pompieri' con 16 gemelli da creare
+[2025-12-06 18:25:05] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Ambulanza' con 17 gemelli da creare
+[2025-12-06 18:25:05] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Polizia' con 16 gemelli da creare
+[2025-12-06 18:25:05] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'ProtezioneCivile' con 15 gemelli da creare
+[2025-12-06 18:25:05] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'NBCR' con 14 gemelli da creare
+[2025-12-06 18:25:05] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'TecniciElettrici' con 15 gemelli da creare
+[2025-12-06 18:25:05] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'SoccorsoAlpino' con 15 gemelli da creare
+[2025-12-06 18:25:05] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Pompieri' con 15 gemelli da creare
+[2025-12-06 18:25:05] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Ambulanza' con 15 gemelli da creare
+[2025-12-06 18:25:05] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Polizia' con 15 gemelli da creare
+[2025-12-06 18:25:05] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'ProtezioneCivile' con 14 gemelli da creare
+[2025-12-06 18:25:05] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'NBCR' con 13 gemelli da creare
+[2025-12-06 18:25:05] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'TecniciElettrici' con 14 gemelli da creare
+[2025-12-06 18:25:05] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'SoccorsoAlpino' con 15 gemelli da creare
+[2025-12-06 18:25:05] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Pompieri' con 14 gemelli da creare
+[2025-12-06 18:25:05] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Ambulanza' con 14 gemelli da creare
+[2025-12-06 18:25:05] [PARSE-RESCUER-TYPES] [FILE_PARSING] Allocazione memoria per 16 tipi di soccorritori e 237 gemelli digitali
+[2025-12-06 18:25:05] [PARSE-RESCUER-TYPES] [FILE_PARSING] Inizio popolamento array tipi di soccorritori e gemelli digitali da './Data/rescuers.conf'
+[2025-12-06 18:25:05] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Pompieri' con 16 gemelli
+[2025-12-06 18:25:05] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Ambulanza' con 17 gemelli
+[2025-12-06 18:25:05] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Polizia' con 16 gemelli
+[2025-12-06 18:25:05] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'ProtezioneCivile' con 15 gemelli
+[2025-12-06 18:25:05] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'NBCR' con 14 gemelli
+[2025-12-06 18:25:05] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'TecniciElettrici' con 15 gemelli
+[2025-12-06 18:25:05] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'SoccorsoAlpino' con 15 gemelli
+[2025-12-06 18:25:05] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Pompieri' con 15 gemelli
+[2025-12-06 18:25:05] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Ambulanza' con 15 gemelli
+[2025-12-06 18:25:05] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Polizia' con 15 gemelli
+[2025-12-06 18:25:05] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'ProtezioneCivile' con 14 gemelli
+[2025-12-06 18:25:05] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'NBCR' con 13 gemelli
+[2025-12-06 18:25:05] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'TecniciElettrici' con 14 gemelli
+[2025-12-06 18:25:05] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'SoccorsoAlpino' con 15 gemelli
+[2025-12-06 18:25:05] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Pompieri' con 14 gemelli
+[2025-12-06 18:25:05] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Ambulanza' con 14 gemelli
+[2025-12-06 18:25:05] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento completato con successo
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Inizio parsing tipi di emergenza da './Data/emergency.conf'
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'Incendio'
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'Incendio'
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Polizia' per emergenza 'Incendio'
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
 ' per emergenza 'Incendio'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'Allagamento'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'Allagamento'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'Allagamento'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'Allagamento'
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'Allagamento'
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'Allagamento'
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
 ' per emergenza 'Allagamento'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'IncidenteStradale'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Polizia' per emergenza 'IncidenteStradale'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'IncidenteStradale'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'IncidenteStradale'
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Polizia' per emergenza 'IncidenteStradale'
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'IncidenteStradale'
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
 ' per emergenza 'IncidenteStradale'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'InfortunioSulLavoro'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Polizia' per emergenza 'InfortunioSulLavoro'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'InfortunioSulLavoro'
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Polizia' per emergenza 'InfortunioSulLavoro'
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
 ' per emergenza 'InfortunioSulLavoro'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'Esplosione'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'Esplosione'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Polizia' per emergenza 'Esplosione'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'NBCR' per emergenza 'Esplosione'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'Esplosione'
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'Esplosione'
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Polizia' per emergenza 'Esplosione'
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'NBCR' per emergenza 'Esplosione'
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
 ' per emergenza 'Esplosione'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Polizia' per emergenza 'Sommossa'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'Sommossa'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Polizia' per emergenza 'Sommossa'
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'Sommossa'
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
 ' per emergenza 'Sommossa'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'Frana'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'Frana'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'Frana'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'Frana'
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'Frana'
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'Frana'
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
 ' per emergenza 'Frana'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'Blackout'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'TecniciElettrici' per emergenza 'Blackout'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'Blackout'
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'TecniciElettrici' per emergenza 'Blackout'
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
 ' per emergenza 'Blackout'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'NBCR' per emergenza 'DisastroChimico'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'DisastroChimico'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'DisastroChimico'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'DisastroChimico'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'NBCR' per emergenza 'DisastroChimico'
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'DisastroChimico'
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'DisastroChimico'
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'DisastroChimico'
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
 ' per emergenza 'DisastroChimico'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'SoccorsoAlpino' per emergenza 'RicercaPersone'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'RicercaPersone'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'RicercaPersone'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'SoccorsoAlpino' per emergenza 'RicercaPersone'
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'RicercaPersone'
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'RicercaPersone'
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
 ' per emergenza 'RicercaPersone'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'IncendioBoschivo'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'IncendioBoschivo'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'SoccorsoAlpino' per emergenza 'IncendioBoschivo'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'IncendioBoschivo'
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'IncendioBoschivo'
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'SoccorsoAlpino' per emergenza 'IncendioBoschivo'
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
 ' per emergenza 'IncendioBoschivo'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'Evacuazione'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Polizia' per emergenza 'Evacuazione'
-[2025-12-06 18:15:01] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'Evacuazione'
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Polizia
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Polizia
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Polizia
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Polizia
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Polizia
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Polizia
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Polizia
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Polizia
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: NBCR
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: NBCR
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Polizia
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Polizia
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: TecniciElettrici
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: TecniciElettrici
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: NBCR
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: NBCR
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: SoccorsoAlpino
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: SoccorsoAlpino
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: SoccorsoAlpino
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: SoccorsoAlpino
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Polizia
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Polizia
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
-[2025-12-06 18:15:01] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
-[2025-12-06 18:15:01] [status] [SYSTEM] Inizializzazione dello stato
-[2025-12-06 18:15:01] [status] [SYSTEM] Inizializzazione dell'array dei soccorritori disponibili
-[2025-12-06 18:15:01] [status] [SYSTEM] Array dei soccorritori disponibili inizializzato con successo
-[2025-12-06 18:15:01] [mq_consumer] [SYSTEM] Inizializzazione della message queue
-[2025-12-06 18:15:01] [mq_consumer] [SYSTEM] Inizializzazione della struttura mq_consumer
-[2025-12-06 18:15:01] [mq_consumer] [SYSTEM] Struttura mq_consumer inizializzata. Nome coda: /emergenze676878
-[2025-12-06 18:15:01] [mq_consumer] [SYSTEM] Message queue inizializzata correttamente
-[2025-12-06 18:15:01] [mq_consumer] [SYSTEM] Numero di worker threads (0) inferiore al massimo (16), creazione di nuovi thread
-[2025-12-06 18:15:01] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 1
-[2025-12-06 18:15:01] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 2
-[2025-12-06 18:15:01] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 3
-[2025-12-06 18:15:01] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 4
-[2025-12-06 18:15:01] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 5
-[2025-12-06 18:15:01] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 6
-[2025-12-06 18:15:01] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 7
-[2025-12-06 18:15:01] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 8
-[2025-12-06 18:15:01] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 9
-[2025-12-06 18:15:01] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 10
-[2025-12-06 18:15:01] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 11
-[2025-12-06 18:15:01] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 12
-[2025-12-06 18:15:01] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 13
-[2025-12-06 18:15:01] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 14
-[2025-12-06 18:15:01] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 15
-[2025-12-06 18:15:01] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 16
-[2025-12-06 18:15:01] [mq_consumer] [SYSTEM] Messaggio ricevuto: Frana 320 15 1765040879
-[2025-12-06 18:15:01] [mq_consumer] [SYSTEM] Analisi del messaggio: Frana 320 15 1765040879
-[2025-12-06 18:15:01] [mq_consumer] [SYSTEM] Messaggio valido: Frana 320 15 1765040879
-[2025-12-06 18:15:01] [mq_consumer] [SYSTEM] Richiesta di emergenza creata: Frana 320 15 1765040879
-[2025-12-06 18:15:01] [mq_consumer] [SYSTEM] Richiesta di emergenza analizzata: Frana 320 15 1765040879
-[2025-12-06 18:15:01] [status] [SYSTEM] Assegnazione di una nuova richiesta di emergenza
-[2025-12-06 18:15:01] [emergency_types] [SYSTEM] Ricerca del tipo di emergenza: Frana
-[2025-12-06 18:15:01] [emergency_types] [SYSTEM] Tipo di emergenza trovato: Frana
-[2025-12-06 18:15:01] [status] [SYSTEM] Preparazione del record per l'emergenza: Frana
-[2025-12-06 18:15:01] [emergency_types] [SYSTEM] Ricerca del tipo di emergenza: Frana
-[2025-12-06 18:15:01] [emergency_types] [SYSTEM] Tipo di emergenza trovato: Frana
-[2025-12-06 18:15:01] [status] [SYSTEM] Record per l'emergenza Frana preparato correttamente
-[2025-12-06 18:15:01] [status] [SYSTEM] Allocazione della memoria necessaria per il nuovo elemento riuscita
-[2025-12-06 18:15:01] [status] [SYSTEM] Elemento inserito correttamente
-[2025-12-06 18:15:01] [status] [SYSTEM] Nuova emergenza inserita nella waiting queue, notifica i worker thread
-[2025-12-06 18:15:01] [mq_consumer] [SYSTEM] Messaggio ricevuto: Incendio 120 210 1765040967
-[2025-12-06 18:15:01] [mq_consumer] [SYSTEM] Analisi del messaggio: Incendio 120 210 1765040967
-[2025-12-06 18:15:01] [mq_consumer] [SYSTEM] Messaggio valido: Incendio 120 210 1765040967
-[2025-12-06 18:15:01] [mq_consumer] [SYSTEM] Richiesta di emergenza creata: Incendio 120 210 1765040967
-[2025-12-06 18:15:01] [mq_consumer] [SYSTEM] Richiesta di emergenza analizzata: Incendio 120 210 1765040967
-[2025-12-06 18:15:01] [status] [SYSTEM] Assegnazione di una nuova richiesta di emergenza
-[2025-12-06 18:15:01] [status] [SYSTEM] Rimozione di un'emergenza dalla coda 
-[2025-12-06 18:15:01] [status] [SYSTEM] Emergenza rimossa correttamente
-[2025-12-06 18:15:01] [status] [SYSTEM] Emergenza da risolvere con la priorità più alta trovata: Frana, priorità 1.00
-[2025-12-06 18:15:01] [status] [SYSTEM] Tentativo di allocazione soccorritori per emergenza: Frana
-[2025-12-06 18:15:01] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Frana
-[2025-12-06 18:15:01] [status] [SYSTEM] Miglior soccorritore IDLE trovato: ProtezioneCivile 154
-[2025-12-06 18:15:01] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 18:15:01] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 18:15:01] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Frana
-[2025-12-06 18:15:01] [status] [SYSTEM] Miglior soccorritore IDLE trovato: ProtezioneCivile 155
-[2025-12-06 18:15:01] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 18:15:01] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 18:15:01] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Frana
-[2025-12-06 18:15:01] [status] [SYSTEM] Miglior soccorritore IDLE trovato: ProtezioneCivile 156
-[2025-12-06 18:15:01] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 18:15:01] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 18:15:01] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Frana
-[2025-12-06 18:15:01] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 210
-[2025-12-06 18:15:01] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 18:15:01] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 18:15:01] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Frana
-[2025-12-06 18:15:01] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 211
-[2025-12-06 18:15:01] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 18:15:01] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 18:15:01] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Frana
-[2025-12-06 18:15:01] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Ambulanza 17
-[2025-12-06 18:15:01] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 18:15:01] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 18:15:01] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Frana
-[2025-12-06 18:15:01] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Ambulanza 18
-[2025-12-06 18:15:01] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 18:15:01] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 18:15:01] [status] [SYSTEM] Allocazione soccorritori per emergenza Frana riuscita
-[2025-12-06 18:15:01] [status] [SYSTEM] Inizio della gestione dell'emergenza: Frana
-[2025-12-06 18:15:01] [status] [SYSTEM] Allocazione della memoria necessaria per il nuovo elemento riuscita
-[2025-12-06 18:15:01] [status] [SYSTEM] Elemento inserito correttamente
-[2025-12-06 18:15:01] [status] [SYSTEM] Gestione dell'emergenza Frana iniziata correttamente
-[2025-12-06 18:15:01] [status] [SYSTEM] Calcolo del tempo massimo per arrivare sulla scena dell'emergenza: Frana
-[2025-12-06 18:15:01] [emergency_types] [SYSTEM] Ricerca dell'emergenza assegnata al soccorritore: ProtezioneCivile
-[2025-12-06 18:15:01] [emergency_types] [SYSTEM] Emergenza trovata per il soccorritore: ProtezioneCivile
-[2025-12-06 18:15:01] [debug] [SYSTEM] Rescuer: 154 | Dist: 0 | Speed: 26 | Time: 0
-[2025-12-06 18:15:01] [emergency_types] [SYSTEM] Ricerca dell'emergenza assegnata al soccorritore: ProtezioneCivile
-[2025-12-06 18:15:01] [emergency_types] [SYSTEM] Emergenza trovata per il soccorritore: ProtezioneCivile
-[2025-12-06 18:15:01] [debug] [SYSTEM] Rescuer: 155 | Dist: 0 | Speed: 26 | Time: 0
-[2025-12-06 18:15:01] [emergency_types] [SYSTEM] Ricerca dell'emergenza assegnata al soccorritore: ProtezioneCivile
-[2025-12-06 18:15:01] [emergency_types] [SYSTEM] Emergenza trovata per il soccorritore: ProtezioneCivile
-[2025-12-06 18:15:01] [debug] [SYSTEM] Rescuer: 156 | Dist: 0 | Speed: 26 | Time: 0
-[2025-12-06 18:15:01] [emergency_types] [SYSTEM] Ricerca dell'emergenza assegnata al soccorritore: Pompieri
-[2025-12-06 18:15:01] [emergency_types] [SYSTEM] Emergenza trovata per il soccorritore: Pompieri
-[2025-12-06 18:15:01] [debug] [SYSTEM] Rescuer: 210 | Dist: 0 | Speed: 35 | Time: 0
-[2025-12-06 18:15:01] [emergency_types] [SYSTEM] Ricerca dell'emergenza assegnata al soccorritore: Pompieri
-[2025-12-06 18:15:01] [emergency_types] [SYSTEM] Emergenza trovata per il soccorritore: Pompieri
-[2025-12-06 18:15:01] [debug] [SYSTEM] Rescuer: 211 | Dist: 0 | Speed: 35 | Time: 0
-[2025-12-06 18:15:01] [emergency_types] [SYSTEM] Ricerca dell'emergenza assegnata al soccorritore: Ambulanza
-[2025-12-06 18:15:01] [emergency_types] [SYSTEM] Emergenza trovata per il soccorritore: Ambulanza
-[2025-12-06 18:15:01] [debug] [SYSTEM] Rescuer: 17 | Dist: 0 | Speed: 48 | Time: 0
-[2025-12-06 18:15:01] [emergency_types] [SYSTEM] Ricerca dell'emergenza assegnata al soccorritore: Ambulanza
-[2025-12-06 18:15:01] [emergency_types] [SYSTEM] Emergenza trovata per il soccorritore: Ambulanza
-[2025-12-06 18:15:01] [debug] [SYSTEM] Rescuer: 18 | Dist: 0 | Speed: 48 | Time: 0
-[2025-12-06 18:15:01] [status] [SYSTEM] Tempo massimo per arrivare sulla scena dell'emergenza Frana calcolato: 0
-[2025-12-06 18:15:01] [status] [SYSTEM] Tutti i soccorritori sono arrivati sulla scena dell'emergenza: Frana
-[2025-12-06 18:15:01] [status] [SYSTEM] Inizio della gestione dell'emergenza: Frana
-[2025-12-06 18:17:08] [PARSE-ENV] [FILE_PARSING] Inizio parsing variabili d'ambiente da './Data/environment.conf'
-[2025-12-06 18:17:08] [PARSE-ENV] [FILE_PARSING] Aggiunta la 'queue' con nome 'emergenze676878' e dimensioni (600, 500)
-[2025-12-06 18:17:08] [PARSE-RESCUER-TYPES] [FILE_PARSING] Inizio parsing tipi di soccorritori da './Data/rescuers.conf'
-[2025-12-06 18:17:08] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Pompieri' con 16 gemelli da creare
-[2025-12-06 18:17:08] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Ambulanza' con 17 gemelli da creare
-[2025-12-06 18:17:08] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Polizia' con 16 gemelli da creare
-[2025-12-06 18:17:08] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'ProtezioneCivile' con 15 gemelli da creare
-[2025-12-06 18:17:08] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'NBCR' con 14 gemelli da creare
-[2025-12-06 18:17:08] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'TecniciElettrici' con 15 gemelli da creare
-[2025-12-06 18:17:08] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'SoccorsoAlpino' con 15 gemelli da creare
-[2025-12-06 18:17:08] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Pompieri' con 15 gemelli da creare
-[2025-12-06 18:17:08] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Ambulanza' con 15 gemelli da creare
-[2025-12-06 18:17:08] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Polizia' con 15 gemelli da creare
-[2025-12-06 18:17:08] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'ProtezioneCivile' con 14 gemelli da creare
-[2025-12-06 18:17:08] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'NBCR' con 13 gemelli da creare
-[2025-12-06 18:17:08] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'TecniciElettrici' con 14 gemelli da creare
-[2025-12-06 18:17:08] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'SoccorsoAlpino' con 15 gemelli da creare
-[2025-12-06 18:17:08] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Pompieri' con 14 gemelli da creare
-[2025-12-06 18:17:08] [PARSE-RESCUER-TYPES] [FILE_PARSING] Trovato tipo di soccorritore 'Ambulanza' con 14 gemelli da creare
-[2025-12-06 18:17:08] [PARSE-RESCUER-TYPES] [FILE_PARSING] Allocazione memoria per 16 tipi di soccorritori e 237 gemelli digitali
-[2025-12-06 18:17:08] [PARSE-RESCUER-TYPES] [FILE_PARSING] Inizio popolamento array tipi di soccorritori e gemelli digitali da './Data/rescuers.conf'
-[2025-12-06 18:17:08] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Pompieri' con 16 gemelli
-[2025-12-06 18:17:08] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Ambulanza' con 17 gemelli
-[2025-12-06 18:17:08] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Polizia' con 16 gemelli
-[2025-12-06 18:17:08] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'ProtezioneCivile' con 15 gemelli
-[2025-12-06 18:17:08] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'NBCR' con 14 gemelli
-[2025-12-06 18:17:08] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'TecniciElettrici' con 15 gemelli
-[2025-12-06 18:17:08] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'SoccorsoAlpino' con 15 gemelli
-[2025-12-06 18:17:08] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Pompieri' con 15 gemelli
-[2025-12-06 18:17:08] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Ambulanza' con 15 gemelli
-[2025-12-06 18:17:08] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Polizia' con 15 gemelli
-[2025-12-06 18:17:08] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'ProtezioneCivile' con 14 gemelli
-[2025-12-06 18:17:08] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'NBCR' con 13 gemelli
-[2025-12-06 18:17:08] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'TecniciElettrici' con 14 gemelli
-[2025-12-06 18:17:08] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'SoccorsoAlpino' con 15 gemelli
-[2025-12-06 18:17:08] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Pompieri' con 14 gemelli
-[2025-12-06 18:17:08] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento tipo di soccorritore 'Ambulanza' con 14 gemelli
-[2025-12-06 18:17:08] [PARSE-RESCUER-TYPES] [FILE_PARSING] Popolamento completato con successo
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Inizio parsing tipi di emergenza da './Data/emergency.conf'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'Incendio'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'Incendio'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Polizia' per emergenza 'Incendio'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
-' per emergenza 'Incendio'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'Allagamento'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'Allagamento'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'Allagamento'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
-' per emergenza 'Allagamento'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'IncidenteStradale'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Polizia' per emergenza 'IncidenteStradale'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'IncidenteStradale'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
-' per emergenza 'IncidenteStradale'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'InfortunioSulLavoro'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Polizia' per emergenza 'InfortunioSulLavoro'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
-' per emergenza 'InfortunioSulLavoro'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'Esplosione'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'Esplosione'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Polizia' per emergenza 'Esplosione'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'NBCR' per emergenza 'Esplosione'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
-' per emergenza 'Esplosione'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Polizia' per emergenza 'Sommossa'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'Sommossa'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
-' per emergenza 'Sommossa'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'Frana'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'Frana'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'Frana'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
-' per emergenza 'Frana'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'Blackout'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'TecniciElettrici' per emergenza 'Blackout'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
-' per emergenza 'Blackout'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'NBCR' per emergenza 'DisastroChimico'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'DisastroChimico'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'DisastroChimico'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'DisastroChimico'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
-' per emergenza 'DisastroChimico'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'SoccorsoAlpino' per emergenza 'RicercaPersone'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'RicercaPersone'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'RicercaPersone'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
-' per emergenza 'RicercaPersone'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Pompieri' per emergenza 'IncendioBoschivo'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'IncendioBoschivo'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'SoccorsoAlpino' per emergenza 'IncendioBoschivo'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta '
-' per emergenza 'IncendioBoschivo'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'Evacuazione'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Polizia' per emergenza 'Evacuazione'
-[2025-12-06 18:17:08] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'Evacuazione'
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Polizia
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Polizia
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Polizia
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Polizia
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Polizia
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Polizia
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Polizia
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Polizia
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: NBCR
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: NBCR
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Polizia
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Polizia
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: TecniciElettrici
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: TecniciElettrici
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: NBCR
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: NBCR
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: SoccorsoAlpino
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: SoccorsoAlpino
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: SoccorsoAlpino
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: SoccorsoAlpino
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Polizia
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Polizia
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
-[2025-12-06 18:17:08] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
-[2025-12-06 18:17:08] [status] [SYSTEM] Inizializzazione dello stato
-[2025-12-06 18:17:08] [status] [SYSTEM] Inizializzazione dell'array dei soccorritori disponibili
-[2025-12-06 18:17:08] [status] [SYSTEM] Array dei soccorritori disponibili inizializzato con successo
-[2025-12-06 18:17:08] [mq_consumer] [SYSTEM] Inizializzazione della message queue
-[2025-12-06 18:17:08] [mq_consumer] [SYSTEM] Inizializzazione della struttura mq_consumer
-[2025-12-06 18:17:08] [mq_consumer] [SYSTEM] Struttura mq_consumer inizializzata. Nome coda: /emergenze676878
-[2025-12-06 18:17:08] [mq_consumer] [SYSTEM] Message queue inizializzata correttamente
-[2025-12-06 18:17:22] [mq_consumer] [SYSTEM] Numero di worker threads (0) inferiore al massimo (16), creazione di nuovi thread
-[2025-12-06 18:17:22] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 1
-[2025-12-06 18:17:22] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 2
-[2025-12-06 18:17:22] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 3
-[2025-12-06 18:17:22] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 4
-[2025-12-06 18:17:22] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 5
-[2025-12-06 18:17:22] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 6
-[2025-12-06 18:17:22] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 7
-[2025-12-06 18:17:22] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 8
-[2025-12-06 18:17:22] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 9
-[2025-12-06 18:17:22] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 10
-[2025-12-06 18:17:22] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 11
-[2025-12-06 18:17:22] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 12
-[2025-12-06 18:17:22] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 13
-[2025-12-06 18:17:22] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 14
-[2025-12-06 18:17:22] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 15
-[2025-12-06 18:17:22] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 16
-[2025-12-06 18:17:22] [mq_consumer] [SYSTEM] Messaggio ricevuto: Incendio 120 210 1765041440
-[2025-12-06 18:17:22] [mq_consumer] [SYSTEM] Analisi del messaggio: Incendio 120 210 1765041440
-[2025-12-06 18:17:22] [mq_consumer] [SYSTEM] Messaggio valido: Incendio 120 210 1765041440
-[2025-12-06 18:17:22] [mq_consumer] [SYSTEM] Richiesta di emergenza creata: Incendio 120 210 1765041440
-[2025-12-06 18:17:22] [mq_consumer] [SYSTEM] Richiesta di emergenza analizzata: Incendio 120 210 1765041440
-[2025-12-06 18:17:22] [status] [SYSTEM] Assegnazione di una nuova richiesta di emergenza
-[2025-12-06 18:17:22] [emergency_types] [SYSTEM] Ricerca del tipo di emergenza: Incendio
-[2025-12-06 18:17:22] [emergency_types] [SYSTEM] Tipo di emergenza trovato: Incendio
-[2025-12-06 18:17:22] [status] [SYSTEM] Preparazione del record per l'emergenza: Incendio
-[2025-12-06 18:17:22] [emergency_types] [SYSTEM] Ricerca del tipo di emergenza: Incendio
-[2025-12-06 18:17:22] [emergency_types] [SYSTEM] Tipo di emergenza trovato: Incendio
-[2025-12-06 18:17:22] [status] [SYSTEM] Record per l'emergenza Incendio preparato correttamente
-[2025-12-06 18:17:22] [status] [SYSTEM] Allocazione della memoria necessaria per il nuovo elemento riuscita
-[2025-12-06 18:17:22] [status] [SYSTEM] Elemento inserito correttamente
-[2025-12-06 18:17:22] [status] [SYSTEM] Nuova emergenza inserita nella waiting queue, notifica i worker thread
-[2025-12-06 18:17:22] [status] [SYSTEM] Rimozione di un'emergenza dalla coda 
-[2025-12-06 18:17:22] [status] [SYSTEM] Emergenza rimossa correttamente
-[2025-12-06 18:17:22] [status] [SYSTEM] Emergenza da risolvere con la priorità più alta trovata: Incendio, priorità 2.00
-[2025-12-06 18:17:22] [status] [SYSTEM] Tentativo di allocazione soccorritori per emergenza: Incendio
-[2025-12-06 18:17:22] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Incendio
-[2025-12-06 18:17:22] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 1
-[2025-12-06 18:17:22] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 18:17:22] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 18:17:22] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Incendio
-[2025-12-06 18:17:22] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 2
-[2025-12-06 18:17:22] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 18:17:22] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 18:17:22] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Incendio
-[2025-12-06 18:17:22] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 3
-[2025-12-06 18:17:22] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 18:17:22] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 18:17:22] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Incendio
-[2025-12-06 18:17:22] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Ambulanza 17
-[2025-12-06 18:17:22] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 18:17:22] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 18:17:22] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Incendio
-[2025-12-06 18:17:22] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Ambulanza 18
-[2025-12-06 18:17:22] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 18:17:22] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 18:17:22] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Incendio
-[2025-12-06 18:17:22] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Polizia 34
-[2025-12-06 18:17:22] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
-[2025-12-06 18:17:22] [status] [SYSTEM] Soccorritore rimosso correttamente
-[2025-12-06 18:17:22] [status] [SYSTEM] Allocazione soccorritori per emergenza Incendio riuscita
-[2025-12-06 18:17:22] [status] [SYSTEM] Inizio della gestione dell'emergenza: Incendio
-[2025-12-06 18:17:22] [status] [SYSTEM] Allocazione della memoria necessaria per il nuovo elemento riuscita
-[2025-12-06 18:17:22] [status] [SYSTEM] Elemento inserito correttamente
-[2025-12-06 18:17:22] [status] [SYSTEM] Gestione dell'emergenza Incendio iniziata correttamente
-[2025-12-06 18:17:22] [status] [SYSTEM] Calcolo del tempo massimo per arrivare sulla scena dell'emergenza: Incendio
-[2025-12-06 18:17:22] [emergency_types] [SYSTEM] Ricerca dell'emergenza assegnata al soccorritore: Pompieri
-[2025-12-06 18:17:22] [emergency_types] [SYSTEM] Emergenza trovata per il soccorritore: Pompieri
-[2025-12-06 18:17:22] [debug] [SYSTEM] Rescuer: 1 | Dist: 0 | Speed: 32 | Time: 0
-[2025-12-06 18:17:22] [emergency_types] [SYSTEM] Ricerca dell'emergenza assegnata al soccorritore: Pompieri
-[2025-12-06 18:17:22] [emergency_types] [SYSTEM] Emergenza trovata per il soccorritore: Pompieri
-[2025-12-06 18:17:22] [debug] [SYSTEM] Rescuer: 2 | Dist: 0 | Speed: 32 | Time: 0
-[2025-12-06 18:17:22] [emergency_types] [SYSTEM] Ricerca dell'emergenza assegnata al soccorritore: Pompieri
-[2025-12-06 18:17:22] [emergency_types] [SYSTEM] Emergenza trovata per il soccorritore: Pompieri
-[2025-12-06 18:17:22] [debug] [SYSTEM] Rescuer: 3 | Dist: 0 | Speed: 32 | Time: 0
-[2025-12-06 18:17:22] [emergency_types] [SYSTEM] Ricerca dell'emergenza assegnata al soccorritore: Ambulanza
-[2025-12-06 18:17:22] [emergency_types] [SYSTEM] Emergenza trovata per il soccorritore: Ambulanza
-[2025-12-06 18:17:22] [debug] [SYSTEM] Rescuer: 17 | Dist: 0 | Speed: 48 | Time: 0
-[2025-12-06 18:17:22] [emergency_types] [SYSTEM] Ricerca dell'emergenza assegnata al soccorritore: Ambulanza
-[2025-12-06 18:17:22] [emergency_types] [SYSTEM] Emergenza trovata per il soccorritore: Ambulanza
-[2025-12-06 18:17:22] [debug] [SYSTEM] Rescuer: 18 | Dist: 0 | Speed: 48 | Time: 0
-[2025-12-06 18:17:22] [emergency_types] [SYSTEM] Ricerca dell'emergenza assegnata al soccorritore: Polizia
-[2025-12-06 18:17:22] [emergency_types] [SYSTEM] Emergenza trovata per il soccorritore: Polizia
-[2025-12-06 18:17:22] [debug] [SYSTEM] Rescuer: 34 | Dist: 0 | Speed: 44 | Time: 0
-[2025-12-06 18:17:22] [status] [SYSTEM] Tempo massimo per arrivare sulla scena dell'emergenza Incendio calcolato: 0
-[2025-12-06 18:17:22] [status] [SYSTEM] Tutti i soccorritori sono arrivati sulla scena dell'emergenza: Incendio
-[2025-12-06 18:17:22] [status] [SYSTEM] Inizio della gestione dell'emergenza: Incendio
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'ProtezioneCivile' per emergenza 'Evacuazione'
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Polizia' per emergenza 'Evacuazione'
+[2025-12-06 18:25:05] [PARSE-EMERGENCY-TYPES] [FILE_PARSING] Trovata sub-richiesta 'Ambulanza' per emergenza 'Evacuazione'
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Polizia
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Polizia
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Polizia
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Polizia
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Polizia
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Polizia
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Polizia
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Polizia
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: NBCR
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: NBCR
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Polizia
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Polizia
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: TecniciElettrici
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: TecniciElettrici
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: NBCR
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: NBCR
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: SoccorsoAlpino
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: SoccorsoAlpino
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Pompieri
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Pompieri
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: SoccorsoAlpino
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: SoccorsoAlpino
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: ProtezioneCivile
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: ProtezioneCivile
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Polizia
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Polizia
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Ricerca del tipo di soccorritore: Ambulanza
+[2025-12-06 18:25:05] [parse_emergency_types] [SYSTEM] Tipo di soccorritore trovato: Ambulanza
+[2025-12-06 18:25:05] [status] [SYSTEM] Inizializzazione dello stato
+[2025-12-06 18:25:05] [status] [SYSTEM] Inizializzazione dell'array dei soccorritori disponibili
+[2025-12-06 18:25:05] [status] [SYSTEM] Array dei soccorritori disponibili inizializzato con successo
+[2025-12-06 18:25:05] [mq_consumer] [SYSTEM] Inizializzazione della message queue
+[2025-12-06 18:25:05] [mq_consumer] [SYSTEM] Inizializzazione della struttura mq_consumer
+[2025-12-06 18:25:05] [mq_consumer] [SYSTEM] Struttura mq_consumer inizializzata. Nome coda: /emergenze676878
+[2025-12-06 18:25:05] [mq_consumer] [SYSTEM] Message queue inizializzata correttamente
+[2025-12-06 18:25:24] [mq_consumer] [SYSTEM] Numero di worker threads (0) inferiore al massimo (16), creazione di nuovi thread
+[2025-12-06 18:25:24] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 1
+[2025-12-06 18:25:24] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 2
+[2025-12-06 18:25:24] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 3
+[2025-12-06 18:25:24] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 4
+[2025-12-06 18:25:24] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 5
+[2025-12-06 18:25:24] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 6
+[2025-12-06 18:25:24] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 7
+[2025-12-06 18:25:24] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 8
+[2025-12-06 18:25:24] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 9
+[2025-12-06 18:25:24] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 10
+[2025-12-06 18:25:24] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 11
+[2025-12-06 18:25:24] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 12
+[2025-12-06 18:25:24] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 13
+[2025-12-06 18:25:24] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 14
+[2025-12-06 18:25:24] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 15
+[2025-12-06 18:25:24] [mq_consumer] [SYSTEM] Nuovo worker thread creato. Totale worker threads: 16
+[2025-12-06 18:25:24] [mq_consumer] [SYSTEM] Messaggio ricevuto: Incendio 120 210 1765041922
+[2025-12-06 18:25:24] [mq_consumer] [SYSTEM] Analisi del messaggio: Incendio 120 210 1765041922
+[2025-12-06 18:25:24] [mq_consumer] [SYSTEM] Messaggio valido: Incendio 120 210 1765041922
+[2025-12-06 18:25:24] [mq_consumer] [SYSTEM] Richiesta di emergenza creata: Incendio 120 210 1765041922
+[2025-12-06 18:25:24] [mq_consumer] [SYSTEM] Richiesta di emergenza analizzata: Incendio 120 210 1765041922
+[2025-12-06 18:25:24] [status] [SYSTEM] Assegnazione di una nuova richiesta di emergenza
+[2025-12-06 18:25:24] [emergency_types] [SYSTEM] Ricerca del tipo di emergenza: Incendio
+[2025-12-06 18:25:24] [emergency_types] [SYSTEM] Tipo di emergenza trovato: Incendio
+[2025-12-06 18:25:24] [status] [SYSTEM] Preparazione del record per l'emergenza: Incendio
+[2025-12-06 18:25:24] [emergency_types] [SYSTEM] Ricerca del tipo di emergenza: Incendio
+[2025-12-06 18:25:24] [emergency_types] [SYSTEM] Tipo di emergenza trovato: Incendio
+[2025-12-06 18:25:24] [status] [SYSTEM] Record per l'emergenza Incendio preparato correttamente
+[2025-12-06 18:25:24] [status] [SYSTEM] Allocazione della memoria necessaria per il nuovo elemento riuscita
+[2025-12-06 18:25:24] [status] [SYSTEM] Elemento inserito correttamente
+[2025-12-06 18:25:24] [status] [SYSTEM] Nuova emergenza inserita nella waiting queue, notifica i worker thread
+[2025-12-06 18:25:24] [status] [SYSTEM] Rimozione di un'emergenza dalla coda 
+[2025-12-06 18:25:24] [status] [SYSTEM] Emergenza rimossa correttamente
+[2025-12-06 18:25:24] [status] [SYSTEM] Emergenza da risolvere con la priorità più alta trovata: Incendio, priorità 2.00
+[2025-12-06 18:25:24] [status] [SYSTEM] Tentativo di allocazione soccorritori per emergenza: Incendio
+[2025-12-06 18:25:24] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Incendio
+[2025-12-06 18:25:24] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 1
+[2025-12-06 18:25:24] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 18:25:24] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 18:25:24] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Incendio
+[2025-12-06 18:25:24] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 2
+[2025-12-06 18:25:24] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 18:25:24] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 18:25:24] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Incendio
+[2025-12-06 18:25:24] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Pompieri 3
+[2025-12-06 18:25:24] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 18:25:24] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 18:25:24] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Incendio
+[2025-12-06 18:25:24] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Ambulanza 17
+[2025-12-06 18:25:24] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 18:25:24] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 18:25:24] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Incendio
+[2025-12-06 18:25:24] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Ambulanza 18
+[2025-12-06 18:25:24] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 18:25:24] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 18:25:24] [status] [SYSTEM] Ricerca del miglior soccorritore IDLE per l'emergenza: Incendio
+[2025-12-06 18:25:24] [status] [SYSTEM] Miglior soccorritore IDLE trovato: Polizia 34
+[2025-12-06 18:25:24] [status] [SYSTEM] Rimozione di un soccorritore dalla coda 
+[2025-12-06 18:25:24] [status] [SYSTEM] Soccorritore rimosso correttamente
+[2025-12-06 18:25:24] [status] [SYSTEM] Allocazione soccorritori per emergenza Incendio riuscita
+[2025-12-06 18:25:24] [status] [SYSTEM] Inizio della gestione dell'emergenza: Incendio
+[2025-12-06 18:25:24] [status] [SYSTEM] Allocazione della memoria necessaria per il nuovo elemento riuscita
+[2025-12-06 18:25:24] [status] [SYSTEM] Elemento inserito correttamente
+[2025-12-06 18:25:24] [status] [SYSTEM] Gestione dell'emergenza Incendio iniziata correttamente
+[2025-12-06 18:25:24] [status] [SYSTEM] Calcolo del tempo massimo per arrivare sulla scena dell'emergenza: Incendio
+[2025-12-06 18:25:24] [debug] [SYSTEM] Rescuer: 1 | Dist: 30 | Speed: 32 | Time: 1
+[2025-12-06 18:25:24] [debug] [SYSTEM] Rescuer: 2 | Dist: 30 | Speed: 32 | Time: 1
+[2025-12-06 18:25:24] [debug] [SYSTEM] Rescuer: 3 | Dist: 30 | Speed: 32 | Time: 1
+[2025-12-06 18:25:24] [debug] [SYSTEM] Rescuer: 17 | Dist: 70 | Speed: 48 | Time: 2
+[2025-12-06 18:25:24] [debug] [SYSTEM] Rescuer: 18 | Dist: 70 | Speed: 48 | Time: 2
+[2025-12-06 18:25:24] [debug] [SYSTEM] Rescuer: 34 | Dist: 10 | Speed: 44 | Time: 1
+[2025-12-06 18:25:24] [status] [SYSTEM] Tempo massimo per arrivare sulla scena dell'emergenza Incendio calcolato: 2
+[2025-12-06 18:25:26] [status] [SYSTEM] Tutti i soccorritori sono arrivati sulla scena dell'emergenza: Incendio
+[2025-12-06 18:25:26] [status] [SYSTEM] Inizio della gestione dell'emergenza: Incendio
