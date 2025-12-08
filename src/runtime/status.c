@@ -344,7 +344,10 @@ static rescuer_digital_twin_t* find_best_rescuer_lower_priority(state_t* state, 
         
         // Passiamo 'rescuer' corrente, NON 'best'
         emergency_t* curr_em = find_emergency_by_rescuer(rescuer, state->emergencies_in_progress, state->emergencies_in_progress_count);
-        if(!curr_em) continue; 
+        if(!curr_em) {
+            curr_em = find_emergency_by_rescuer(rescuer, state->emergencies_paused, state->emergencies_paused_count);
+        } 
+        if(!curr_em) continue;
         
         if(curr_em->type.priority >= emergency->type.priority) continue; 
 
@@ -373,6 +376,14 @@ static rescuer_digital_twin_t* find_best_rescuer_lower_priority(state_t* state, 
         // Ritroviamo il record dell'emergenza a cui apparteneva
         emergency_t* old_em_ptr = find_emergency_by_rescuer(best, state->emergencies_in_progress, state->emergencies_in_progress_count);
         
+        if(!old_em_ptr){
+            old_em_ptr = find_emergency_by_rescuer(best, state->emergencies_paused, state->emergencies_paused_count);
+        }
+
+        if(!old_em_ptr){
+            return best; // Non dovrebbe succedere
+        }
+
         if(old_em_ptr) {
             emergency_record_t* old_record = (emergency_record_t*)old_em_ptr;
             
@@ -954,7 +965,7 @@ void* worker_thread(void* arg){
                     break;
                 }   
 
-                sleep(1); // Attende prima di riprovare
+                sleep(1); // Attende prima di riprovare per evitare di monopolizzare il mutex
 
                 continue;
             }
