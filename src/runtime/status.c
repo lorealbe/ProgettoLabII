@@ -342,7 +342,6 @@ static rescuer_digital_twin_t* find_best_rescuer_lower_priority(state_t* state, 
         if(strcmp(rescuer->type->rescuer_type_name, required_type_name) != 0) continue;
         if(rescuer->status != EN_ROUTE_TO_SCENE && rescuer->status != ON_SCENE) continue; 
         
-        // Passiamo 'rescuer' corrente, NON 'best'
         emergency_t* curr_em = find_emergency_by_rescuer(rescuer, state->emergencies_in_progress, state->emergencies_in_progress_count);
         if(!curr_em) {
             curr_em = find_emergency_by_rescuer(rescuer, state->emergencies_paused, state->emergencies_paused_count);
@@ -956,17 +955,13 @@ void* worker_thread(void* arg){
         if(record && record->preempted){
             if(!try_allocate_rescuers_for_preempted(state, record)){
                 // Non è stato possibile riallocare i soccorritori, continua ad essere preemptata
-                pthread_mutex_unlock(&state->mutex);
 
                 if(record->emergency.status == TIMEOUT){
-                    pthread_mutex_lock(&state->mutex);
                     timeout_emergency(state, &record->emergency);
-                    pthread_mutex_unlock(&state->mutex);
                     break;
                 }   
-
+                pthread_mutex_unlock(&state->mutex);
                 sleep(1); // Attende prima di riprovare per evitare di monopolizzare il mutex
-
                 continue;
             }
             record->preempted = false; 
@@ -1052,14 +1047,10 @@ void* worker_thread(void* arg){
                 record->assigned_rescuers[i].status = IDLE;
                 state->rescuer_available[state->rescuer_available_count++] = &record->assigned_rescuers[i];
                 // Rimuove il soccorritore dall'array in_use
-                size_t idx = find_idx((void**)state->rescuers_in_use, state->rescuers_in_use_count, (void*)&record->assigned_rescuers[i]);
-                if(idx != (size_t)-1){
-                    remove_rescuer_from_general_queue((void**)state->rescuers_in_use, 
-                                              (size_t*)&state->rescuers_in_use_count, 
-                                              idx);
-                }
-                // Inserisce il soccorritore nell'array available
-                state->rescuer_available[state->rescuer_available_count++] = &record->assigned_rescuers[i];
+                rescuer_digital_twin_t* r = &record->assigned_rescuers[i];
+                size_t idx = find_idx((void**)state->rescuers_in_use, state->rescuers_in_use_count, r);
+                if(idx != (size_t)-1) remove_rescuer_from_general_queue((void**)state->rescuers_in_use, &state->rescuers_in_use_count, idx);
+                insert_into_general_queue((void***)&state->rescuer_available, &state->rescuer_available_count, (size_t*)&state->rescuer_available, r); 
                 // Notifica eventuali thread in attesa di soccorritori
                 LOG_SYSTEM("debug", "Soccorritore %d rilasciato e ora IDLE", record->assigned_rescuers[i].id);
             }
@@ -1069,17 +1060,40 @@ void* worker_thread(void* arg){
 
             // Rimuove l'emergenza dall'array delle emergenze in corso
             size_t idx = find_idx((void**)state->emergencies_in_progress, state->emergencies_in_progress_count, (void*)&record->emergency);
-            if(idx != (size_t)-1){
-                remove_emergency_from_general_queue((void**)state->emergencies_in_progress, 
-                                          (size_t*)&state->emergencies_in_progress_count, 
-                                          idx);
-            }
+            if(idx != (size_t)-1) remove_emergency_from_general_queue((void**)state->emergencies_in_progress, &state->emergencies_in_progress_count, idx);
             emergency_record_cleanup(record);
             break;
         } else if(record->preempted){
             // L'emergenza è stata preemptata
+            LOG_SYSTEM("status", "Emergenza preemptata: %s", record->emergency.type.emergency_name);
+            
+            for(size_t i = 0; i < record->assigned_rescuers_count; ++i){
+                rescuer_digital_twin_t* r = &record->assigned_rescuers[i];
+                
+                rescuer_digital_twin_t* twin_ptr = NULL;
+                for(size_t u=0; u<state->rescuers_in_use_count; u++){
+                    if(state->rescuers_in_use[u]->id == r->id){
+                        twin_ptr = state->rescuers_in_use[u];
+                        remove_rescuer_from_general_queue((void**)state->rescuers_in_use, &state->rescuers_in_use_count, u);
+                        break;
+                    }
+                }
+
+                if(twin_ptr){
+                    twin_ptr->status = IDLE;
+                    state->rescuer_available[state->rescuer_available_count++] = twin_ptr;
+                }
+            }
+            free(record->assigned_rescuers);
+            record->assigned_rescuers = NULL;
+            record->assigned_rescuers_count = 0;
+
             pause_emergency(state, &record->emergency);
             pthread_mutex_unlock(&state->mutex);
+
+            pthread_cond_broadcast(&state->rescuer_available_cond); // Notifica eventuali thread in attesa di soccorritori
+
+            continue; // Torna all'inizio del ciclo per gestire nuovamente l'emergenza
         }
     }
     pthread_mutex_unlock(&state->mutex);
