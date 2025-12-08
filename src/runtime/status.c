@@ -937,50 +937,67 @@ int status_add_waiting(state_t* state, emergency_request_t* request, emergency_t
 */
 
 // Thread worker per la gestione delle emergenze
+// Sostituisci in src/runtime/status.c
+
 void* worker_thread(void* arg){
     state_t* state = (state_t*)arg;
-    if(!state) {
-        return NULL;
-    } // Errore nello stato
+    if(!state) return NULL; 
 
     emergency_record_t* record = NULL;
     
     while(true){
         pthread_mutex_lock(&state->mutex);
-        if(*state->shutdown_flag == 1) { // Controlla il flag di shutdown
+        if(*state->shutdown_flag == 1) { 
             pthread_mutex_unlock(&state->mutex);
             break;
         }
 
         if(record && record->preempted){
-            if(!try_allocate_rescuers_for_preempted(state, record)){
-                // Non è stato possibile riallocare i soccorritori, continua ad essere preemptata
-
-                if(record->emergency.status == TIMEOUT){
-                    timeout_emergency(state, &record->emergency);
-                    break;
-                }   
-                pthread_mutex_unlock(&state->mutex);
-                sleep(1); // Attende prima di riprovare per evitare di monopolizzare il mutex
-                continue;
+            // Se siamo qui, il tentativo di riallocazione precedente è fallito.
+            // Rilasciamo tutto per evitare deadlock.
+            LOG_SYSTEM("status", "Preemption fallita o timeout per %s: RILASCIO TOTALE", record->emergency.type.emergency_name);
+            
+            // RILASCIO TOTALE (Logica corretta usando ID)
+            for(size_t i = 0; i < record->assigned_rescuers_count; ++i){
+                int id_to_find = record->assigned_rescuers[i].id;
+                rescuer_digital_twin_t* original_ptr = NULL;
+                
+                // Cerca il puntatore originale in in_use tramite ID
+                for(size_t u = 0; u < state->rescuers_in_use_count; u++){
+                    if(state->rescuers_in_use[u]->id == id_to_find){
+                        original_ptr = state->rescuers_in_use[u];
+                        remove_rescuer_from_general_queue((void**)state->rescuers_in_use, &state->rescuers_in_use_count, u);
+                        break;
+                    }
+                }
+                
+                // Se trovato (e quindi non rubato), rimettilo in available
+                if(original_ptr){
+                    original_ptr->status = IDLE;
+                    state->rescuer_available[state->rescuer_available_count++] = original_ptr;
+                }
             }
-            record->preempted = false; 
-            remove_emergency_from_general_queue((void**)state->emergencies_paused, 
-                                      &state->emergencies_paused_count, 
-                                      find_idx((void**)state->emergencies_paused, state->emergencies_paused_count, (void*)&record->emergency));
-            insert_into_general_queue((void***)&state->emergencies_in_progress, 
-                                   (size_t*)&state->emergencies_in_progress_count, 
-                                   (size_t*)&state->emergencies_in_progress_capacity, 
-                                   (void*)&record->emergency);
+            
+            free(record->assigned_rescuers);
+            record->assigned_rescuers = NULL;
+            record->assigned_rescuers_count = 0;
+
+            if(record->emergency.status == TIMEOUT){
+                 timeout_emergency(state, &record->emergency);
+            } else {
+                 pause_emergency(state, &record->emergency);
+            }
+            
+            pthread_mutex_unlock(&state->mutex);
+            pthread_cond_broadcast(&state->rescuer_available_cond);
+            continue; // Ricomincia il loop
         } else {
             while(!state->shutdown_flag && state->emergencies_waiting_count == 0){
-                // Attesa di una nuova emergenza
                 pthread_cond_wait(&state->emergency_available_cond, &state->mutex);
                 continue;
             }
             record = get_highest_priority_emergency(state);
             if(!record){
-                // Nessun record di emergenza disponibile
                 pthread_mutex_unlock(&state->mutex);
                 continue;
             }
@@ -990,14 +1007,22 @@ void* worker_thread(void* arg){
                                     (size_t*)&state->emergencies_waiting_capacity, 
                                     (void*)&record->emergency);
                 pthread_mutex_unlock(&state->mutex);
-
-                sleep(1); // Attende prima di riprovare
-
+                sleep(1); 
                 continue;
             }
             if(!start_emergency_management(state, record) && !record->preempted){
+                // Rollback in caso di fallimento start (raro)
                 for(size_t i = 0; i < record->assigned_rescuers_count; ++i){
-                    record->assigned_rescuers[i].status = IDLE;
+                    int id_to_find = record->assigned_rescuers[i].id;
+                    for(size_t u = 0; u < state->rescuers_in_use_count; u++){
+                        if(state->rescuers_in_use[u]->id == id_to_find){
+                            rescuer_digital_twin_t* original_ptr = state->rescuers_in_use[u];
+                            remove_rescuer_from_general_queue((void**)state->rescuers_in_use, &state->rescuers_in_use_count, u);
+                            original_ptr->status = IDLE;
+                            state->rescuer_available[state->rescuer_available_count++] = original_ptr;
+                            break;
+                        }
+                    }
                 }
                 free(record->assigned_rescuers);
                 record->assigned_rescuers = NULL;
@@ -1012,11 +1037,9 @@ void* worker_thread(void* arg){
             }
         }
 
-        unsigned int sleep_time = highest_time_to_scene(state, record); // Simula l'arrivo dei soccorritori sulla scena
-
+        unsigned int sleep_time = highest_time_to_scene(state, record); 
         pthread_mutex_unlock(&state->mutex);
-
-        sleep(sleep_time); // Simula il tempo di arrivo sulla scena
+        sleep(sleep_time); 
 
         LOG_SYSTEM("status", "Tutti i soccorritori sono arrivati sulla scena dell'emergenza: %s", record->emergency.type.emergency_name);
 
@@ -1027,77 +1050,103 @@ void* worker_thread(void* arg){
 
         LOG_SYSTEM("status", "Inizio della gestione dell'emergenza: %s", record->emergency.type.emergency_name);
         
-        // Tutti i soccorritori sono arrivati sulla scena
         while(record->time_remaining > 0 && !record->preempted && !(*state->shutdown_flag)){
             pthread_mutex_unlock(&state->mutex);
             LOG_SYSTEM("status", "Gestione in corso dell'emergenza: %s, tempo rimanente: %u secondi", record->emergency.type.emergency_name, record->time_remaining);
-            sleep(1); // Simula la gestione dell'emergenza
+            sleep(1); 
             pthread_mutex_lock(&state->mutex);
             record->time_remaining--;
             if(!check_all_rescuers_still_assigned(record)){
                 record->preempted = true;
             } 
         }
+
         if(record->time_remaining == 0){
             LOG_SYSTEM("status", "Emergenza risolta: %s", record->emergency.type.emergency_name);
-            // Emergenza risolta
             record->emergency.status = COMPLETED;
-            // Rilascia i soccorritori assegnati
-            for(size_t i = 0; i < record->assigned_rescuers_count; ++i){
-                record->assigned_rescuers[i].status = IDLE;
-                state->rescuer_available[state->rescuer_available_count++] = &record->assigned_rescuers[i];
-                // Rimuove il soccorritore dall'array in_use
-                rescuer_digital_twin_t* r = &record->assigned_rescuers[i];
-                size_t idx = find_idx((void**)state->rescuers_in_use, state->rescuers_in_use_count, r);
-                if(idx != (size_t)-1) remove_rescuer_from_general_queue((void**)state->rescuers_in_use, &state->rescuers_in_use_count, idx);
-                insert_into_general_queue((void***)&state->rescuer_available, &state->rescuer_available_count, (size_t*)&state->rescuer_available, r); 
-                // Notifica eventuali thread in attesa di soccorritori
-                LOG_SYSTEM("debug", "Soccorritore %d rilasciato e ora IDLE", record->assigned_rescuers[i].id);
-            }
-            record->assigned_rescuers_count = 0;
-            free(record->assigned_rescuers);
-            record->assigned_rescuers = NULL;
-
-            // Rimuove l'emergenza dall'array delle emergenze in corso
-            size_t idx = find_idx((void**)state->emergencies_in_progress, state->emergencies_in_progress_count, (void*)&record->emergency);
-            if(idx != (size_t)-1) remove_emergency_from_general_queue((void**)state->emergencies_in_progress, &state->emergencies_in_progress_count, idx);
-            emergency_record_cleanup(record);
-            break;
-        } else if(record->preempted){
-            // L'emergenza è stata preemptata
-            LOG_SYSTEM("status", "Emergenza preemptata: %s", record->emergency.type.emergency_name);
             
+            // --- RILASCIO RISORSE SUCCESSO (FIXED) ---
             for(size_t i = 0; i < record->assigned_rescuers_count; ++i){
-                rescuer_digital_twin_t* r = &record->assigned_rescuers[i];
-                
-                rescuer_digital_twin_t* twin_ptr = NULL;
-                for(size_t u=0; u<state->rescuers_in_use_count; u++){
-                    if(state->rescuers_in_use[u]->id == r->id){
-                        twin_ptr = state->rescuers_in_use[u];
+                int id_to_find = record->assigned_rescuers[i].id;
+                rescuer_digital_twin_t* original_ptr = NULL;
+
+                // Cerca puntatore originale
+                for(size_t u = 0; u < state->rescuers_in_use_count; u++){
+                    if(state->rescuers_in_use[u]->id == id_to_find){
+                        original_ptr = state->rescuers_in_use[u];
                         remove_rescuer_from_general_queue((void**)state->rescuers_in_use, &state->rescuers_in_use_count, u);
                         break;
                     }
                 }
 
-                if(twin_ptr){
-                    twin_ptr->status = IDLE;
-                    state->rescuer_available[state->rescuer_available_count++] = twin_ptr;
+                if(original_ptr){
+                    original_ptr->status = IDLE;
+                    state->rescuer_available[state->rescuer_available_count++] = original_ptr;
+                    LOG_SYSTEM("debug", "Soccorritore %d rilasciato e ora IDLE", original_ptr->id);
                 }
             }
+            
+            record->assigned_rescuers_count = 0;
+            free(record->assigned_rescuers);
+            record->assigned_rescuers = NULL;
+
+            size_t idx = find_idx((void**)state->emergencies_in_progress, state->emergencies_in_progress_count, (void*)&record->emergency);
+            if(idx != (size_t)-1){
+                remove_emergency_from_general_queue((void**)state->emergencies_in_progress, 
+                                          (size_t*)&state->emergencies_in_progress_count, 
+                                          idx);
+            }
+            emergency_record_cleanup(record);
+            
+            // Reset record locale per evitare di processarlo di nuovo nel loop
+            record = NULL; 
+            
+
+            goto end;
+            // Importante: sblocca mutex e segnala disponibilità prima di uscire/riciclare
+            // Ma qui siamo alla fine del task, break esce dal while interno? No, worker thread è loop infinito.
+            // Break qui usciva dal "if/else preemption check" loop? No, worker structure è flat.
+            // Break qui esce dal while(true)? No, vogliamo continuare.
+            // Il codice originale aveva "break" ma era sbagliato se voleva continuare a lavorare.
+            // Rimuoviamo break e continuiamo.
+            
+        } else if(record->preempted){
+            // --- RILASCIO RISORSE PREEMPTION (FIXED) ---
+            LOG_SYSTEM("status", "Emergenza %s preemptata: RILASCIO TOTALE RISORSE", record->emergency.type.emergency_name);
+            
+            for(size_t i = 0; i < record->assigned_rescuers_count; ++i){
+                int id_to_find = record->assigned_rescuers[i].id;
+                rescuer_digital_twin_t* original_ptr = NULL;
+
+                for(size_t u = 0; u < state->rescuers_in_use_count; u++){
+                    if(state->rescuers_in_use[u]->id == id_to_find){
+                        original_ptr = state->rescuers_in_use[u];
+                        remove_rescuer_from_general_queue((void**)state->rescuers_in_use, &state->rescuers_in_use_count, u);
+                        break;
+                    }
+                }
+
+                if(original_ptr){
+                    original_ptr->status = IDLE;
+                    state->rescuer_available[state->rescuer_available_count++] = original_ptr;
+                }
+            }
+            
             free(record->assigned_rescuers);
             record->assigned_rescuers = NULL;
             record->assigned_rescuers_count = 0;
 
             pause_emergency(state, &record->emergency);
             pthread_mutex_unlock(&state->mutex);
-
-            pthread_cond_broadcast(&state->rescuer_available_cond); // Notifica eventuali thread in attesa di soccorritori
-
-            continue; // Torna all'inizio del ciclo per gestire nuovamente l'emergenza
+            
+            // Segnala che ci sono risorse libere!
+            pthread_cond_broadcast(&state->rescuer_available_cond);
+            continue; 
         }
     }
+end:
     pthread_mutex_unlock(&state->mutex);
-    pthread_cond_broadcast(&state->rescuer_available_cond); // Notifica eventuali thread in attesa di soccorritori
+    pthread_cond_broadcast(&state->rescuer_available_cond); 
     state->worker_threads_count--;
     return NULL;
 }
