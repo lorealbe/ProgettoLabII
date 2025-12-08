@@ -321,94 +321,101 @@ static rescuer_digital_twin_t* find_best_idle_rescuer(state_t* state, emergency_
 }
 
 // Trova il miglior soccorritore impegnato in un'emergenza di priorità inferiore
-// Sostituisci interamente questa funzione in src/runtime/status.c
 
 static rescuer_digital_twin_t* find_best_rescuer_lower_priority(state_t* state, emergency_record_t* record, char* required_type_name){
     if(!state || !record) return NULL;
 
-    LOG_SYSTEM("status", "Ricerca preemption per: %s", record->emergency.type.emergency_name);
-
-    emergency_t* emergency = &record->emergency;
+    emergency_t* requesting_emergency = &record->emergency;
     rescuer_digital_twin_t* best = NULL;         
-    time_t best_time = LONG_MAX;      
     
-    int best_est_x = -1;
-    int best_est_y = -1;
-
-    // 1. Trova il miglior candidato
-    for(size_t i = 0; i < state->rescuers_in_use_count; ++i){
-        rescuer_digital_twin_t* rescuer = state->rescuers_in_use[i]; 
+    // Strategia: Iteriamo sulle EMERGENZE, non sui soccorritori.
+    // Questo ci permette di scegliere UNA vittima e rubare da lei.
+    
+    // 1. Cerca prima nelle emergenze in corso
+    for(size_t i = 0; i < state->emergencies_in_progress_count; ++i){
+        emergency_record_t* victim_record = state->emergencies_in_progress[i];
         
-        if(strcmp(rescuer->type->rescuer_type_name, required_type_name) != 0) continue;
-        if(rescuer->status != EN_ROUTE_TO_SCENE && rescuer->status != ON_SCENE) continue; 
-        
-        emergency_t* curr_em = find_emergency_by_rescuer(rescuer, state->emergencies_in_progress, state->emergencies_in_progress_count);
-        if(!curr_em) {
-            curr_em = find_emergency_by_rescuer(rescuer, state->emergencies_paused, state->emergencies_paused_count);
-        } 
-        if(!curr_em) continue;
-        
-        if(curr_em->type.priority >= emergency->type.priority) continue; 
+        // Non possiamo rubare a chi ha priorità >= o uguale
+        if(victim_record->emergency.type.priority >= requesting_emergency->type.priority) continue;
 
-        int est_x = rescuer->x;
-        int est_y = rescuer->y;
-        estimate_rescuer_position(rescuer, curr_em, &est_x, &est_y);
-        
-        int distance = manhattan_distance(est_x, est_y, emergency->x, emergency->y);
-        int speed = rescuer->type->speed > 0 ? rescuer->type->speed : 1; 
-        time_t time_to_scene = (distance + speed - 1) / speed; 
-
-        if(time_to_scene < best_time && arrive_in_time(time_to_scene, emergency->type.priority) ){
-            best = rescuer;
-            best_time = time_to_scene; 
-            best_est_x = est_x;
-            best_est_y = est_y;
-        }
-    }
-
-    // 2. Se trovato, rimuovilo CORRETTAMENTE dalla vecchia emergenza
-    if(best != NULL){  
-        LOG_SYSTEM("status", "Preemption: rubato soccorritore %s (ID %d)", best->type->rescuer_type_name, best->id);
-        best->x = best_est_x;
-        best->y = best_est_y;
-
-        // Ritroviamo il record dell'emergenza a cui apparteneva
-        emergency_t* old_em_ptr = find_emergency_by_rescuer(best, state->emergencies_in_progress, state->emergencies_in_progress_count);
-        
-        if(!old_em_ptr){
-            old_em_ptr = find_emergency_by_rescuer(best, state->emergencies_paused, state->emergencies_paused_count);
-        }
-
-        if(!old_em_ptr){
-            return best; // Non dovrebbe succedere
-        }
-
-        if(old_em_ptr) {
-            emergency_record_t* old_record = (emergency_record_t*)old_em_ptr;
+        // Cerchiamo se questa vittima ha un soccorritore del tipo richiesto
+        for(size_t j = 0; j < victim_record->assigned_rescuers_count; ++j){
+            rescuer_digital_twin_t* candidate = &victim_record->assigned_rescuers[j];
             
-            // FIX: Cerca l'indice LOCALE nell'array dell'emergenza
-            int local_idx = -1;
-            for(size_t k = 0; k < old_record->assigned_rescuers_count; k++){
-                if(old_record->assigned_rescuers[k].id == best->id){
-                    local_idx = k;
-                    break;
+            // Controllo tipo
+            if(strcmp(candidate->type->rescuer_type_name, required_type_name) == 0){
+                
+                // Trovato un candidato valido dalla vittima i-esima.
+                // Lo prendiamo SUBITO (senza cercare il "migliore" per distanza in assoluto).
+                // Questo concentra il furto sulla prima vittima trovata.
+                
+                // Ora dobbiamo trovare il puntatore originale in rescuers_in_use
+                for(size_t u = 0; u < state->rescuers_in_use_count; ++u){
+                    if(state->rescuers_in_use[u]->id == candidate->id){
+                        best = state->rescuers_in_use[u];
+                        break;
+                    }
                 }
-            }
-
-            if(local_idx != -1){
-                size_t count = old_record->assigned_rescuers_count;
-                if(count > 1 && local_idx < count - 1){
-                    memmove(&old_record->assigned_rescuers[local_idx], 
-                            &old_record->assigned_rescuers[local_idx + 1], 
-                            (count - local_idx - 1) * sizeof(rescuer_digital_twin_t));
+                
+                if(best){
+                    // Rimuoviamo il soccorritore dalla lista LOCALE della vittima
+                    if(victim_record->assigned_rescuers_count > 1 && j < victim_record->assigned_rescuers_count - 1){
+                        memmove(&victim_record->assigned_rescuers[j], 
+                                &victim_record->assigned_rescuers[j + 1], 
+                                (victim_record->assigned_rescuers_count - j - 1) * sizeof(rescuer_digital_twin_t));
+                    }
+                    victim_record->assigned_rescuers_count--;
+                    
+                    // Impostiamo la posizione stimata per il nuovo assegnatario
+                    int est_x = best->x; 
+                    int est_y = best->y;
+                    estimate_rescuer_position(best, &victim_record->emergency, &est_x, &est_y);
+                    best->x = est_x;
+                    best->y = est_y;
+                    
+                    LOG_SYSTEM("status", "Preemption Chirurgica: rubato %s (ID %d) all'emergenza %s", 
+                               best->type->rescuer_type_name, best->id, victim_record->emergency.type.emergency_name);
+                    
+                    return best; // Ritorniamo immediatamente
                 }
-                old_record->assigned_rescuers_count--; // Decrementa contatore locale
             }
         }
     }
-    return best;
-}
 
+    // 2. Se non abbiamo trovato nulla nelle in_progress, cerchiamo nelle PAUSED (come fallback)
+    // ... (stessa logica iterando su emergencies_paused) ...
+    for(size_t i = 0; i < state->emergencies_paused_count; ++i){
+        emergency_record_t* victim_record = state->emergencies_paused[i];
+        if(victim_record->emergency.type.priority >= requesting_emergency->type.priority) continue;
+
+        for(size_t j = 0; j < victim_record->assigned_rescuers_count; ++j){
+            rescuer_digital_twin_t* candidate = &victim_record->assigned_rescuers[j];
+            if(strcmp(candidate->type->rescuer_type_name, required_type_name) == 0){
+                
+                for(size_t u = 0; u < state->rescuers_in_use_count; ++u){
+                    if(state->rescuers_in_use[u]->id == candidate->id){
+                        best = state->rescuers_in_use[u];
+                        break;
+                    }
+                }
+                if(best){
+                    // Rimozione dalla vittima
+                    if(victim_record->assigned_rescuers_count > 1 && j < victim_record->assigned_rescuers_count - 1){
+                        memmove(&victim_record->assigned_rescuers[j], 
+                                &victim_record->assigned_rescuers[j + 1], 
+                                (victim_record->assigned_rescuers_count - j - 1) * sizeof(rescuer_digital_twin_t));
+                    }
+                    victim_record->assigned_rescuers_count--;
+                    best->x = best->x; // È in pausa, assumiamo fermo all'ultima posizione nota o base
+                    best->y = best->y;
+                    return best;
+                }
+            }
+        }
+    }
+
+    return NULL;
+}
 
 
 static bool try_allocate_rescuers(state_t* state, emergency_record_t* record){
@@ -936,9 +943,7 @@ int status_add_waiting(state_t* state, emergency_request_t* request, emergency_t
 * ---------------------------------------------------------------------------------------------------
 */
 
-// Thread worker per la gestione delle emergenze
-// Sostituisci in src/runtime/status.c
-
+// Thread per la gestione delle emergenze
 void* worker_thread(void* arg){
     state_t* state = (state_t*)arg;
     if(!state) return NULL; 
@@ -1152,48 +1157,73 @@ end:
 }
 
 // Thread worker per la gestione del timeout delle emergenze
+
 void* timeout_thread(void* arg){
     state_t* state = (state_t*)arg;
-    if(!state) {
-        return NULL;
-    } // Errore nello stato
+    if(!state) return NULL; 
 
     while(true){
         pthread_mutex_lock(&state->mutex);
-        if(state->shutdown_flag) { // Controlla il flag di shutdown
+        if(*state->shutdown_flag) { 
             pthread_mutex_unlock(&state->mutex);
-            continue;
+            break; // Usa break per uscire pulitamente
         }
 
+        // --- FIX: Gestione corretta TIMEOUT per emergenze in PAUSA ---
         for(size_t i = 0; i < state->emergencies_paused_count; ++i){
             emergency_record_t* record = state->emergencies_paused[i];
             increment_emergency_timeout(record);
-            // Aggiorna la priorità corrente in base alla formula: priorità_base + radice cubica di (timeout/9)
-            // Dopo 9 secondi la priorità aumenta di 1, garantendo che le emergenze di priorità 0 siano gestite in modo prioritario rispetto a quelle di priorità base 1
-            // Dopo 72 secondi, una emergenza di priorità base 0 raggiunge la priorità 2
-            // Le emergenze di priorià base 0 però non avranno precedenza su quelle di priorità base 2 quando queste sono in timeout da 1 secondo o più
+            
+            // Se è andata in timeout, rimuovila dalla lista PAUSED e pulisci
+            if(record->emergency.status == TIMEOUT){
+                LOG_SYSTEM("status", "Rimuovo emergenza in pausa scaduta: %s", record->emergency.type.emergency_name);
+                
+                // Rilascia eventuali soccorritori residui (se ce ne sono)
+                for(size_t k = 0; k < record->assigned_rescuers_count; ++k){
+                    rescuer_digital_twin_t* r = &record->assigned_rescuers[k];
+                    // Trova l'originale e rilascialo
+                    for(size_t u=0; u<state->rescuers_in_use_count; u++){
+                        if(state->rescuers_in_use[u]->id == r->id){
+                            rescuer_digital_twin_t* original = state->rescuers_in_use[u];
+                            remove_rescuer_from_general_queue((void**)state->rescuers_in_use, &state->rescuers_in_use_count, u);
+                            original->status = IDLE;
+                            state->rescuer_available[state->rescuer_available_count++] = original;
+                            break;
+                        }
+                    }
+                }
+                free(record->assigned_rescuers);
+                record->assigned_rescuers = NULL;
+
+                // Rimuovi dalla lista PAUSED
+                remove_emergency_from_general_queue((void**)state->emergencies_paused, 
+                                          &state->emergencies_paused_count, 
+                                          i);
+                emergency_record_cleanup(record);
+                i--; // Decrementa indice perché l'array si è accorciato
+                continue;
+            }
+
+            // Aggiorna priorità dinamica solo se non è in timeout
             record->current_priority = (float)record->emergency.type.priority + (float)(cbrt(((float)(record->timeout/9))));
         }
+
+        // --- Gestione emergenze in WAITING (Invariata ma con break al posto di continue) ---
         for(size_t i = 0; i < state->emergencies_waiting_count; ++i){
             emergency_record_t* record = state->emergencies_waiting[i];
             increment_emergency_timeout(record);
-            // Aggiorna la priorità corrente in base alla formula: priorità_base + radice cubica di (timeout/9)
             record->current_priority = (float)record->emergency.type.priority + (float)(cbrt(((float)(record->timeout/9)))); 
             if(record->emergency.status == TIMEOUT){
-                timeout_emergency(state, &record->emergency);
-                // Rimuove l'emergenza dall'array delle emergenze in attesa
-                size_t idx = find_idx((void**)state->emergencies_waiting, state->emergencies_waiting_count, (void*)&record->emergency);
-                if(idx != (size_t)-1){
-                    remove_emergency_from_general_queue((void**)state->emergencies_waiting, 
-                                              (size_t*)&state->emergencies_waiting_count, 
-                                              idx);
-                    emergency_record_cleanup(record);
-                    i--; // Decrementa l'indice per controllare il nuovo elemento in questa posizione
-                }
+                LOG_SYSTEM("status", "Timeout emergenza in attesa: %s", record->emergency.type.emergency_name);
+                remove_emergency_from_general_queue((void**)state->emergencies_waiting, 
+                                          &state->emergencies_waiting_count, 
+                                          i);
+                emergency_record_cleanup(record);
+                i--; 
             }
         }
         pthread_mutex_unlock(&state->mutex);
-        sleep(1); // Attende un secondo prima di controllare nuovamente
+        sleep(1); 
     }
     return NULL;
 }
