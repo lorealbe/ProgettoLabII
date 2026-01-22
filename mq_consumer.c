@@ -131,6 +131,19 @@ void* mq_consumer_thread(void* arg) {
 
         buffer[bytes_received] = '\0'; // Termina il messaggio
         LOG_SYSTEM("mq_consumer", "Messaggio ricevuto: %s", buffer);
+        if(strcmp(buffer, "exit") == 0) {
+            LOG_SYSTEM("mq_consumer", "Ricevuto comando di exit. Avvio procedura di shutdown.");
+            
+            // 1. Imposta il flag di shutdown nello stato condiviso
+            status_request_shutdown(consumer->state);
+
+            // 2. Invia segnale SIGUSR1 al processo corrente per svegliare il main dalla pause()
+            kill(getpid(), SIGUSR1);
+
+            // 3. Esci dal ciclo di consumo
+            break;
+        }
+
         if(mq_parse_message(consumer, buffer, &request)) {
             LOG_SYSTEM("mq_consumer", "Richiesta di emergenza analizzata: %s %d %d %ld", request.emergency_name, request.x, request.y, request.timestamp);
             // Processa la richiesta di emergenza

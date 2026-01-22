@@ -11,6 +11,26 @@
 #define QUEUE_NAME "/emergenze676878"
 
 int main(int argc, char *argv[]) {
+
+    if (argc == 2 && strcmp(argv[1], "exit") == 0) {
+        mqd_t mq = mq_open(QUEUE_NAME, O_WRONLY);
+        if (mq == (mqd_t)-1) {
+            perror("Errore nell'apertura della coda");
+            exit(1);
+        }
+        
+        // Invia il messaggio "exit" (lunghezza 5 per includere \0)
+        if (mq_send(mq, "exit", 5, 0) == -1) {
+            perror("Errore nell'invio del messaggio di exit");
+            mq_close(mq);
+            exit(1);
+        }
+
+        printf("Comando di exit inviato al server.\n");
+        mq_close(mq);
+        return 0;
+    }
+    
     // Controllo dei parametri
     if (!((argc == 5) || (argc == 3 && strcmp(argv[1], "-f") == 0))) {
         fprintf(stderr, "Uso: %s <nomeEmergenza> <x> <y> <delay>\nOppure\n%s -f <file>\n", argv[0], argv[0]);
