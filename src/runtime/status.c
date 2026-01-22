@@ -936,6 +936,34 @@ int status_add_waiting(state_t* state, emergency_request_t* request, emergency_t
     return 0; 
 }
 
+int status_start_worker_threads(state_t* state, size_t worker_threads_count) {
+    if(!state) return -1;
+
+    // 1. Avvia i Worker Threads (quelli che gestiscono le emergenze)
+    for(size_t i = 0; i < worker_threads_count; ++i) {
+        if(pthread_create(&state->worker_threads[i], NULL, worker_thread, state) != 0) {
+            LOG_SYSTEM("status", "Errore nella creazione del worker thread %zu", i);
+            return -1;
+        }
+        state->worker_threads_count++;
+    }
+
+    // 2. Avvia il Timeout Thread (FONDAMENTALE per far scadere le emergenze)
+    // Nota: Usiamo uno slot extra nell'array worker_threads o una variabile dedicata
+    // Se usi l'array worker_threads, assicurati che sia dimensionato per MAX_WORKER_THREADS + 1
+    // Oppure, più semplicemente, lancialo in modalità "detached" se non devi farci join, 
+    // o salvalo in una variabile dedicata nella struct state_t (consigliato).
+    
+    pthread_t timeout_tid;
+    if(pthread_create(&timeout_tid, NULL, timeout_thread, state) != 0) {
+        LOG_SYSTEM("status", "Errore nella creazione del timeout thread");
+        return -1;
+    }
+    pthread_detach(timeout_tid); // Il timeout thread gira sempre in background
+
+    LOG_SYSTEM("status", "Tutti i thread avviati correttamente");
+    return 0;
+}
 
 /*
 * ---------------------------------------------------------------------------------------------------
@@ -995,6 +1023,8 @@ void* worker_thread(void* arg){
             
             pthread_mutex_unlock(&state->mutex);
             pthread_cond_broadcast(&state->rescuer_available_cond);
+
+            record = NULL; // Reset del record locale
             continue; // Ricomincia il loop
         } else {
             while(!state->shutdown_flag && state->emergencies_waiting_count == 0){

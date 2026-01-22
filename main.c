@@ -7,6 +7,7 @@
 #include <unistd.h>
 #include <limits.h>
 #include <time.h>
+#include <signal.h>
 
 #include "Parser/parse_env.h"
 #include "Parser/parse_emergency_types.h"
@@ -18,6 +19,7 @@
 
 #define QUEUE_NAME "/emergenze676878"
 
+void handler_sigusr1(int sig){ ; }
 
 int main(){
     // -----------------------------------
@@ -58,7 +60,15 @@ int main(){
         LOG_SYSTEM("main", "Errore nell'inizializzazione della message queue");
         goto cleanup;
     }
-    while(1){
+
+    if(status_start_worker_threads(&state, MAX_WORKER_THREADS) != 0){
+        LOG_SYSTEM("main", "Errore nell'avvio dei worker threads");
+        goto cleanup;
+    }
+
+    signal(SIGUSR1, handler_sigusr1);
+    
+    while(!*(state.shutdown_flag)){
         pause(); // Attende un segnale per terminare
     }
 
