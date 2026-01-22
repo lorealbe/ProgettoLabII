@@ -57,6 +57,9 @@ typedef struct state_t {
     pthread_t* worker_threads;
     size_t worker_threads_count;
 
+    size_t emergencies_solved;
+    size_t emergencies_not_solved;
+
     sig_atomic_t* shutdown_flag; // 0 = running, 1 = shutdown
 } state_t;
 

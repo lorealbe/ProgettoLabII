@@ -1136,7 +1136,7 @@ void* worker_thread(void* arg){
             // Reset record locale per evitare di processarlo di nuovo nel loop
             record = NULL; 
             
-
+            state.emergencies_solved++;
             goto end;
             // Importante: sblocca mutex e segnala disponibilità prima di uscire/riciclare
             // Ma qui siamo alla fine del task, break esce dal while interno? No, worker thread è loop infinito.
@@ -1231,6 +1231,8 @@ void* timeout_thread(void* arg){
                                           i);
                 emergency_record_cleanup(record);
                 i--; // Decrementa indice perché l'array si è accorciato
+
+                state.emergencies_not_solved++;
                 continue;
             }
 
@@ -1250,6 +1252,7 @@ void* timeout_thread(void* arg){
                                           i);
                 emergency_record_cleanup(record);
                 i--; 
+                state.emergencies_not_solved++;
             }
         }
         pthread_mutex_unlock(&state->mutex);
