@@ -1,0 +1,392 @@
+================================================================================
+DOCUMENTAZIONE PROGETTO - SISTEMA DI GESTIONE EMERGENZE E SOCCORRITORI
+================================================================================
+
+PANORAMICA DEL PROGETTO
+================================================================================
+
+Questo progetto implementa un sistema di simulazione per la gestione di 
+emergenze e l'allocazione di soccorritori in un ambiente bidimensionale. 
+Il sistema è scritto in C e utilizza un approccio basato su file di 
+configurazione per definire i tipi di emergenze, i tipi di soccorritori e 
+le variabili ambientali.
+
+ARCHITETTURA DEL SISTEMA
+================================================================================
+
+Il progetto è composto da diversi moduli, ognuno con una responsabilità 
+specifica:
+
+1. MODULO MAIN (main.c)
+   - Punto di ingresso dell'applicazione
+   - Coordina il parsing dei file di configurazione
+   - Visualizza i dati parsati per verifica
+
+2. MODULO SOCCORRITORI (rescuers.h, rescuers.c)
+   - Definisce le strutture dati per i tipi di soccorritori
+   - Definisce i "digital twins" (gemelli digitali) dei soccorritori
+   - Gestisce gli stati dei soccorritori (IDLE, EN_ROUTE_TO_SCENE, 
+     ON_SCENE, RETURNING_TO_BASE)
+
+3. MODULO TIPI DI EMERGENZA (emergency_types.h, emergency_types.c)
+   - Definisce le strutture per i tipi di emergenza
+   - Gestisce le richieste di soccorritori per ogni tipo di emergenza
+   - Gestisce le priorità delle emergenze
+
+4. MODULO PARSING SOCCORRITORI (parse_rescuers.h, parse_rescuers.c)
+   - Parsing sicuro in due passate del file rescuers.txt
+   - Allocazione efficiente della memoria
+   - Creazione automatica dei digital twins
+
+5. MODULO PARSING EMERGENZE (parse_emergency_types.h, parse_emergency_types.c)
+   - Parsing sicuro in due passate del file emergency.txt
+   - Collegamento tra emergenze e tipi di soccorritori richiesti
+   - Gestione delle richieste multiple di soccorritori per emergenza
+
+6. MODULO PARSING AMBIENTE (parse_env.h, parse_env.c)
+   - Parsing del file environment.txt
+   - Configurazione delle dimensioni dell'ambiente simulato
+   - Configurazione della coda delle emergenze
+
+STRUTTURE DATI PRINCIPALI
+================================================================================
+
+1. rescuer_type_t
+   - Rappresenta un tipo di soccorritore (es. Pompieri, Ambulanza)
+   - Campi:
+     * rescuer_type_name: Nome del tipo di soccorritore
+     * speed: Velocità in celle per secondo
+     * x, y: Coordinate della base di partenza
+
+2. rescuer_digital_twin_t
+   - Rappresenta un'istanza specifica di un soccorritore
+   - Campi:
+     * id: Identificatore univoco
+     * x, y: Posizione corrente
+     * type: Puntatore al tipo di soccorritore
+     * status: Stato corrente (IDLE, EN_ROUTE_TO_SCENE, ON_SCENE, 
+       RETURNING_TO_BASE)
+
+3. emergency_type_t
+   - Rappresenta un tipo di emergenza
+   - Campi:
+     * emergency_name: Nome dell'emergenza
+     * priority: Priorità (0=bassa, 1=media, 2=alta)
+     * rescuer_requests: Array di richieste di soccorritori
+     * rescuers_req_number: Numero di tipi di soccorritori richiesti
+
+4. rescuer_request_t
+   - Rappresenta una richiesta di soccorritori per un'emergenza
+   - Campi:
+     * type: Puntatore al tipo di soccorritore richiesto
+     * required_count: Numero di soccorritori richiesti
+     * time_to_manage: Tempo necessario per gestire l'emergenza (secondi)
+
+5. environment_variable_t
+   - Contiene le variabili di configurazione dell'ambiente
+   - Campi:
+     * queue: Nome della coda delle emergenze
+     * height: Altezza dell'ambiente in celle
+     * width: Larghezza dell'ambiente in celle
+
+FORMATO DEI FILE DI CONFIGURAZIONE
+================================================================================
+
+1. rescuers.txt
+   Formato: [NomeTipo][NumeroIstanze][Velocità][CoordX;CoordY]
+   Esempio:
+     [Pompieri][5][2][100;200]
+     [Ambulanza][25][4][150;250]
+   
+   Significato:
+   - Pompieri: 5 istanze, velocità 2 celle/sec, base in (100,200)
+   - Ambulanza: 25 istanze, velocità 4 celle/sec, base in (150,250)
+
+2. emergency.txt
+   Formato: [NomeEmergenza][Priorità]TipoSoccorritore:NumRichiesti,TempoGestione;...
+   Esempio:
+     [Allagamento][1]Pompieri:1,5;Ambulanza:1,2;
+     [Incendio][2]Pompieri:2,8;Ambulanza:3,1;
+   
+   Significato:
+   - Allagamento (priorità 1): richiede 1 Pompiere (5 sec) e 1 Ambulanza (2 sec)
+   - Incendio (priorità 2): richiede 2 Pompieri (8 sec) e 3 Ambulanze (1 sec)
+
+3. environment.txt
+   Formato: chiave=valore
+   Esempio:
+     queue=emergenze123456
+     height=300
+     width=400
+   
+   Significato:
+   - Nome coda: emergenze123456
+   - Ambiente: 300x400 celle
+
+ALGORITMO DI PARSING SICURO
+================================================================================
+
+Il progetto implementa un approccio di parsing in DUE PASSATE per garantire
+sicurezza nella gestione della memoria e prevenire bug legati a puntatori
+invalidi:
+
+PASSATA 1 - CONTEGGIO:
+1. Legge il file per contare gli elementi da allocare
+2. Calcola il numero totale di strutture necessarie
+3. Determina la dimensione esatta della memoria richiesta
+
+PASSATA 2 - ALLOCAZIONE E POPOLAMENTO:
+1. Alloca TUTTA la memoria necessaria in un unico blocco con calloc()
+2. Rilegge il file dall'inizio (rewind)
+3. Popola le strutture con i dati parsati
+4. Stabilisce i collegamenti tra strutture in modo sicuro
+
+VANTAGGI DI QUESTO APPROCCIO:
+- Nessuna riallocazione dinamica durante il popolamento
+- I puntatori rimangono sempre validi
+- Memoria azzerata automaticamente (calloc)
+- Terminatori NULL automatici per gli array
+- Prevenzione di memory leak e use-after-free
+
+COMPILAZIONE ED ESECUZIONE
+================================================================================
+
+Per compilare il progetto:
+  gcc -o a.out main.c parse_env.c parse_rescuers.c parse_emergency_types.c \
+      emergency_types.c rescuers.c
+
+Per eseguire il programma:
+  ./a.out
+
+OUTPUT ATTESO:
+Il programma stampa a video:
+1. Lista dei tipi di soccorritori con le loro caratteristiche
+2. Lista dei tipi di emergenze con priorità e richieste associate
+
+GESTIONE DELLA MEMORIA
+================================================================================
+
+Il progetto utilizza diverse tecniche per garantire una corretta gestione 
+della memoria:
+
+1. ALLOCAZIONE CON CALLOC:
+   - Azzera automaticamente la memoria allocata
+   - Garantisce che i terminatori NULL siano impostati correttamente
+   - Previene l'uso di dati non inizializzati
+
+2. STRDUP PER STRINGHE:
+   - Duplica le stringhe parsate in memoria heap
+   - Evita problemi con buffer temporanei
+   - Garantisce che ogni stringa abbia la propria memoria
+
+3. ARRAY TERMINATI CON NULL:
+   - Gli array di strutture sono terminati con un elemento NULL
+   - Facilita l'iterazione senza bisogno di contatori separati
+   - Previene accessi fuori limite
+
+4. PUNTATORI STABILI:
+   - La memoria allocata con calloc non viene mai spostata
+   - I puntatori tra strutture rimangono sempre validi
+   - Nessun bisogno di aggiornare i puntatori dopo l'allocazione
+
+FUNZIONI DI UTILITÀ
+================================================================================
+
+1. find_rescuer_type_by_name()
+   - Cerca un tipo di soccorritore per nome
+   - Utilizzata per collegare le emergenze ai soccorritori
+   - Restituisce NULL se il tipo non viene trovato
+
+2. parse_rescuer_type()
+   - Parsing del file rescuers.txt
+   - Crea array di tipi e digital twins
+   - Ritorna il numero di tipi parsati
+
+3. parse_emergency_type()
+   - Parsing del file emergency.txt
+   - Collega emergenze a tipi di soccorritori
+   - Ritorna il numero di emergenze parsate
+
+4. parse_environment_variables()
+   - Parsing del file environment.txt
+   - Popola la struttura environment_variable_t
+   - Ritorna 0 in caso di successo
+
+STATI DEI SOCCORRITORI
+================================================================================
+
+Il sistema definisce quattro possibili stati per i soccorritori digitali:
+
+1. IDLE (In attesa)
+   - Il soccorritore è disponibile alla base
+   - Può essere assegnato a una nuova emergenza
+   - Stato iniziale di tutti i digital twins
+
+2. EN_ROUTE_TO_SCENE (In viaggio verso la scena)
+   - Il soccorritore sta raggiungendo il luogo dell'emergenza
+   - Si muove alla velocità definita nel suo tipo
+   - Non può essere riassegnato fino all'arrivo
+
+3. ON_SCENE (Sulla scena)
+   - Il soccorritore sta gestendo l'emergenza
+   - Rimane per il tempo specificato in time_to_manage
+   - Non può essere riassegnato fino al completamento
+
+4. RETURNING_TO_BASE (In ritorno alla base)
+   - Il soccorritore sta tornando alla propria base
+   - Si muove alla velocità definita nel suo tipo
+   - Diventerà IDLE all'arrivo alla base
+
+PRIORITÀ DELLE EMERGENZE
+================================================================================
+
+Le emergenze sono classificate secondo tre livelli di priorità:
+
+- PRIORITÀ 0 (BASSA): Emergenze non urgenti, gestibili con calma
+- PRIORITÀ 1 (MEDIA): Emergenze che richiedono intervento tempestivo
+- PRIORITÀ 2 (ALTA): Emergenze critiche che richiedono intervento immediato
+
+La priorità determina l'ordine di gestione quando multiple emergenze sono 
+presenti nella coda.
+
+CARATTERISTICHE TECNICHE
+================================================================================
+
+1. SICUREZZA NELLA GESTIONE DELLA MEMORIA:
+   - Nessun uso di realloc durante il popolamento delle strutture
+   - Tutti i puntatori rimangono validi per tutta la durata del programma
+   - Allocazione preventiva di tutta la memoria necessaria
+
+2. ROBUSTEZZA DEL PARSING:
+   - Verifica della presenza di tutti i token necessari
+   - Gestione di file malformati o vuoti
+   - Messaggi di errore descrittivi
+
+3. ESTENSIBILITÀ:
+   - Facile aggiunta di nuovi tipi di soccorritori
+   - Facile aggiunta di nuovi tipi di emergenze
+   - Struttura modulare facilmente estendibile
+
+4. EFFICIENZA:
+   - Parsing in due sole passate sui file
+   - Allocazione di memoria ottimizzata
+   - Nessuna copia inutile di dati
+
+POSSIBILI SVILUPPI FUTURI
+================================================================================
+
+1. SIMULAZIONE DINAMICA:
+   - Implementare la logica di movimento dei soccorritori
+   - Gestire la coda delle emergenze in tempo reale
+   - Calcolare i tempi di arrivo sulla scena
+
+2. ALGORITMI DI ALLOCAZIONE:
+   - Implementare strategie di assegnazione ottimale dei soccorritori
+   - Considerare distanze, priorità e disponibilità
+   - Minimizzare i tempi di risposta
+
+3. STATISTICHE E REPORTING:
+   - Tracciare i tempi di intervento
+   - Calcolare l'efficienza del sistema
+   - Generare report sulle operazioni
+
+4. INTERFACCIA GRAFICA:
+   - Visualizzare la mappa 2D dell'ambiente
+   - Mostrare le posizioni dei soccorritori in tempo reale
+   - Visualizzare le emergenze attive sulla mappa
+
+5. PERSISTENZA DEI DATI:
+   - Salvare lo stato della simulazione
+   - Caricare configurazioni salvate
+   - Log delle operazioni eseguite
+
+NOTE IMPORTANTI PER GLI SVILUPPATORI
+================================================================================
+
+1. Non modificare la struttura dei file di configurazione senza aggiornare
+   le funzioni di parsing corrispondenti.
+
+2. Quando si aggiungono nuovi campi alle strutture, ricordarsi di:
+   - Aggiornare le funzioni di parsing
+   - Aggiornare le funzioni di stampa/debug
+   - Verificare che la memoria sia allocata correttamente
+
+3. Quando si lavora con i puntatori tra strutture:
+   - Assicurarsi che la struttura puntata sia stata allocata
+   - Verificare che i puntatori siano inizializzati a NULL quando appropriato
+   - Non assumere mai che un puntatore sia valido senza verificarlo
+
+4. Per debugging:
+   - Utilizzare valgrind per verificare memory leak
+   - Utilizzare gdb per tracciare i puntatori
+   - Aggiungere stampe di debug durante il parsing
+
+5. La compilazione con flag aggiuntivi è consigliata:
+   gcc -Wall -Wextra -g -o a.out main.c parse_env.c parse_rescuers.c \
+       parse_emergency_types.c emergency_types.c rescuers.c
+
+GESTIONE DEGLI ERRORI
+================================================================================
+
+Il progetto implementa diverse strategie di gestione degli errori:
+
+1. FILE NON TROVATI:
+   - Utilizzo di perror() per messaggi di errore descrittivi
+   - Terminazione con exit(1) in caso di errore fatale
+
+2. ALLOCAZIONE MEMORIA FALLITA:
+   - Verifica del risultato di ogni calloc/malloc
+   - Liberazione della memoria già allocata in caso di fallimento
+   - Terminazione con exit(1) e messaggio di errore
+
+3. DATI MALFORMATI:
+   - Verifica della presenza di tutti i token necessari
+   - Gestione graceful di righe incomplete
+   - Possibilità di continuare con i dati validi trovati
+
+4. RIFERIMENTI NON TROVATI:
+   - Messaggi di warning quando un tipo di soccorritore non viene trovato
+   - Impostazione del puntatore a NULL per riferimenti invalidi
+   - Continuazione dell'esecuzione quando possibile
+
+DIPENDENZE
+================================================================================
+
+Il progetto utilizza le seguenti librerie standard C:
+
+- stdio.h: Input/output su file e console
+- stdlib.h: Allocazione memoria, conversioni, utilità generali
+- string.h: Manipolazione di stringhe
+- stddef.h: Definizione di size_t e altri tipi base
+
+Il flag _GNU_SOURCE è utilizzato per:
+- getline(): Lettura di righe di lunghezza variabile
+- strtok_r(): Versione thread-safe di strtok
+
+CONVENZIONI DI CODICE
+================================================================================
+
+1. NOMENCLATURA:
+   - Strutture: nome_struct_t (snake_case con suffisso _t)
+   - Funzioni: nome_funzione (snake_case)
+   - Variabili: nome_variabile (snake_case)
+   - Costanti enum: NOME_COSTANTE (UPPER_CASE)
+
+2. COMMENTI:
+   - Commenti in italiano per descrizioni generali
+   - Commenti inline per spiegazioni tecniche
+   - Header di funzione con descrizione, parametri e return value
+
+3. INDENTAZIONE:
+   - 4 spazi per livello di indentazione
+   - Parentesi graffe su nuova riga per funzioni
+   - Parentesi graffe inline per statement di controllo
+
+4. ORGANIZZAZIONE FILE:
+   - Un header (.h) per ogni modulo
+   - Implementazione (.c) corrispondente
+   - #pragma once per header guards
+
+================================================================================
+FINE DOCUMENTAZIONE
+================================================================================
