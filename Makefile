@@ -23,4 +23,3 @@ run-client: client
 
 clean:
 	rm -f server client
-	rm /dev/mqueue/emergenze676878

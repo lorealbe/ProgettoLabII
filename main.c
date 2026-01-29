@@ -87,7 +87,7 @@ cleanup:
     free(rescuer_twins);
     free(emergency_types);
     LOG_SYSTEM("main", "Applicazione terminata con successo");
-    LOG_SYSTEM("main", "Emergenze risolte: %d", state.emergencies_solved)
-    LOG_SYSTEM("main", "Emergenze non risolte: %d", state.emergencies_not_solved)
+    LOG_SYSTEM("main", "Emergenze risolte: %d", state.emergencies_solved);
+    LOG_SYSTEM("main", "Emergenze non risolte: %d", state.emergencies_not_solved);
     return 0;
 }

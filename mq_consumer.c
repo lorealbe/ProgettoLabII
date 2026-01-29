@@ -82,25 +82,21 @@ void* mq_consumer_thread(void* arg) {
         timeout.tv_sec += 1; // Attendi al massimo 1 secondo   
 
         ssize_t bytes_received = mq_timedreceive(consumer->mq, buffer, consumer->message_size, NULL, &timeout);
-        if(bytes_received <= 0){ // Gestione errori
-            if(errno == ETIMEDOUT || errno == EAGAIN) {
-                // Nessun messaggio disponibile entro il timeout
-                continue;
-            } else if( errno == EINTR) {
-                LOG_SYSTEM("mq_consumer", "Ricezione del messaggio interrotta da segnale, riprovo");
-                continue; 
-            } else if (errno == EBADF) {
-                LOG_SYSTEM("mq_consumer", "Coda di messaggi chiusa, terminazione del thread consumatore");
-                break;
-            } else if (errno == EINVAL) {
-                LOG_SYSTEM("mq_consumer", "Coda di messaggi non valida, terminazione del thread consumatore");
-                break; 
-            } else if (errno == EMSGSIZE) {
-                LOG_SYSTEM("mq_consumer", "Messaggio troppo grande per il buffer, ignoro il messaggio");
-            }
-            continue;
-        }
+        buffer[bytes_received] = '\0'; // Termina il messaggio
+        LOG_SYSTEM("mq_consumer", "Messaggio ricevuto: %s", buffer);
+        if(strcmp(buffer, "exit") == 0) {
+            LOG_SYSTEM("mq_consumer", "Ricevuto comando di exit. Avvio procedura di shutdown.");
+            
+            // 1. Imposta il flag di shutdown nello stato condiviso
+            status_request_shutdown(consumer->state);
 
+            // 2. Invia segnale SIGUSR1 al processo corrente per svegliare il main dalla pause()
+            kill(getpid(), SIGUSR1);
+
+            // 3. Esci dal ciclo di consumo
+            break;
+        }
+        
         // Crea tutti i thread necessari per raggiungere il cap MAX_WORKER_THREADS
         pthread_mutex_lock(&consumer->state->mutex);
 
@@ -128,21 +124,6 @@ void* mq_consumer_thread(void* arg) {
         }
         pthread_mutex_unlock(&consumer->state->mutex);
         
-
-        buffer[bytes_received] = '\0'; // Termina il messaggio
-        LOG_SYSTEM("mq_consumer", "Messaggio ricevuto: %s", buffer);
-        if(strcmp(buffer, "exit") == 0) {
-            LOG_SYSTEM("mq_consumer", "Ricevuto comando di exit. Avvio procedura di shutdown.");
-            
-            // 1. Imposta il flag di shutdown nello stato condiviso
-            status_request_shutdown(consumer->state);
-
-            // 2. Invia segnale SIGUSR1 al processo corrente per svegliare il main dalla pause()
-            kill(getpid(), SIGUSR1);
-
-            // 3. Esci dal ciclo di consumo
-            break;
-        }
 
         if(mq_parse_message(consumer, buffer, &request)) {
             LOG_SYSTEM("mq_consumer", "Richiesta di emergenza analizzata: %s %d %d %ld", request.emergency_name, request.x, request.y, request.timestamp);

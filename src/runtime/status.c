@@ -115,7 +115,6 @@ static rescuer_digital_twin_t* remove_rescuer_from_general_queue(void** array, s
     if(array == NULL || count == NULL || *count == 0 || index >= *count) {
         return NULL; // Parametri non validi
     }
-    LOG_SYSTEM("status", "Rimozione di un soccorritore dalla coda "); // ??????????????
     rescuer_digital_twin_t* rescuer = (rescuer_digital_twin_t*)array[index];
     size_t remaining = *count - index - 1;
     if(remaining > 0) {
@@ -123,7 +122,6 @@ static rescuer_digital_twin_t* remove_rescuer_from_general_queue(void** array, s
     }
     (*count)--;
     array[*count] = NULL;
-    LOG_SYSTEM("status", "Soccorritore rimosso correttamente");
     return rescuer;
 } 
 
@@ -664,7 +662,7 @@ static unsigned int highest_time_to_scene(state_t* state, emergency_record_t* re
         time_t time_to_scene = (distance + speed - 1) / speed; // Calcola il tempo stimato per arrivare sulla scena approssimando per eccesso
 
         
-        LOG_SYSTEM("debug", "Rescuer: %d | Dist: %d | Speed: %d | Time: %ld", rescuer->id, distance, speed, (long)time_to_scene);
+        LOG_SYSTEM("status", "Rescuer: %d | Dist: %d | Speed: %d | Time: %ld", rescuer->id, distance, speed, (long)time_to_scene);
 
 
         if(time_to_scene > max_time){
@@ -986,11 +984,11 @@ void* worker_thread(void* arg){
         }
 
         if(record && record->preempted){
-            // Se siamo qui, il tentativo di riallocazione precedente è fallito.
+            // Il tentativo di riallocazione precedente è fallito.
             // Rilasciamo tutto per evitare deadlock.
             LOG_SYSTEM("status", "Preemption fallita o timeout per %s: RILASCIO TOTALE", record->emergency.type.emergency_name);
             
-            // RILASCIO TOTALE (Logica corretta usando ID)
+            // RILASCIO TOTALE
             for(size_t i = 0; i < record->assigned_rescuers_count; ++i){
                 int id_to_find = record->assigned_rescuers[i].id;
                 rescuer_digital_twin_t* original_ptr = NULL;
@@ -1117,7 +1115,6 @@ void* worker_thread(void* arg){
                 if(original_ptr){
                     original_ptr->status = IDLE;
                     state->rescuer_available[state->rescuer_available_count++] = original_ptr;
-                    LOG_SYSTEM("debug", "Soccorritore %d rilasciato e ora IDLE", original_ptr->id);
                 }
             }
             
@@ -1136,17 +1133,11 @@ void* worker_thread(void* arg){
             // Reset record locale per evitare di processarlo di nuovo nel loop
             record = NULL; 
             
-            state.emergencies_solved++;
+            state->emergencies_solved++;
             goto end;
-            // Importante: sblocca mutex e segnala disponibilità prima di uscire/riciclare
-            // Ma qui siamo alla fine del task, break esce dal while interno? No, worker thread è loop infinito.
-            // Break qui usciva dal "if/else preemption check" loop? No, worker structure è flat.
-            // Break qui esce dal while(true)? No, vogliamo continuare.
-            // Il codice originale aveva "break" ma era sbagliato se voleva continuare a lavorare.
-            // Rimuoviamo break e continuiamo.
             
         } else if(record->preempted){
-            // --- RILASCIO RISORSE PREEMPTION (FIXED) ---
+            // --- RILASCIO RISORSE PREEMPTION ---
             LOG_SYSTEM("status", "Emergenza %s preemptata: RILASCIO TOTALE RISORSE", record->emergency.type.emergency_name);
             
             for(size_t i = 0; i < record->assigned_rescuers_count; ++i){
@@ -1199,7 +1190,7 @@ void* timeout_thread(void* arg){
             break; // Usa break per uscire pulitamente
         }
 
-        // --- FIX: Gestione corretta TIMEOUT per emergenze in PAUSA ---
+        // --- Gestione TIMEOUT per emergenze in PAUSA ---
         for(size_t i = 0; i < state->emergencies_paused_count; ++i){
             emergency_record_t* record = state->emergencies_paused[i];
             increment_emergency_timeout(record);
@@ -1232,7 +1223,7 @@ void* timeout_thread(void* arg){
                 emergency_record_cleanup(record);
                 i--; // Decrementa indice perché l'array si è accorciato
 
-                state.emergencies_not_solved++;
+                state->emergencies_not_solved++;
                 continue;
             }
 
@@ -1240,7 +1231,7 @@ void* timeout_thread(void* arg){
             record->current_priority = (float)record->emergency.type.priority + (float)(cbrt(((float)(record->timeout/9))));
         }
 
-        // --- Gestione emergenze in WAITING (Invariata ma con break al posto di continue) ---
+        // --- Gestione emergenze in WAITING ---
         for(size_t i = 0; i < state->emergencies_waiting_count; ++i){
             emergency_record_t* record = state->emergencies_waiting[i];
             increment_emergency_timeout(record);
@@ -1252,7 +1243,7 @@ void* timeout_thread(void* arg){
                                           i);
                 emergency_record_cleanup(record);
                 i--; 
-                state.emergencies_not_solved++;
+                state->emergencies_not_solved++;
             }
         }
         pthread_mutex_unlock(&state->mutex);
