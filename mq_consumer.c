@@ -34,11 +34,16 @@ static bool mq_parse_message(mq_consumer_t* consumer, const char* message, emerg
     LOG_SYSTEM("mq_consumer", "Analisi del messaggio: %s", message);
 
     // Analizza il messaggio e popola la struttura request
-    char emergency_name[128];
-    int x, y;
+    char emergency_name[128] = {0};
+    int x = -1, y = -1;
     time_t timestamp = time(NULL);
-    sscanf(message, "%127s %d %d %ld", emergency_name, &x, &y, &timestamp);
+    int result = sscanf(message, "%127s %d %d %ld", emergency_name, &x, &y, &timestamp);
 
+    if (result != 4) {
+        LOG_SYSTEM("mq_consumer", "ERRORE: Messaggio malformato o vuoto. Letti %d elementi su 4. Messaggio ignorato.", result);
+        return false; // Interrompe l'elaborazione di questo messaggio errato
+    }
+    
     if(consumer->env_width < x || x < 0) {
         LOG_SYSTEM("mq_consumer", "Coordinate X fuori dall'ambiente: %d", x);
         return false; // ignora il messaggio
